@@ -1,0 +1,15 @@
+{
+  "name": "little-diamond",
+  "version": "1.0.0",
+  "description": "TCC em ciências da computação",
+  "main": "main.js",
+  "scripts": {
+    "bundle": "gulp bundle",
+    "start": "gulp bundle && electron ."
+  },
+  "author": "Patrick Mateus Craveiro",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  }
+}
