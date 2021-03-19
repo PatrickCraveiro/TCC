@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "bundle": "gulp bundle",
-    "start": "gulp bundle && electron ."
+    "start": "electron ."
   },
   "author": "Patrick Mateus Craveiro",
   "license": "ISC",
