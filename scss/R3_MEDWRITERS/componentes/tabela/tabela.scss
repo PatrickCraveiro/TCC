@@ -1,0 +1,97 @@
+.#{$r3_medwriters} {
+  .tabela {
+    width: 100%;
+
+    .celula.quadro-resumo__destaque {
+      padding: 0;
+    }
+
+    .quadro-resumo__destaque {
+      margin-bottom: 0;
+    }
+
+    .quadro-resumo__subtitulo {
+      color: $cor-14;
+    }
+
+    .linha {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .coluna {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .celula {
+      display: block;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0%;
+
+      &.fundo-cinza {
+        background-color: $cor-8;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid $cor-1;
+      }
+    }
+  }
+
+  .tabela-coluna.fundo-cinza {
+    background-color: $cor-8;
+  }
+
+  .tabela-caixa {
+    .tabela-linha {
+      border-color: $cor-1;
+
+      &.linha-coluna {
+        flex-direction: column !important;
+      }
+
+      &.sem-borda {
+        border-bottom: 0 !important;
+      }
+    }
+
+    .componente-biblioteca .tabela-linha {
+      border-color: $cor-1;
+    }
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno {
+//     .tabela {
+//         width: 100%;
+//         .quadro-resumo__destaque {
+//             margin-bottom: 0;
+//             background-color: $cor-8;
+//             color: $cor-0;
+//         }
+//         .celula {
+//             display: flex;
+//             flex-grow: 1;
+//             flex-shrink: 1;
+//             flex-basis: 0%;
+//             flex-direction: column;
+//             &.quadro-resumo__titulo-h1 {
+//                 background-color: $cor-3;
+//                 color: #fff;
+//             }
+//             &.quadro-resumo__subtitulo {
+//                 background-color: $cor-4;
+//                 color: $cor-2;
+//             }
+//             & .paragrafo,
+//             &.paragrafo {
+//                 color: $cor-0;
+//             }
+
+//         }
+//     }
+// }

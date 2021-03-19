@@ -1,0 +1,18 @@
+$ard-margem-apostila: (8 + 15);
+
+.apostila {
+	padding: 0 8px !important;
+}
+
+.cap:not(.clipboard__element),
+.content-out {
+	padding: 0 15px !important;
+}
+
+.apostila .container-imagem {
+	margin-bottom: 30px;
+}
+
+.resposta-questoes-miolo {
+	margin-bottom: 20px !important;
+}

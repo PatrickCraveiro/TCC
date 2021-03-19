@@ -1,0 +1,290 @@
+.#{$r3_medwriters} {
+
+  .quadro-resumo,
+  .tabela-caixa {
+    display: block;
+    border: 1px solid $cor-1;
+    margin: $margem-caixas-r3;
+
+    .tabela-coluna,
+    .r3-tabela-coluna {
+      &:not(:last-child) {
+        border-right: 1px solid $cor-1;
+      }
+    }
+
+    .paragrafo.quadro-resumo__subtitulo--h4 {
+      color: #f57c00;
+      font-family: NotoSans-SemiBold;
+    }
+
+    & .border-bottom-1 {
+      border-bottom: 1px solid $cor-1;
+    }
+
+    & .border-top-1 {
+      border-top: 1px solid $cor-1;
+    }
+
+    & .border-left-1 {
+      border-left: 1px solid $cor-1;
+    }
+
+    & .border-right-1 {
+      border-right: 1px solid $cor-1;
+    }
+
+    & .margin-bottom-0,
+    & .celula.margin-bottom-0 {
+      margin-bottom: 0px;
+    }
+
+    & .margin-bottom-0,
+    & .celula.margin-bottom-4 {
+      margin-bottom: 4px;
+    }
+
+    @mixin borda-bot {
+      &.borda-bot-1 {
+        border-bottom-color: $cor-1;
+      }
+    }
+  
+
+    &__titulo-h1--escuro,
+    .tabela--h1 {
+      background-color: $cor-2;
+      color: #fff;
+      font-family: NotoSerif-SemiBold;
+      display: block;
+      padding: $padding-caixas-r3;
+
+      @include borda-bot;
+    }
+
+    &__titulo-h1,
+    .tabela--h2 {
+      background-color: $cor-3;
+      color: #fff;
+      font-family: NotoSerif-SemiBold;
+      display: block;
+      padding: $padding-caixas-r3;
+
+      @include borda-bot;
+    }
+
+    &__subtitulo,
+    .tabela--h3 {
+      background-color: $cor-4;
+      color: $cor-0;
+      font-family: NotoSerif-SemiBold;
+      display: block;
+      padding: $padding-caixas-r3;
+
+      @include borda-bot;
+
+      .paragrafo,
+      .paragrafo .negrito {
+        font-family: NotoSerif-SemiBold;
+      }
+
+      &--h2 {
+        background-color: $cor-4;
+        color: $cor-0;
+        font-family: NotoSerif-SemiBold;
+        display: block;
+        padding: $padding-caixas-r3;
+
+        @include borda-bot;
+      }
+
+      &--h3 {
+        color: $cor-0;
+        font-family: NotoSerif-SemiBold;
+        background-color: $cor-5;
+        padding: $padding-caixas-r3;
+        display: block;
+        @include borda-bot;
+
+        &.destaque-primario,
+        .destaque-primario {
+          color: $cor-1 !important;
+        }
+      }
+
+      &--h4 {
+        color: $cor-3;
+        font-family: NotoSans-SemiBold;
+        display: block;
+        padding: $padding-caixas-r3;
+      }
+
+      &--h5 {
+        color: $cor-1;
+        font-family: NotoSans-Medium;
+        display: block;
+        padding: $padding-caixas-r3;
+      }
+    }
+
+    .tabela--h0 {
+      background-color: #fff;
+      font-family: NotoSerif-SemiBold;
+      padding: $padding-caixas-r3;
+    }
+
+    .tabela--h4 {
+      background-color: $cor-4;
+      color: $cor-0;
+      font-family: NotoSerif-SemiBold;
+      display: block;
+      padding: $padding-caixas-r3;
+
+      @include borda-bot;
+    }
+
+    .tabela--h5 {
+      color: $cor-0;
+      font-family: NotoSerif-SemiBold;
+      background-color: $cor-5;
+      padding: $padding-caixas-r3;
+      display: block;
+      @include borda-bot;
+
+      &.destaque-primario,
+      .destaque-primario {
+        color: $cor-1 !important;
+      }
+    }
+
+    .tabela--h6 {
+      color: $cor-3;
+      font-family: NotoSans-SemiBold;
+      display: block;
+      padding: $padding-caixas-r3;
+    }
+   
+
+    &__destaque {
+      background-color: $cor-8;
+      border-top: 1px solid $cor-1;
+      border-bottom: 1px solid $cor-1;
+      padding: $padding-caixas-r3;
+      font-family: NotoSans-Regular;
+      margin-bottom: 0;
+      display: block;
+
+      &+.quadro-resumo__destaque {
+        border-top: 0;
+      }
+    }
+
+    .paragrafo {
+      padding: $padding-caixas-r3;
+      margin-bottom: 0;
+    }
+
+    &__legenda {
+      padding: 5px 10px;
+      font-family: NotoSans-Italic;
+      text-decoration-line: underline;
+      -webkit-text-decoration-line: underline;
+      text-decoration-style: dotted;
+      -webkit-text-decoration-style: dotted;
+      text-decoration-color: $cor-1;
+      -webkit-text-decoration-color: $cor-1;
+      text-decoration-color: $cor-1;
+      line-height: 1.5;
+      display: block;
+
+      .destaque-primario {
+        color: $cor-1;
+      }
+    }
+
+    .celula.quadro-resumo__titulo-h1.width-30,
+    .celula.tabela--h1.width-30  {
+      max-width: 30%;
+    }
+
+    .celula.quadro-resumo__subtitulo.width-30,
+    .celula.tabela--h3.width-30 {
+      max-width: 30%;
+    }
+
+    .celula.quadro-resumo__subtitulo--h3.width-30,
+    .celula.tabela--h5.width-30 {
+      max-width: 30%;
+    }
+
+    .celula.width-30 {
+      max-width: 30%;
+    }
+
+    .celula.quadro-resumo__titulo-h1.width-40,
+    .celula.tabela--h1.width-40{
+      max-width: 40%;
+    }
+
+    .celula.quadro-resumo__subtitulo.width-40,
+    .celula.tabela--h3.width-40 {
+      max-width: 40%;
+    }
+
+    .celula.quadro-resumo__subtitulo--h3.width-40,
+    .celula.tabela--h5.width-40 {
+      max-width: 40%;
+    }
+
+    .celula.width-40 {
+      max-width: 40%;
+    }
+  }
+
+  .tabela-caixa .quadro-resumo__subtitulo,
+  .tabela-caixa .tabela--h3 {
+    color: $cor-2;
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno {
+//   .quadro-resumo {
+//     border-color: $cor-1;
+
+//     &__titulo-h1 {
+//       background-color: $cor-18-modo-noturno;
+//       color: $cor-3;
+//     }
+
+//     &__subtitulo {
+//       background-color: $cor-19-modo-noturno;
+//       color: $cor-1;
+
+//       &--h2 {
+//         background-color: $cor-20-modo-noturno;
+//         color: $cor-1;
+//       }
+
+//       &--h3 {
+//         color: $cor-1;
+//         background-color: $cor-20-modo-noturno;
+//       }
+
+//       &--h4 {
+//         color: $cor-1;
+//       }
+//       &--h5 {
+//         color: $cor-4;
+//       }
+//     }
+
+//     &__destaque {
+//       background-color: $cor-23-modo-noturno;
+//     }
+
+//     &__legenda {
+//       background-color: $cor-24-modo-noturno;
+//       color: $cor-0-modo-noturno;
+//     }
+//   }
+// }

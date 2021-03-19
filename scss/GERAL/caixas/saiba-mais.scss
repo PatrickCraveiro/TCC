@@ -1,0 +1,44 @@
+.saiba-mais-mdc__expandir,
+.saiba-mais-med__expandir,
+.saiba-mais__expandir {
+	padding: 10px 15px;
+	font-size: 0.8em;
+	color: #fff;
+	text-transform: uppercase;
+	white-space: pre;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 150px;
+	display: block;
+	margin: -30px auto 5px auto;
+	text-align: center !important;
+	transform: translateX(-50%);
+	z-index: 12;
+	border: 1px solid #fff;
+}
+
+// Classes do collapse precisam ser verificadas...
+
+.saiba-mais-med.saiba-mais-collapse,
+.saiba-mais-mdc.saiba-mais-collapse,
+.saiba-mais.saiba-mais-collapse,
+.saiba-mais-mdc__conteudo.saiba-mais-collapse,
+.saiba-mais-med__conteudo.saiba-mais-collapse,
+.saiba-mais__conteudo.saiba-mais-collapse {
+	height: 210px;
+	overflow: hidden;
+	z-index: 11;
+}
+
+.saiba-mais__conteudo.saiba-mais-collapse::before,
+.saiba-mais-med__conteudo.saiba-mais-med-collapse::before,
+.saiba-mais-mdc__conteudo.saiba-mais-mdc-collapse::before {
+	left: 2px;
+	bottom: -3px;
+	right: 2px;
+	position: absolute;
+	height: 30px;
+	content: "";
+	display: inline-block;
+}

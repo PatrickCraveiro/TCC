@@ -1,0 +1,31 @@
+.#{$mdc_medyklin} .cap .container-titulo--h3,
+caixa-indice.#{$mdc_medyklin} .indice-style .container-titulo--h3 {
+  border-left: 2px solid $cor-4;
+  border-top: 2px solid $cor-4;
+  display: block;
+  padding: 6px 6px 1px;
+  width: -webkit-fill-available;
+  font-family: ArialMTStd-Black;
+
+  .titulo--h3 {
+    font-size: 1.2em;
+
+    area-indice & {
+      font-size: 1.1rem;
+    }
+  }
+
+  .titulo--h3__irmao--1 {
+    display: block;
+    
+    font-family: ArialMTStd;
+    font-size: 0.7em;
+    line-height: 1.5;
+
+    .lista-bullet-3 {
+      &::before {
+        margin-top: 0;
+      }
+    }
+  }
+}

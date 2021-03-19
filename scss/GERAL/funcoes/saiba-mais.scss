@@ -1,0 +1,57 @@
+//MIXIN SAIBA-MAIS MEDCURSO
+@mixin propriedade-saiba-mais-mdc {
+  @include ard-std-caixa($padding: 0);
+}
+
+@mixin propriedade-saiba-mais-mdc__titulo {
+  display: block;
+  font-family: UniversLTStd-Bold_0;
+  width: -webkit-fill-available;
+}
+
+@mixin propriedade-saiba-mais-mdc__conteudo {
+  @include ard-std-caixa($margin: null);
+  border: none;
+
+  .paragrafo {
+    font-family: UniversLTPro-Condensed;
+    @include italico(UniversLTPro-CondensedObl);
+    @include negrito(UniversLTPro-BoldCond);
+  }
+}
+
+//MIXIN SAIBA-MAIS MED
+@mixin propriedades-saiba-mais {
+  display: block;
+  margin: 20px 0;
+  width: -webkit-fill-available;
+}
+
+@mixin propriedades-saiba-mais__titulo {
+  display: block;
+  border-top-right-radius: 10px;
+  color: #fff;
+  font-family: NotoSans-Bold;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 10px 10px 5px;
+  width: -webkit-fill-available;
+}
+
+@mixin propriedades-saiba-mais__conteudo {
+  @include ard-std-caixa($margin: null);
+  border-bottom-right-radius: 10px;
+
+  .paragrafo {
+    @include negrito(NotoSerif-Bold);
+    color: #fff;
+    font-family: NotoSerif-Regular;
+  }
+
+  .questoes .paragrafo {
+    color: #000;
+  }
+  .caixa-bordas {
+    border-color: #fff;
+  }
+}

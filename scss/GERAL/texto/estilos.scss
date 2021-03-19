@@ -1,0 +1,77 @@
+.negrito {
+	font-weight: bold;
+}
+
+.italico {
+	font-style: italic;
+}
+
+.sublinhado {
+	text-decoration: underline;
+}
+
+.sobrescrito {
+	text-decoration: line-through;
+}
+
+.sup {
+	vertical-align: super;
+}
+.sub {
+	vertical-align: sub;
+}
+
+.sup,
+.sub,
+span[style*="vertical-align: super;"],
+span[style*="vertical-align: sub;"]
+{
+  font-size: .85em;
+}
+
+
+.pequeno {
+	font-size: 0.75em;
+}
+
+.grande {
+	font-size: 1.3em;
+}
+
+.figura {
+	position: relative;
+}
+
+// Alinhamento de texto
+@mixin alinha($alinhamento) {
+	text-align: $alinhamento !important;
+	text-align-last: $alinhamento !important;
+}
+
+@each $i in (centralizado center (display, block !important), esquerda left, direita right, justificado justify)
+{
+	.#{nth($i, 1)} {
+		@include alinha(nth($i, 2));
+		@if (length($i) > 2) {
+			@for $j from 3 through length($i) {
+				#{nth(nth($i, $j), 1)}: #{nth(nth($i, $j), 2)};
+			}
+		}
+	}
+}
+
+// Para quebrar palavras grandes, como links
+.quebra-paragrafo {
+	word-break: break-all;
+}
+
+// Para palavras que não devem quebrar
+.palavra-nao-quebra {
+	display: inline-block;
+}
+
+// Para quebrar linha sem espaçamento
+.quebra-linha {
+	display: block;
+	text-align: inherit;
+}

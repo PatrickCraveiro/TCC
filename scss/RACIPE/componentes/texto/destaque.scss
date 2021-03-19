@@ -1,0 +1,33 @@
+.#{$intensivao} {
+	.paragrafo,
+	button.btn-tool-color,
+	div.color-option,
+	.questoes {
+		.destaque--0,
+		&.destaque--0 {
+			color: #fff;
+		}
+
+		// .destaque deve ser usado quando a cor de destaque é fixa, ex. dentro de uma caixa.
+		.destaque-primario,
+		&.destaque-primario,
+		.destaque--1,
+		&.destaque--1 {
+			color: $cor-1;
+		}
+
+		.destaque-secundario,
+		&.destaque-secundario,
+		.destaque--2,
+		&.destaque--2 {
+			color: $cor-2;
+		}
+
+		.destaque-terciario,
+		&.destaque-terciario,
+		.destaque--3,
+		&.destaque--3 {
+			color: $cor-3;
+		}
+	}
+}

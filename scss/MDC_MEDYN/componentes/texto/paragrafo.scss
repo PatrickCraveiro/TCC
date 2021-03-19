@@ -1,0 +1,39 @@
+.#{$mdc_medyn} {
+  .paragrafo {
+    font-family: UniversLTPro-55Roman;
+    margin-bottom: $ard-margem-paragrafo;
+    line-height: $ard-line-height;
+    @include negrito(UniversLTPro-65Bold);
+    @include italico(UniversLTPro-55Oblique);
+    @include negrito-italico(UniversLTPro-65BoldOblique);
+
+    // Legenda de imagens e tabelas
+    &.legenda--1 {
+      border-left: 2px solid $cor-2;
+      font-size: 0.8em;
+      padding: 3px 8px 0px;
+      font-family: UniversLTPro-LightCond;
+      @include negrito(UniversLTPro-BoldCond);
+      @include italico(UniversLTPro-LightCondObl);
+      @include negrito-italico(UniversLTPro-65BoldOblique);
+    }
+
+    &.borda--1 {
+      &::before {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 3px;
+        background: $cor-1;
+        margin-bottom: 4px;
+      }
+    }
+
+    &.borda--2 {
+      display: block;
+      border-left: 3px solid $cor-1;
+      font-family: UniversLTPro-55Roman;
+      padding-left: 5px;
+    }
+  }
+}

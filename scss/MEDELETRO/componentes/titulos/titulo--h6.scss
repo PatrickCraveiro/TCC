@@ -1,0 +1,20 @@
+.#{$medeletro} .cap .titulo--h6,
+caixa-indice.#{$medeletro} .indice-style .titulo--h6 {
+
+  @include titulos-medeletro;
+
+  border-bottom: 0.2rem dashed $cor-2;
+  color: $cor-11;
+  font-family: NotoSans-Medium;
+  max-width: 72%;
+  width: fit-content;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-transform: uppercase;
+
+  area-indice & {
+    font-size: 1.3rem;
+    border-bottom-width: 2px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,23 @@
+// Evite usar. Está definido para compatibilidade.
+.separador {
+	border: 1px solid transparent;
+	display: inline-block;
+	width: -webkit-fill-available;
+
+	&-seta-baixo {
+		display: block;
+		background: url(../../imagens-componentes/seta-baixo.png) repeat-y;
+		background-size: contain;
+		background-position: center;
+		height: 5em;
+		width: 5em;
+		margin: 0 auto 10px auto;
+	}
+
+	&-cruz {
+		display: block;
+		font-size: 20vw;
+		text-align: center;
+		line-height: 1em;
+	}
+}

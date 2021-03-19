@@ -1,0 +1,49 @@
+.#{$med_mederi} {
+  .caixa--0 {
+    @include propriedades-saiba-mais;
+    &__filho {
+      &--1 {
+        @include propriedades-saiba-mais__titulo;
+
+        background-color: $cor-1;
+      }
+      &--2 {
+        @include propriedades-saiba-mais__conteudo;
+
+        background-color: $cor-2;
+
+        .paragrafo {
+          .figura {
+            color: $cor-5;
+          }
+
+          &.legenda-tabela {
+            width: fit-content;
+            border-bottom: 2px solid $cor-1;
+            font-size: 0.85em;
+            padding: 0;
+            margin: 5px 5px 15px 5px;
+          }
+
+          .olho {
+            background-color: $cor-1;
+          }
+
+          .lista__texto {
+            @include marcadores(circulo seta seta-2 seta-3, before) {
+              color: $cor-3;
+            }
+          }
+
+          &.destaque--1 {
+            color: $cor-1;
+          }
+        }
+      }
+    }
+
+    .caixa--3 {
+      border: 2px solid #fff;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// Níveis
+@each $i in (0, 1, 2, 3, 4) {
+	.nv-#{$i} {
+		margin-left: #{(($i + 1) * 0.9)}rem;
+	}
+}
+
+// martop-10, etc
+@include bloco-bootstrap(margin);
+
+// padtop-10, etc
+@include bloco-bootstrap(padding, top bottom, 10 20 30);
+
+// borda-top-1, borda-top-2, borda-top-sm, etc.
+@include bloco-bootstrap(border,
+	top bottom,
+	1 (2 sm) (3 md) (4 lg),
+	px solid,
+	borda-);
+
+.borda-top {
+	border-top: 1px solid;
+}
+
+// alinhamento de texto por botão no meditango
+@each $name, $value in (
+	(esquerda, left),
+	(centralizado, center),
+	(direita, right),
+	(justificado, justify)
+) {
+	.alinhado-#{$name} {
+		text-align: $value !important;
+		text-align-last: if($name == 'justificado', left, $value) !important;
+	}
+}

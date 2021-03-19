@@ -1,0 +1,55 @@
+.#{$intensivao} .cap .titulo,
+caixa-indice.#{$intensivao} .indice-style .titulo {
+	&--h1 {
+		display: block;
+		text-align: left;
+		// margin-bottom: $ard-margem-titulos;
+		border-bottom: 3px solid $cor-3;
+		color: $cor-2;
+		font-family: ZillaSlab-Bold;
+		@include italico(ZillaSlab-BoldItalic);
+		font-size: 1.85em;
+
+		area-indice & {
+			width: -webkit-fill-available;
+			font-size: 1.15rem;
+			border-bottom-width: 2px;
+		}
+	}
+
+	&--h2 {
+		display: block;
+		text-align: left;
+		// margin-bottom: $ard-margem-titulos;
+		border-bottom: 3px dashed $cor-2;
+		color: $cor-h2;
+		font-family: ZillaSlab-BoldItalic;
+		font-size: 1.7em;
+
+		area-indice & {
+			width: -webkit-fill-available;
+			font-size: 1.075rem;
+			border-bottom-width: 2px;
+		}
+	}
+
+	&--h3 {
+		display: block;
+		text-align: left;
+		// margin-bottom: $ard-margem-titulos;
+		border-radius: 10px;
+		padding: $ard-padding-caixas;
+		background-color: $cor-3;
+		color: $cor-1;
+		border: 2px solid $cor-1;
+		font-family: ZillaSlab-SemiBold;
+		@include italico(ZillaSlab-SemiBoldItalic);
+		font-size: 1.55em;
+
+		area-indice & {
+			width: -webkit-fill-available;
+			font-size: 1rem;
+			padding: 10px;
+		}
+	}
+}

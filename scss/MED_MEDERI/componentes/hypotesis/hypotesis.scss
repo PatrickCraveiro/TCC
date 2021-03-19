@@ -1,0 +1,37 @@
+.#{$med_mederi} .cap {
+  .hypotesis {
+    display: block;
+    width: -webkit-fill-available;
+    background-image: url(../../imagens-componentes/bg-hypothesis.png);
+    padding: 10px;
+    margin-bottom: 10px;
+
+    &::before {
+      background-image: url(../../imagens-componentes/logo-hypothesis.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 100px;
+      width: 100%;
+    }
+
+    & .titulo-hypotesis {
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: 1.3em;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 10px;
+      font-family: NotoSerif-SemiBold;
+
+      &.titulo--h2 {
+        background-color: transparent;
+        color: #000;
+        padding: 0;
+      }
+    }
+  }
+}

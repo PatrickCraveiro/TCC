@@ -1,0 +1,45 @@
+.#{$r3_mederi} {
+  .container-imagem {
+    display: block;
+
+    img {
+      width: 100%;
+    }
+
+    // em tego 39 existia uma lista filha de paragrafo e como lista é alinhado a esquerda houve essa modificação para dentro do modal ficar centralizado
+    @at-root .zoom-view__legenda {
+      .lista {
+        text-align: inherit;
+        text-align-last: inherit;
+      }
+    }
+
+    .paragrafo {
+      &.legenda {
+        display: block;
+        padding: std-pad(5px 10px);
+        font-family: NotoSerif-Medium;
+        @include negrito(NotoSerif-Bold);
+        border: 1px solid $cor-1;
+        color: $cor-1;
+        background-color: #fff;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   .container-imagem {
+//     .paragrafo {
+//       &.legenda {
+//         border: 1px solid $cor-1;
+//         color: $cor-9;
+//         background-color: $cor-24-modo-noturno;
+//       }
+//     }
+//   }
+// }

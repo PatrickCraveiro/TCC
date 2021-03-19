@@ -1,0 +1,41 @@
+.#{$mdc_medyklin} {
+  .caixa--5 {
+    display: flex;
+    
+    &__filho--1 {
+      background: initial;
+      display: flex;
+      padding: 0;
+      margin-bottom: 20px;
+
+      &::before {
+        color: $cor-4;
+        background-color: transparent;
+        content: "";
+        display: inline-block;
+        margin-top: 5px;
+        margin-right: 5px;
+        position: relative;
+        top: $ard-padding-caixas;
+
+        //url triangulo monta string que vai formar URL de caminho do icone de aten��o da descricao
+        $url-triangulo: "../../imagens-componentes/triangulo-" + str-slice(quote($mdc_medyklin), 5) + ".png";
+        background: url($url-triangulo) no-repeat center/ contain;
+        flex-shrink: 0;
+        width: 20px;
+        height: 25px;
+      }
+    }
+    &__filho--2 {
+      @include ard-std-caixa;
+      background-color: $cor-9;
+
+      .paragrafo {
+        font-family: ArialMTStd;
+        @include negrito(ArialMTStd-Bold);
+        @include italico(ArialMTStd-Italic);
+        @include negrito-italico(ArialMTStd-BoldItalic);
+      }
+    }
+  }
+}

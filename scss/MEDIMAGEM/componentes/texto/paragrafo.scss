@@ -1,0 +1,9 @@
+.#{$medimagem} {
+	.paragrafo {
+		color: #fff;
+		font-family: FSEmericBook;
+		// @include negrito(FSEmericBold);
+		// @include italico(FSEmericItalic);
+		// @include negrito-italico(FSEmericBoldItalic);
+	}
+}

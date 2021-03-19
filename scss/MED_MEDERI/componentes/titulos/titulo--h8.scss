@@ -1,0 +1,30 @@
+.#{$med_mederi} .cap .container-titulo--h8,
+caixa-indice.#{$med_mederi} .indice-style .container-titulo--h8 {
+  display: block;
+  border-bottom: 2px solid $cor-2;
+  border-top: 2px solid $cor-2;
+  font-family: NotoSans-Medium;
+  padding: 5px 5px;
+  width: -webkit-fill-available;
+
+  .titulo--h8 {
+    display: block;
+    color: $cor-1;
+    font-size: 1.3em;
+    line-height: 1.3em;
+
+    area-indice & {
+      font-size: 0.85rem;
+      padding: 0;
+      border-bottom-width: 4px;
+    }
+  }
+}
+
+.titulo--h8__irmao--1 {
+  display: block;
+
+  color: $cor-2;
+  line-height: 1.3em;
+  font-size: 1.1em;
+}

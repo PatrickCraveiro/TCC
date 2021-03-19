@@ -1,0 +1,13 @@
+.#{$cpmed_extensivo} {
+    .topico--h1 {
+        @include italico(NotoSans-BoldItalic);
+
+        display: block;
+        color: $cor-1;
+        font-family: NotoSans-Bold;
+        font-size: 1.1em;
+        margin-bottom: 0;
+        padding-right: 5px;
+        width: -webkit-fill-available;
+    }
+}

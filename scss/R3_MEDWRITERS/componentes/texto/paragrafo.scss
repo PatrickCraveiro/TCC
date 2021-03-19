@@ -1,0 +1,50 @@
+.#{$r3_medwriters} {
+  .paragrafo {
+    font-family: NotoSans-Regular;
+    margin-bottom: $margem-paragrafo;
+    line-height: $line-height;
+    color: $cor-0;
+
+    @include negrito(NotoSans-Bold);
+    @include italico(NotoSans-Italic);
+    @include negrito-italico(NotoSans-BoldItalic);
+
+    &.capitalizado {
+      margin-top: 30px;
+
+      &::first-letter {
+        font-size: 3.5em;
+        line-height: 0.75;
+        padding-right: 5px;
+      }
+    }
+
+    &.introducao {
+      color: $cor-2;
+    }
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno {
+//   .paragrafo {
+//     color: $cor-0-modo-noturno;
+//     .destaque-primario,
+//     &.destaque-primario {
+//       color: $cor-1;
+//     }
+
+//     .destaque-secundario,
+//     &.destaque-secundario {
+//       color: $cor-2;
+//     }
+
+//     .destaque-terciario,
+//     &.destaque-terciario {
+//       color: $cor-3;
+//     }
+
+//     &.introducao {
+//       color:$cor-4;
+//     }
+//   }
+// }

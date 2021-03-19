@@ -1,0 +1,13 @@
+.#{$mdc_medyn} .cap .titulo--h6,
+caixa-indice.#{$mdc_medyn} .indice-style .titulo--h6 {
+    display: block;
+
+    color: $cor-1;
+    font-family: UniversLTPro-BoldCond;
+
+    area-indice & {
+        font-size: 0.9rem;
+        border-bottom-width: 2px;
+        padding: 0;
+    }
+}

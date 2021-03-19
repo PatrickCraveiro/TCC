@@ -1,0 +1,60 @@
+.#{$mdc_medyn} {
+  .tabela-caixa--1 {
+    @include ard-std-caixa($padding: 0);
+    border-bottom: 2px solid $cor-2;
+
+    &__filho--1 {
+      display: block;
+
+      color: $cor-2;
+      padding: 0;
+      flex-shrink: 1.5;
+      -webkit-flex-shring: 1.5;
+      border-bottom: 3px solid $cor-2;
+      font-size: 1.1em;
+      font-family: AkzidenzGroteskBold;
+    }
+
+    &__filho--2 {
+      display: block;
+
+      border-bottom: 3px solid $cor-2;
+      font-size: 0.9em;
+      font-family: AkzidenzGroteskMedium;
+      padding-top: 10px;
+    }
+
+    .tabela-coluna {
+      padding: 5px 5px 0 5px;
+
+      .paragrafo {
+        font-family: UniversLTPro-55Roman;
+        margin: 0;
+        padding: 8px 8px 5px;
+      }
+
+      &.centralizado-vertical,
+      .centralizado-vertical {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    // LINHA
+    .tabela-linha {
+      border-bottom: 1px solid $cor-2;
+    }
+
+    .paragrafo.legenda-tabela {
+      display: block;
+      font-family: UniversLTPro-Condensed;
+      margin-bottom: 0;
+      line-height: 1.1;
+      padding: 10px;
+
+      &.pequeno {
+        font-size: 0.75em;
+      }
+    }
+  }
+}

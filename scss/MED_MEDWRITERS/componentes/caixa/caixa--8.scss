@@ -1,0 +1,14 @@
+.#{$med_medwriters} {
+    .caixa--8 {
+        @include ard-std-caixa;
+
+        background-color: $cor-13;
+
+        .paragrafo {
+            &.capitalizado {
+                color: #000;
+                margin-top: 0;
+            }
+        }
+    }
+}

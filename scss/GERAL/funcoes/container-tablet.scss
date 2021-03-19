@@ -1,0 +1,22 @@
+@mixin propriedades-container-tablet {
+    // NÃO USE! ESTÁ AQUI APENAS PARA COMPATIBILIDADE
+    .container-imagem {
+        text-align: center;
+
+        @each $i in (35 50 70) {
+            &.largura-tablet-#{$i} img {
+                width: #{$i}#{unquote("%")};
+            }
+        }
+    }
+
+    // O correto é diminuir o width do container-imagem em si, não do img.
+    // Para diminuir imagens em tablets, use essas classes
+    @each $i in (30 50 70) {
+        .apostila .container-imagem.container-largura-#{$i} {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: #{$i}#{unquote("%")};
+        }
+    }
+}

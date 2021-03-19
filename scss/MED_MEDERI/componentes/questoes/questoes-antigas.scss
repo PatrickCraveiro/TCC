@@ -1,0 +1,96 @@
+// [Gui] Padronizando questões conforme solicitado por Billy e Acadêmico
+.#{$med_mederi} {
+  .questoes-antigas {
+    display: block;
+    width: -webkit-fill-available;
+    background-color: #fddbba;
+    overflow: auto;
+    padding: 10px 5px 0;
+    margin: 20px 0;
+
+    .titulo-questoes {
+      display: block;
+      text-align: left;
+      font-family: NotoSerif-Italic;
+      font-style: italic;
+      padding: 0 5px;
+      margin: 0;
+
+      +.paragrafo {
+        @include std-margin(paragrafo, $override-posicao: top);
+      }
+
+      ~.paragrafo .lista-flexivel {
+        @include std-margin(lista-questoes);
+      }
+    }
+
+    .paragrafo {
+      font-style: italic;
+    }
+
+    .botao-questoes {
+      display: block;
+      background-color: $cor-2;
+      border: 1px solid $cor-1;
+      color: #fff;
+      text-align: center;
+      width: 60%;
+      font-family: NotoSans-Medium;
+      top: 20px;
+      margin: 20px auto;
+      line-height: 2;
+
+      &--expandido {
+        @extend .botao-questoes;
+        margin: 20px 5px 5px 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: fit-content;
+        text-align: left;
+      }
+    }
+
+    .resposta-questoes {
+      display: block;
+      width: -webkit-fill-available;
+      font-family: NotoSerif-Regular;
+
+      >.paragrafo:first-child::before {
+        content: "R. ";
+        color: $cor-2;
+        font-family: NotoSerif-Bold;
+      }
+
+      .paragrafo {
+        max-height: 0;
+        overflow: hidden;
+        font-style: normal;
+        margin-bottom: 0;
+      }
+
+      .tabela-caixa {
+        display: none;
+      }
+
+      .container-imagem {
+        display: none;
+      }
+
+      &.mostraRespostaQuestoes {
+        .paragrafo {
+          max-height: initial;
+          @include std-margin(paragrafo);
+        }
+
+        .container-imagem {
+          display: inline-block;
+        }
+
+        .tabela-caixa {
+          display: block;
+        }
+      }
+    }
+  }
+}

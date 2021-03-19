@@ -1,0 +1,63 @@
+@mixin caixa-titulo {
+  display: block;
+  font-size: 1.2rem;
+  font-family: UniversLTPro-BoldCond;
+  padding-bottom: $ard-margem-caixas;
+}
+
+@mixin caixa-titulo-mederi {
+  color: $cor-0;  //cor zero é a cor de parágrafo em todas as editoras r+ (posteriormente será implementado também nas R+ / RAC / RACIPE / MEDIMAGEM etc...
+  width: -webkit-fill-available;
+}
+
+@mixin caixa-texto {
+  font-family: UniversLTPro-Condensed;
+  @include negrito(UniversLTPro-BoldCond);
+  @include italico(UniversLTPro-CondensedObl);
+}
+
+@mixin caixa-titulo-medwriters {
+  display: block;
+
+  color: #fff;
+  font-family: NotoSans-Medium;
+  margin-left: auto;
+  max-width: fit-content;
+  padding: 5px;
+  width: 68%;
+}
+
+@mixin caixa-medwriters {
+  display: block;
+
+  margin: 30px 0;
+  padding-left: 25px;
+  width: -webkit-fill-available;
+}
+
+@mixin caixa-medeletro {
+  display: block;
+  padding: $padding-caixas-r3;
+
+  .paragrafo {
+    color: $cor-3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin quadro-geral($cor-paragrafo-quadro: null) {
+  display: block;
+  padding: $padding-caixas-r3;
+  margin: $margem-caixas-r3;
+
+  .paragrafo {
+    color: $cor-paragrafo-quadro;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

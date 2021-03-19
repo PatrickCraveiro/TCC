@@ -1,0 +1,19 @@
+.#{$medimagem} {
+	.questao-apostila {
+		display: none !important;
+	}	
+
+	.container-imagem {
+		margin-bottom: 0;
+	}
+
+	.medimagem-divisoria {
+    display: block;
+    border-top: 1px solid $cor-5;
+		margin: 40px 10px;
+	}
+
+	input.placeholder-image {
+		display: none;
+	}
+}

@@ -1,0 +1,125 @@
+.#{$r3_mederi} {
+  .questoes-2 {
+    display: block;
+    background-color: $cor-2;
+    margin: $margem-caixas-r3;
+    padding: $padding-caixas-r3;
+    color: #fff;
+    padding: 0;
+
+    .paragrafo {
+      padding: 15px;
+      font-family: NotoSerif-Italic;
+      @include negrito(NotoSerif-BoldItalic);
+      color: #fff;
+      padding-bottom: 0;
+      margin-bottom: 5px;
+    }
+
+    .titulo-questoes {
+      display: block;
+      font-family: NotoSerif-Italic;
+      @include negrito(NotoSerif-BoldItalic);
+      font-size: 1.3em;
+      padding: 15px;
+      padding-bottom: 0;
+      font-style: initial;
+
+      +.titulo-questoes {
+        padding-top: 0;
+      }
+    }
+
+    .botao-questoes {
+      background-color: $cor-2;
+      border: 1px solid $cor-1;
+      padding: $padding-caixas-r3;
+      font-family: NotoSans-Medium;
+      text-transform: uppercase;
+      // max-width: fit-content;
+      display: block;
+      top: 20px;
+      margin: 20px auto;
+      text-align: center;
+      line-height: 2;
+      width: fit-content;
+    }
+
+    .resposta-questoes {
+      background-color: $cor-8;
+      font-family: NotoSans-Regular;
+      display: block;
+      width: -webkit-fill-available;
+
+      .paragrafo {
+        color: initial;
+        margin-bottom: 0;
+        max-height: 0;
+        font-family: NotoSerif-Regular;
+        @include negrito(NotoSerif-Bold);
+        font-style: initial;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .tabela-caixa {
+        display: none;
+      }
+
+      .container-imagem {
+        display: none;
+      }
+
+      &.mostraRespostaQuestoes {
+        .paragrafo {
+          max-height: initial;
+          @include std-margin(paragrafo);
+          padding: 15px;
+          margin-bottom: 0;
+        }
+
+        .container-imagem {
+          display: inline-block;
+        }
+
+        .tabela-caixa {
+          display: block;
+        }
+      }
+    }
+
+    .container-imagem {
+      margin: 0 15px;
+    }
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   .questoes-2 {
+//     background-color: $cor-22-modo-noturno;
+//     color: $cor-4;
+
+//     .paragrafo {
+//       color: $cor-4;
+//     }
+
+//     .botao-questoes {
+//       background-color: $cor-2;
+//       border-color: $cor-1;
+//       color: #fff;
+//     }
+
+//     .resposta-questoes {
+//       background-color: $cor-24-modo-noturno;
+
+//       .paragrafo {
+//         color: $cor-9;
+//       }
+
+//       //gambi
+//       .destaque-secundario {
+//         color: $cor-1;
+//       }
+//     }
+//   }
+// }

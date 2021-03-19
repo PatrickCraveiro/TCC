@@ -1,0 +1,60 @@
+.#{$medeletro} {
+  .anteriormente-caixa {
+    display: block;
+    background-color: $cor-6;
+    margin-bottom: 10px;
+
+    &__topo {
+      display: block;
+      height: 25vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90%;
+    }
+
+    &__video {
+      display: block;
+      width: 100%;
+    }
+
+    &__texto {
+      padding: 5vh 0;
+      text-align: center;
+      display: block;
+      margin: 0;
+
+      &-titulo {
+        display: block;
+        font-size: 2.5em;
+        font-family: NotoSans-Bold;
+        color: $cor-4;
+
+        @media only screen and (max-width:374px) {
+          font-size: 2.2em !important
+        }
+
+      }
+
+      &-subtitulo {
+        display: block;
+        margin: 0 auto;
+      }
+
+      &-esq {
+        line-height: 55px;
+        font-size: 2em;
+        font-family: NotoSans-Bold;
+        color: $cor-4;
+        text-align: right;
+      }
+
+      &-dir {
+        line-height: 55px;
+        font-size: 2em;
+        font-family: NotoSans-Bold;
+        color: $cor-5;
+        text-align: left;
+      }
+    }
+  }
+}

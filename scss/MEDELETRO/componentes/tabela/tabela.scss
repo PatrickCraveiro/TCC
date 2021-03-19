@@ -1,0 +1,91 @@
+.#{$medeletro} {
+  .tabela-caixa {
+    @include ard-std-caixa;
+
+    display: block;
+    width: -webkit-fill-available;
+    border: 1px solid $cor-1;
+    padding: 0;
+
+    // Remove a margin caso haja tabela caixa dentro de tabela caixa...
+    .tabela-caixa {
+      margin: 0;
+    }
+
+    .tabela-linha {
+      &:not(:last-child) {
+        border-bottom: 1px solid $cor-1;
+      }
+
+      $fundo: (
+        1: $cor-2,
+        2: $cor-3,
+        3: $cor-6,
+        4: $cor-8,
+        5: $cor-6,
+        6: $cor-13,
+      );
+
+      @each $name, $background in $fundo {
+        .tabela-coluna.tabela--h#{$name} {
+          background-color: $background;
+
+          @if ($name==1) {
+            color: #fff;
+            font-family: NotoSans-SemiBold;
+          }
+
+          @if ($name==2) {
+            color: #fff;
+            font-family: NotoSans-SemiBold;
+          }
+
+          @if ($name==3) {
+            color: $cor-2;
+            font-family: NotoSans-SemiBold;
+          }
+
+          @if ($name==4) {
+            color: $cor-3;
+            font-family: NotoSans-Regular;
+          }
+
+          @if ($name==5) {
+            color: $cor-0;
+            font-family: NotoSans-SemiBold;
+          }
+
+          @if ($name==6) {
+            color: $cor-0;
+            font-family: NotoSans-SemiBold;
+          }
+        }
+      }
+      .tabela-coluna {
+        &.borda-dir {
+          border-right-color: $cor-1;
+        }
+
+        .tabela {
+          &--h4 {
+            display: block;
+            color: $cor-3;
+            font-family: NotoSans-SemiBoldItalic;
+            margin-bottom: $ard-margem-paragrafo;
+          }
+          
+          &--h5 {
+            display: block;
+            color: $cor-1;
+            font-family: NotoSans-MediumItalic;
+            margin-bottom: $ard-margem-paragrafo;
+          }
+        }
+
+        .paragrafo.legenda-tabela {
+          border-bottom: 2px dashed $cor-1;
+        }
+      }
+    }
+  }
+}

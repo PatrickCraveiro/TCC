@@ -1,0 +1,221 @@
+.lista {
+  @include marcador;
+  @include texto;
+
+  &-flexivel {
+    @include propriedades-lista-flexivel;
+    align-items: baseline;
+  }
+}
+
+comp-lista-flex {
+	display: flex;
+	width: -webkit-fill-available;
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&[contenteditable="true"] {
+		display: block;
+	}
+
+	&::before {
+		content: attr(data-marker);
+		width: 1.35rem;
+	}
+
+	&[data-mk-styles*="bold"]::before {
+		font-weight: bold;
+	}
+	&[data-mk-styles*="italic"]::before {
+		font-style: italic;
+	}
+
+	&[style*="--mk-color"]::before {
+    color: var(--mk-color) !important;
+	}
+
+	@for $i from 1 through 4 {
+		&[data-mk-size='#{$i}']::before {
+			width: #{(1.35 + 0.45 * $i)}rem;
+		}
+	}
+}
+
+// lista seta
+.lista-bullet-1 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-1"]::before,
+	&::before {
+    content: "\027a4";
+    margin-top: 2.5px;
+    font-size: 0.65rem;
+    width: 0.9rem;
+
+    .platform-android & {
+      margin-top: 8px;
+    }
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}
+
+// lista quadrado
+.lista-bullet-2 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-2"]::before,
+  &::before {
+    content: "■";
+    margin-top: 2.5px;
+    font-size: 0.7rem;
+    width: 0.9rem;
+
+    .platform-android & {
+      margin-top: 9px;
+    }
+
+    .platform-ios & {
+      margin-top: 7px;
+      font-size: 0.5rem;
+    }
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+
+  p.dica & {
+    color: #fff;
+  }
+}
+
+// lista circulo
+.lista-bullet-3 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-3"]::before,
+  &::before {
+    content: "\025cf";
+    margin-top: 2px;
+    font-size: 0.7rem;
+    width: 0.9rem;
+
+    p.dica & {
+      font-size: 0.7rem;
+      color: #fff;
+    }
+  }
+}
+
+// lista traco
+.lista-bullet-4 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-4"]::before,
+  &::before {
+    content: "¬";
+    font-size: 0.9rem;
+    width: 0.9rem;
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}
+
+// lista seta-dupla
+.lista-bullet-5 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-5"]::before,
+  &::before {
+    content: "»";
+    margin-top: -2px;
+    font-size: 1rem;
+    width: 0.9rem;
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}
+
+// lista circulo-dois
+.lista-bullet-6 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-6"]::before,
+  &::before {
+    content: "\25CB";
+    margin-top: 2px;
+    font-size: 0.75rem;
+    width: 0.9rem;
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}
+
+//lista seta-dois
+.lista-bullet-7 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-7"]::before,
+  &::before {
+    content: "\276F";
+    margin-top: 3px;
+    font-size: 0.75rem;
+    width: 0.9rem;
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}
+
+//lista flecha
+.lista-bullet-8 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-8"]::before,
+  &::before {
+    content: "→";
+    width: 0.9rem;
+    margin: -1px 5px 0 0;
+    font-size: 1rem;
+    font-family: FSEmericBold;
+  }
+}
+
+//lista traco-dois
+.lista-bullet-9 {
+  @include propriedades-lista-flexivel;
+  @include texto;
+
+	@at-root comp-lista-flex[data-marker="bullet-9"]::before,
+  &::before {
+    content: "-";
+    margin-top: 2px;
+    font-size: 0.75rem;
+    width: 0.9rem;
+
+    p.dica & {
+      color: #fff;
+    }
+  }
+}

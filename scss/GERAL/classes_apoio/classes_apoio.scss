@@ -1,0 +1,56 @@
+$spaceamounts: (0, 10, 20, 30, 40);
+$sides: (top, right, bottom, left);
+$bordas: (0, 1, 2, 3, 4, 5);
+@each $side in $sides {
+    @each $space in $spaceamounts {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px;
+        }
+    }
+}
+
+@each $side in $sides {
+    @each $space in $spaceamounts {
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px;
+        }
+    }
+}
+
+@each $side in $sides {
+    @each $borda in $bordas {
+        .border-#{$side}-#{$borda} {
+            border-#{$side}-width: #{$borda}px;
+        }
+    }
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.padtop-0 {
+    padding-top: 0 !important;
+}
+
+.padbot-0 {
+    padding-bottom: 0 !important;
+}
+
+.border-right-0{
+    border-right: none !important;
+}
+
+.noto-sans-regular {
+    font-family: NotoSans-Regular;
+}
+
+$widthNumber: 50;
+
+@while $widthNumber>0 {
+    .width-#{$widthNumber} {
+        width: unquote('#{$widthNumber}%')
+    }
+
+    $widthNumber: $widthNumber - 10;
+}

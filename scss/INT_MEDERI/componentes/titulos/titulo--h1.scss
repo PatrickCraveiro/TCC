@@ -1,0 +1,17 @@
+.#{$int_mederi}.decoreba {
+	.titulo--h1 {
+		display: block;
+		font-family: Rajdhani-Bold;
+		font-size: 2rem;
+		line-height: 1.3;
+		color: $cor-2;
+		border-bottom: 2px solid $cor-1;
+	}
+}
+.ap25706posicao5 {
+	font-size: 0 !important;
+	&::before {
+		content: "LISTA DE DECOREBAS PREVENTIVA";
+		font-size: 1.15rem;
+	}
+}

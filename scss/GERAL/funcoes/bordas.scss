@@ -1,0 +1,13 @@
+// Para especificar várias bordas com as mesmas propriedades
+
+@mixin bordas($props, $pos...) {
+	@for $i from 1 through length($pos) {
+		border-#{nth($pos,$i)}: $props;
+	}
+}
+
+//verificar a necessidade disso
+@mixin borda-bot {
+	width: fit-content;
+	border-bottom: 2px solid $cor-2;
+}

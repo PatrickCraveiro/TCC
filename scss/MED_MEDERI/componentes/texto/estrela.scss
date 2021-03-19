@@ -1,0 +1,11 @@
+.#{$med_mederi} {
+  .icone-estrela {
+    display: inline-block;
+    background-image: url(../../imagens-componentes/estrela.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 0;
+    height: 45px;
+    width: 45px;
+  }
+}

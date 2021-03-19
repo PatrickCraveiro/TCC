@@ -1,0 +1,200 @@
+@mixin propriedades_r3_titulo {
+  display: block;
+  text-align: left;
+  padding: $padding-titulos-r3;
+}
+
+.#{$r3_medwriters} .cap .titulo,
+caixa-indice.#{$r3_medwriters} .indice-style .titulo {
+  &--h1 {
+    @include propriedades_r3_titulo;
+    background-color: $cor-1;
+    line-height: 1.3;
+    padding: 10px;
+    color: #fff;
+    font-family: NotoSerif-Medium;
+    font-size: 1.9rem;
+
+    &::after {
+      content: "";
+      border-bottom: 6px dotted $cor-2;
+      width: -webkit-fill-available;
+      height: 5px;
+      display: block;
+    }
+
+    area-indice & {
+      border-bottom-width: 4px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &--h2 {
+    display: block;
+    background-color: $cor-2;
+    border-radius: 10px;
+    padding: $padding-titulos-2-r3;
+    color: #fff;
+    border: 2px solid $cor-4;
+    font-family: NotoSerif-Light;
+    font-size: 1.9rem;
+    line-height: 1.1;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.25rem;
+    }
+  }
+
+  &--h3 {
+    display: block;
+    background-color: $cor-1;
+    border-radius: 10px;
+    padding: $padding-titulos-2-r3;
+    color: #fff;
+    border: 2px solid $cor-2;
+    font-family: NotoSerif-Light;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.2rem;
+    }
+  }
+
+  &--h4 {
+    @include propriedades_r3_titulo;
+    background-color: #fff;
+    color: $cor-14;
+    border: 5px dotted $cor-14;
+    border-radius: 12px;
+    font-family: NotoSerif-Regular;
+    font-size: 1.7rem;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.15rem;
+      border-width: 3px;
+    }
+  }
+
+  &--h5 {
+    @include propriedades_r3_titulo;
+    border-bottom: 0.2rem dotted $cor-1;
+    color: $cor-3;
+    font-family: NotoSerif-Regular;
+    font-size: 1.4rem;
+    line-height: 1;
+    padding: 0; // max-width: 72%;
+    width: fit-content;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1rem;
+      border-bottom-width: 2px;
+    }
+
+    //fazer ficar global solução paliativa aplicada
+    &.cor-azul {
+      color: #0d76bd;
+      border-bottom: 0.2rem dotted #78b7e4;
+    }
+
+    &.cor-verde {
+      color: #0aa24a;
+      border-bottom: 0.2rem dotted #90b03e;
+    }
+
+    &.cor-vermelho {
+      color: #c51a22;
+      border-bottom: 0.2rem dotted #e6464e;
+    }
+  }
+
+  &--h6 {
+    @include propriedades_r3_titulo;
+    border-bottom: 0.2rem dotted $cor-2;
+    color: $cor-1;
+    font-family: NotoSerif-Medium; // max-width: 72%;
+    width: fit-content;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-align: left;
+    padding: 0;
+
+    area-indice & {
+      font-size: 1rem;
+      border-bottom-width: 2px;
+    }
+
+    &.cor-azul {
+      color: #0d76bd;
+      border-bottom: 0.2rem dotted #78b7e4;
+    }
+
+    &.cor-verde {
+      color: #0aa24a;
+      border-bottom: 0.2rem dotted #90b03e;
+    }
+  }
+
+  &--h7 {
+    @include propriedades_r3_titulo;
+    font-family: NotoSerif-MediumItalic !important;
+    font-style: initial !important;
+    color: $cor-4;
+    font-size: 1.4rem;
+    width: fit-content; // max-width: 72%;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1rem;
+    }
+
+    .sem-italico {
+      font-family: NotoSerif-Regular;
+    }
+
+    .italico {
+      font-family: NotoSerif-MediumItalic !important;
+      font-style: initial !important;
+    }
+  }
+
+  &--h8 {
+    @include propriedades_r3_titulo;
+    font-family: NotoSerif-Medium;
+    font-size: 1.4rem;
+    width: fit-content; // max-width: 72%;
+    color: $cor-10;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1rem;
+    }
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno {
+//     .cap .titulo {
+//         &--h1 {
+//             color: $cor-5;
+//             background-color: $cor-12-modo-noturno;
+//         }
+//         &--h2 {
+//             background-color: $cor-12-modo-noturno;
+//             border: none;
+//             color: $cor-1;
+//             border: 2px solid $cor-1;
+//         }
+//         &--h3 {
+//             background-color: $cor-12-modo-noturno;
+//             border: none;
+//             color: $cor-5;
+//         }
+//         &--h4 {
+//             background-color: $cor-25-modo-noturno;
+//         }
+//     }
+// }

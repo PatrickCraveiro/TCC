@@ -1,0 +1,13 @@
+.#{$med_medwriters} {
+  .destaque {
+    &--1 {
+      color: $cor-1;
+    }
+    &--2 {
+      color: $cor-2;
+    }
+    &--3 {
+      color: $cor-15;
+    }
+  }
+}

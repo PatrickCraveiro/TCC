@@ -1,0 +1,83 @@
+/////////////////
+// MARGEM PADRÃO:
+/////////////////
+// Padrões de margem devem ser definidos aqui, para que
+// mudanças de padrão também só precisem ser feitas aqui.
+///////////////////
+
+// Caixas (a nível de bloco) em geral
+$ard-margem-caixas: 30px;
+
+// Caixas (independente de nível)
+$ard-padding-caixas: 15px;
+
+// Parágrafos e similares
+$ard-margem-paragrafo: 30px;
+
+// Altura padrão de qualquer linha
+$ard-line-height: 1.62;
+
+// Listas com marcadores em geral
+$ard-margem-lista-flexivel: 20px;
+
+// Listas sem marcadores (texto com quebra de linha)
+$ard-margem-lista: 20px;
+
+// Alternativas de questões
+$ard-margem-lista-questoes: 20px;
+
+// Títulos (a nível de bloco) em geral
+// $ard-margem-titulos: 30px;
+$ard-marbot-titulos: 15px;
+$ard-martop-titulos: 40px;
+$ard-margem-titulos: 40px 0 15px 0;
+
+
+//-------------------------------MARGIN-----------------------------
+// Margem das Questões para R3
+$margem-questoes-r3: 15px -15px -15px;
+
+// Margem dos titulos
+$margem-titulos-r3: 40px 0 15px 0;
+
+// Margem das caixas
+$margem-caixas-r3: 0 0 30px 0;
+
+// Margem específica de palavra-dica__texto
+$margem-palavra-dica-r3: 10px 0 30px 0;
+
+//---------------------------- PADDING-------------------------------
+// Padding das Caixas para R3
+$padding-caixas-r3: 15px;
+
+// Padding dos titulos
+$padding-titulos-r3: 5px;
+
+// Padding dos titulos dentro de quadro-resumo
+$padding-titulo-quadro-resumo: 15px;
+
+// Padding dos indices
+$padding-titulos-2-r3: 5px 10px;
+
+// Padding quadro-resumo
+$padding-quadro-resumo-r3: 5px 10px;
+
+//-----------------------------PARAGRAFO--------------------------------
+// Parágrafos e similares R3
+$margem-paragrafo: 30px;
+
+
+// Altura padrão de qualquer linha
+$line-height: 1.62;
+
+// Classe comum a todos os títulos.
+.ard-std-titulo {
+	// Títulos devem estar afastados do conteúdo anterior, e próximos do conteúdo seguinte.
+	margin-top: $ard-martop-titulos;
+	margin-bottom: $ard-marbot-titulos;
+
+	// Títulos consecutivos não devem estar afastados.
+	+.ard-std-titulo {
+		margin-top: 0;
+	}
+}

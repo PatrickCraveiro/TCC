@@ -1,0 +1,57 @@
+/////////////////
+// MARGEM PADRÃO:
+/////////////////
+// Padrões de margem devem ser definidos aqui, para que
+// mudanças de padrão também só precisem ser feitas aqui.
+///////////////////
+
+$margem-titulos: 30px;
+
+$margem-paragrafo: 15px;
+$margem-paragrafo-medyklin: 30px;
+
+$margem-lista-flexivel: 10px;
+
+$margem-lista: 5px;
+
+$margem-lista-questoes: 5px;
+
+@mixin std-margin($categoria, $override-margin-lr: 0, $override-posicao: null) {
+	// Títulos
+	@if ($categoria == titulo) {
+		margin: $margem-titulos
+			$override-margin-lr
+			$margem-paragrafo
+			$override-margin-lr;
+	}
+
+	//Caixas
+	@if ($categoria == caixa) {
+		margin: $margem-titulos
+			$override-margin-lr
+			$margem-paragrafo
+			$override-margin-lr;
+	}
+
+	// Parágrafo
+	@if ($categoria == paragrafo) {
+		margin-#{if($override-posicao, $override-posicao, bottom)}: $margem-paragrafo;
+	}
+
+	// Lista com marcador
+	@if ($categoria == lista-flexivel) {
+		margin-top: $margem-lista-flexivel;
+		margin-bottom: $margem-lista-flexivel;
+	}
+
+	// Lista
+	@if ($categoria == lista) {
+		margin-#{if($override-posicao, $override-posicao, bottom)}: $margem-lista;
+	}
+
+	// Alternativas de questões
+	@if ($categoria == lista-questoes) {
+		margin-top: $margem-lista-flexivel;
+		margin-bottom: $margem-lista-flexivel;
+	}
+}

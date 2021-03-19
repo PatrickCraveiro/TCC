@@ -1,0 +1,188 @@
+.#{$r3_mederi} .cap .titulo,
+caixa-indice.#{$r3_mederi} .indice-style .titulo {
+  @mixin titulo-geral {
+    display: block;
+  }
+
+  &--h1 {
+    @include titulo-geral;
+
+    border-bottom: 0.2em solid $cor-4;
+    color: $cor-2;
+    line-height: 1.1;
+    font-family: NotoSans-Medium;
+    font-size: 2.2rem;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.3rem;
+      padding: 0;
+      border-bottom-width: 4px;
+    }
+  }
+
+  &--h2 {
+    @include titulo-geral;
+
+    background-color: $cor-2;
+    border: 0.1em solid $cor-4;
+    color: #fff;
+    font-family: NotoSans-Light;
+    font-size: 2rem;
+    padding: $padding-titulos-r3;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.2rem;
+    }
+  }
+
+  &--h3 {
+    @include titulo-geral;
+
+    font-family: NotoSans-Light;
+    font-size: 2rem;
+    color: $cor-28;
+    border: 0.1em solid $cor-1;
+    padding: $padding-titulos-r3;
+    background-color: $cor-29;
+    text-align: left;
+
+    area-indice & {
+      font-size: 1.2rem;
+    }
+  }
+
+  &--h4 {
+    @include titulo-geral;
+
+    font-family: NotoSans-Regular;
+    font-size: 1.8rem;
+
+    background-color: $cor-31;
+    color: $cor-30;
+    padding: $padding-titulos-r3;
+    text-align: left;
+    // max-width: 88%;
+    width: fit-content;
+
+    area-indice & {
+      font-size: 1.1rem;
+    }
+  }
+
+  &--h5 {
+    @include titulo-geral;
+
+    font-family: NotoSans-Regular;
+    font-size: 1.6rem;
+
+    background-color: $cor-titulo-h5;
+    color:  $cor-18;
+    padding: $padding-titulos-r3;
+    text-align: left;
+    // max-width: 80%;
+    width: fit-content;
+
+    area-indice & {
+      font-size: 1.1rem;
+    }
+  }
+
+  &--h6 {
+    @include titulo-geral;
+
+    border-bottom: 0.2rem solid $cor-3;
+    color: $cor-3;
+    font-family: NotoSans-Medium;
+    font-size: 1.4rem;
+    line-height: 1.1;
+    text-align: left;
+    // max-width: 72%;
+    width: fit-content;
+
+    area-indice & {
+      font-size: 1rem;
+      border-bottom-width: 2px;
+      padding: 0;
+    }
+  }
+
+  &--h7 {
+    @include titulo-geral;
+
+    border-bottom: 0.2rem solid $cor-1;
+    color: $cor-1;
+    font-family: NotoSans-MediumItalic;
+    font-size: 1.2rem;
+    text-align: left;
+    font-style: italic;
+    // max-width: 64%;
+    width: fit-content;
+
+    area-indice & {
+      font-size: 0.9rem;
+      border-bottom-width: 1px;
+      padding: 0;
+    }
+  }
+
+  &--h8 {
+    @include titulo-geral;
+
+    color: $cor-32;
+    font-family: NotoSans-Medium;
+    font-size: 1.1rem;
+    text-align: left;
+
+    area-indice & {
+      font-size: 0.85rem;
+      padding: 0;
+    }
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   .cap .titulo {
+//     &--h1 {
+//       color: $cor-4;
+//       border-bottom: 0.2em solid $cor-3;
+//     }
+
+//     &--h2 {
+//       border: 0.1em solid $cor-4;
+//       background-color: $cor-12-modo-noturno;
+//       color: #fff;
+//     }
+
+//     &--h3 {
+//       color: $cor-1;
+//       background-color: $cor-13-modo-noturno;
+//       border: 0.1em solid $cor-1;
+//     }
+
+//     &--h4 {
+//       color: $cor-4;
+//       background-color: $cor-14-modo-noturno;
+//     }
+
+//     &--h5 {
+//       color: $cor-9;
+//       background-color: $cor-15-modo-noturno;
+//     }
+
+//     &--h6 {
+//       color: $cor-1;
+//       border-bottom: 0.2rem solid $cor-3;
+//     }
+
+//     &--h7 {
+//       border-bottom: 0.2rem solid $cor-4;
+//       color: $cor-1;
+//     }
+
+//     &--h8 {
+//       color: $cor-4;
+//     }
+//   }
+// }

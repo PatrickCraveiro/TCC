@@ -1,0 +1,23 @@
+.#{$med_medwriters} {
+  .caixa--6 {
+    @include ard-std-caixa;
+    padding: 15px 0;
+
+    &__filho--1 {
+      display: block;
+
+      background-color: $cor-14;
+      font-size: 1.4em;
+      font-family: NotoSerif-SemiBold;
+      padding: 5px 10px;
+    }
+
+    &__filho--2 {
+      display: block;
+
+      background-color: $cor-12;
+      border-bottom: 2px solid #fff;
+      padding: 10px;
+    }
+  }
+}

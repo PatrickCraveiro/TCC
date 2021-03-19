@@ -1,0 +1,16 @@
+.#{$medeletro} {
+  .caixa--1 {
+    @include quadro-geral;
+    background-color: $cor-2;
+
+    &__filho--h1 {
+      @include titulo-caixa-medeletro;
+      color: #fff;
+    }
+
+    .paragrafo {
+      font-family: NotoSans-Regular;
+      color: #fff;
+    }
+  }
+}

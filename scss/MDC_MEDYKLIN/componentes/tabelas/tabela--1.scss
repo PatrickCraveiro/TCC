@@ -1,0 +1,81 @@
+.#{$mdc_medyklin} {
+  .tabela-caixa--1 {
+    display: block;
+    width: -webkit-fill-available;
+    @include std-margin(titulo);
+
+    .tabela-coluna {
+      &.tabela--h1 {
+        display: flex;
+        font-style: normal;
+        font-weight: normal;
+        padding: 0;
+        width: -webkit-fill-available;
+        text-align: left;
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        border-bottom: 3px solid $cor-4;
+
+        .tabela--h1__filho--1 {
+          display: block;
+          background-color: $cor-4;
+          color: #fff;
+          font-family: ArialMTStd-Black;
+          margin: 0;
+          padding: 5px;
+        }
+
+        .tabela--h1__filho--2 {
+          display: block;
+          font-family: ArialMTStd;
+          font-style: italic;
+          margin: 0;
+          padding: 5px;
+        }
+      }
+    }
+
+    .tabela-caixa {
+      display: block;
+      width: -webkit-fill-available;
+      margin: 0;
+      padding: 0;
+
+      // COLUNA
+      .tabela-coluna {
+        background-color: $cor-9;
+
+        &.borda-dir {
+          border-right: 1px solid $cor-4;
+        }
+
+        .paragrafo {
+          font-family: ArialMTStd;
+          @include negrito(ArialMTStd-Bold);
+          @include italico(ArialMTStd-Italic);
+          @include negrito-italico(ArialMTStd-BoldItalic);
+          margin: 0;
+          padding: 8px 8px 5px;
+        }
+
+        &.centralizado-vertical,
+        .centralizado-vertical {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .paragrafo.legenda-tabela {
+        color: $cor-4;
+        display: block;
+        font-family: ArialMTStd-Italic;
+        font-size: 0.9em;
+        margin-bottom: 0;
+        line-height: 1.1;
+        padding: 5px 5px 0;
+        border-bottom: 2px solid $cor-4;
+        @include negrito(ArialMTStd-BoldItalic);
+      }
+    }
+  }
+}

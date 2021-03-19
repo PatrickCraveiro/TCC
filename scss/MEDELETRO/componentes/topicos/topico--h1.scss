@@ -1,0 +1,12 @@
+.#{$medeletro} .topico {
+  &--h1 {
+    @include titulos-medeletro;
+
+    font-family: NotoSans-Medium;
+    font-size: 1.4rem;
+    width: fit-content;
+    max-width: 72%;
+    color: $cor-10;
+    text-transform: uppercase;
+  }
+}

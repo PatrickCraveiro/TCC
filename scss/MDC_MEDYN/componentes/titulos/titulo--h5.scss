@@ -1,0 +1,33 @@
+.#{$mdc_medyn} .cap .container-titulo--h5,
+caixa-indice.#{$mdc_medyn} .indice-style .container-titulo--h5 {
+
+    display: block;
+    border-bottom: 2px solid $cor-1;
+
+    .titulo--h5 {
+        display: block;
+        color: $cor-1;
+        font-size: 1em;
+        font-family: AkzidenzGroteskBold;
+        line-height: 1.3em;
+
+        .figura {
+            color: $cor-2;
+        }
+
+        area-indice & {
+            font-size: 1rem;
+            border-bottom-width: 2px;
+            padding: 0;
+        }
+    }
+
+    .titulo--h5__irmao--1 {
+        display: block;
+
+        color: $cor-9;
+        font-family: AkzidenzGroteskMedium;
+        font-size: 0.8em;
+        line-height: 1.3em;
+    }
+}

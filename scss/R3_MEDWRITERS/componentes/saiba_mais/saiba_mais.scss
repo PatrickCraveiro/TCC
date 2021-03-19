@@ -1,0 +1,75 @@
+.#{$r3_medwriters} {
+  @mixin geral {
+    display: block;
+    padding: $padding-caixas-r3;
+
+    .paragrafo {
+      color: $cor-3;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .saiba-mais,
+  .atencao {
+    position: relative;
+    display: block;
+    margin: $margem-caixas-r3;
+
+    .questoes .paragrafo {
+      color: #424242;
+    }
+
+    container-central container-apostila & {
+      position: initial;
+    }
+
+    .saiba-mais__titulo,
+    .atencao__titulo {
+      @include geral;
+
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: #fff;
+      font-size: 1.2em;
+      font-family: NotoSerif-Bold;
+      background-color: $cor-2;
+      border-bottom: 5px dotted #fff;
+    }
+
+    .saiba-mais__conteudo,
+    .atencao__texto {
+      @include geral;
+
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-family: NotoSerif-Regular;
+      background-color: $cor-5;
+    }
+
+    .saiba-mais__expandir {
+      background: $cor-2;
+    }
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno {
+//   .saiba-mais__titulo,
+//   .atencao__titulo {
+//     border-top:1px solid $cor-1;
+//     border-left:1px solid $cor-1;
+//     border-right:1px solid $cor-1;
+//   }
+
+//     .saiba-mais__conteudo,
+//     .atencao__texto {
+//       background-color: $cor-23-modo-noturno;
+//       border:1px solid $cor-1;
+
+//       .paragrafo{
+//          color:$cor-5;
+//       }
+//     }
+//   }

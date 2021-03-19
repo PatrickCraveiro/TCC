@@ -1,0 +1,25 @@
+$marcadores: (bullet-3 "\2022"0 (line-height 1.7), bullet-4 "\2013"0 (line-height 1.5), bullet-1 "\00bb"0 (line-height 1.5));
+
+.#{$intensivao} {
+	.lista-flexivel {
+		// margin: 0 0 $ard-margem-lista-flexivel 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@include marcadores($marcadores) {
+		display: flex;
+		width: -webkit-fill-available;
+		margin-bottom: $ard-margem-lista-flexivel;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@include marcadores($marcadores, before, inicializa) {
+		@include propriedades-marcador;
+		color: $cor-1;
+	}
+}

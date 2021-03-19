@@ -1,0 +1,35 @@
+.#{$mdc_medyklin} {
+  .caixa {
+    $fundo-caixa: (
+      1: $cor-6,
+      2: $cor-7,
+      3: $cor-9,
+      4: $cor-9,
+    );
+
+    @each $key, $value in $fundo-caixa {
+      &--#{$key} {
+        @include ard-std-caixa;
+        background-color: $value;
+
+        .paragrafo {
+          font-family: ArialMTStd;
+          @include negrito(ArialMTStd-Bold);
+          @include italico(ArialMTStd-Italic);
+          @include negrito-italico(ArialMTStd-BoldItalic);
+        }
+
+        @if ($key==1) {
+          .paragrafo {
+            color: #fff;
+          }
+        }
+
+        @if ($key==4) {
+          border-bottom: 1px solid $cor-4;
+          border-top: 1px solid $cor-4;
+        }
+      }
+    }
+  }
+}

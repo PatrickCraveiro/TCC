@@ -1,0 +1,29 @@
+.#{$mdc_medyn} .cap .container-titulo--h1,
+caixa-indice.#{$mdc_medyn} .indice-style .container-titulo--h1 {
+  display: block;
+  border-left: 20px solid $cor-1;
+  padding-left: 10px;
+
+  .titulo--h1 {
+    display: block;
+    color: $cor-1;
+    font-family: AkzidenzGrotesk-Light;
+    font-size: 2em;
+    line-height: 1.3em;
+
+    area-indice & {
+      font-size: 1.3rem;
+      border-bottom-width: 2px;
+      padding: 0;
+    }
+  }
+
+  //fiz assim pois não podemos ter irmão de titulo--h1 por causa do meditango e o indice
+  .titulo--h1__irmao--1 {
+    display: block;
+    color: $cor-9;
+    line-height: 1.3em;
+    font-family: AkzidenzGrotesk-Light;
+    font-size: 1.3em;
+  }
+}

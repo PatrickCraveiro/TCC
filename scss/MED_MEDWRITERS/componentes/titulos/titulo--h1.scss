@@ -1,0 +1,29 @@
+.#{$med_medwriters} .cap .container-titulo--h1,
+caixa-indice.#{$med_medwriters} .indice-style .container-titulo--h1 {
+  @include titulos-medwriters;
+
+  border-bottom: 1px solid $cor-15;
+  border-left: 15px solid #e74315;
+  font-family: NotoSerif-Medium;
+  font-size: 2em;
+  line-height: 1.2;
+
+  .titulo--h1 {
+    color: $cor-1;
+    line-height: 0.9;
+    display: flex;
+    flex-direction: column;
+  
+    area-indice & {
+      font-size: 1.3rem;
+      border-bottom-width: 2px;
+      padding: 0;
+    }
+  }
+
+  .titulo--h1__irmao--1 {
+    color: $cor-15;
+    font-size: 0.7em;
+    font-weight: normal;
+  }
+}

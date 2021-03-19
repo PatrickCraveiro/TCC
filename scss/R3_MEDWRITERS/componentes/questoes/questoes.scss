@@ -1,0 +1,77 @@
+.#{$r3_medwriters} {
+  .questoes {
+    background-color: $cor-9;
+    margin: $margem-caixas-r3;
+    padding: $padding-caixas-r3;
+    color: $cor-0;
+
+    .quadro-resumo .paragrafo {
+      padding: 0 5px;
+    }
+
+    .paragrafo {
+      padding-left: 0;
+      padding-right: 0;
+      font-family: NotoSans-Italic;
+      @include negrito(NotoSans-Bold);
+      color: $cor-0 !important;
+    }
+
+    .titulo-questoes,
+    .nb-titulo-questoes {
+      display: block;
+      font-family: NotoSans-Italic;
+      font-size: 1.3em;
+      padding: 0;
+      font-style: initial;
+    }
+
+    .botao-questoes {
+      display: block;
+      background-color: $cor-2;
+      border: 1px solid $cor-1;
+      text-transform: uppercase;
+      font-family: NotoSans-Medium;
+      padding: $padding-caixas-r3;
+      width: fit-content;
+    }
+
+    .resposta-questoes {
+      background-color: $cor-8;
+      font-family: NotoSans-Regular;
+
+      .paragrafo {
+        font-family: NotoSans-Regular;
+        color: $cor-0;
+      }
+
+      > .paragrafo:first-child::before {
+        content: "R. ";
+        color: $cor-2;
+        font-family: NotoSerif-Bold;
+      }
+    }
+
+    .container-imagem {
+      margin: 0 15px;
+    }
+  }
+}
+
+// .#{$r3_medwriters}.modo-noturno{
+//   .questoes {
+//     background-color: $cor-22-modo-noturno;
+//     color: $cor-7;
+
+//     .paragrafo {
+//       color:$cor-5;
+//     }
+
+//     .resposta-questoes {
+//       background-color: $cor-24-modo-noturno;
+//       .paragrafo{
+//         color:$cor-9;
+//       }
+//     }
+//   }
+// }

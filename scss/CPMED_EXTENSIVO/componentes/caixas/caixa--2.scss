@@ -1,0 +1,12 @@
+.#{$cpmed_extensivo} {
+    .caixa--2 {
+        @include ard-std-caixa;
+
+        display: block;
+        background-color: #fff;
+        border: 4px dotted $cor-3;
+        border-radius: 10px;
+        padding: 15px;
+        width: -webkit-fill-available;
+    }
+}

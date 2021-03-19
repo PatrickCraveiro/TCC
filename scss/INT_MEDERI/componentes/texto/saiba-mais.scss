@@ -1,0 +1,11 @@
+.#{$int_mederi}.decoreba {
+	.box-decoreba {
+		display: block;
+		padding: 15px;
+		background-color: $cor-6;
+		border: 1px solid $cor-4;
+		.paragrafo:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

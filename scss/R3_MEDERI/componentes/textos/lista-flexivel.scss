@@ -1,0 +1,24 @@
+.#{$r3_mederi} {
+  @each $bullet in (bullet-3, bullet-4, bullet-1, bullet-7, bullet-2) {
+    .lista-#{$bullet} {
+      &::before {
+        color: $cor-2;
+      }
+    }
+
+    @if ($bullet == bullet-3) {
+      .lista-#{$bullet} {
+        &::before {
+          content: "»";
+        }
+      }
+    }
+
+    // &.modo-noturno .lista-#{$lista}-flexivel {
+    //   color: $cor-3;
+    // }
+  }
+	comp-lista-flex[data-marker*="bullet"]::before {
+		color: $cor-2;
+	}
+}

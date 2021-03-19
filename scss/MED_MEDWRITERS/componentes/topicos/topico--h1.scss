@@ -1,0 +1,19 @@
+.#{$med_medwriters} .topico--h1 {
+    @include titulo-colorido-medwriters;
+    background-color: $cor-5;
+
+    &__irmao--2 {
+        @include titulo-colorido-medwriters;
+        background-color: $cor-6;
+    }
+
+    &__irmao--3 {
+        @include titulo-colorido-medwriters;
+        background-color: $cor-2;
+    }
+
+    &__irmao--4 {
+        @include titulo-colorido-medwriters;
+        background-color: $cor-1;
+    }
+}

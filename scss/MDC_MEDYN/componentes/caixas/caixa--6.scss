@@ -1,0 +1,31 @@
+.#{$mdc_medyn} {
+  .caixa--6 {
+    position: relative;
+    @include ard-std-caixa($padding: 0);
+
+    &__filho--1 {
+      display: block;
+      color: $cor-4;
+      border-bottom: 3px solid $cor-4;
+      border-top: 3px solid $cor-4;
+      font-family: UniversLTStd-Bold_0;
+    }
+
+    &__filho--2 {
+      @include ard-std-caixa;
+      background-color: $cor-11;
+
+      .paragrafo {
+        @include caixa-texto;
+
+        &.negrito.italico,
+        &.negrito .italico,
+        .negrito.italico,
+        .negrito .italico {
+          font-family: UniversLTPro-BoldCond;
+          font-style: italic !important;
+        }
+      }
+    }
+  }
+}

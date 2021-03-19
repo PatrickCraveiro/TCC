@@ -1,0 +1,108 @@
+.r3-go .descricao-secundaria__titulo {
+  display: block;
+  background-color: #0095da;
+  color: #fff;
+  text-align: center;
+  font-family: GillSansMTProMedium;
+  word-break: break-word;
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+.#{$r3_mederi} {
+  .tabela {
+    width: 100%;
+
+    .linha {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .coluna {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .celula {
+      display: block;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0%;
+      flex-direction: column;
+
+      // word-break: break-word;
+      &.quadro-resumo__subtitulo {
+        background-color: $cor-4;
+        color: $cor-2;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid $cor-1;
+      }
+    }
+  }
+
+  .tabela-caixa,
+  .quadro-resumo.tabela {
+    .tabela-linha {
+			border-bottom: 1px solid $cor-1;
+			
+			&.sem-borda {
+				border-bottom: none;
+
+				.tabela-coluna.com-borda {
+					border-bottom: 1px solid $cor-1;
+				}
+			}
+    }
+  }
+
+  // correcao pontual para tego 10
+  .ap23323posicao2733 .paragrafo {
+    color: $cor-14 !important;
+  }
+
+  .ap23411posicao2734,
+  .ap23411posicao2735 {
+    color: $cor-2 !important;
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//     .tabela {
+//         width: 100%;
+//         .celula {
+//             display: block;
+//             flex-grow: 1;
+//             flex-shrink: 1;
+//             flex-basis: 0%;
+//             &.quadro-resumo__titulo-h1 {
+//                 background-color: $cor-3;
+//                 color: #fff;
+//                 display: block;
+//             }
+//             &.quadro-resumo__subtitulo {
+//                 background-color: $cor-4;
+//                 color: $cor-2;
+//                 display: block;
+//             }
+//             &.quadro-resumo__destaque {
+//                 padding: 0;
+//             }
+//         }
+//         .paragrafo {
+//             color: $cor-0;
+//         }
+//         .quadro-resumo__legenda {
+//             color: $cor-0;
+//         }
+//         .quadro-resumo__destaque {
+//             background-color: $cor-8;
+//             .paragrafo {
+//                 background-color: $cor-8;
+//             }
+//         }
+//     }
+// }

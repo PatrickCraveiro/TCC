@@ -1,0 +1,20 @@
+.#{$mdc_medyn} .cap .titulo--h9,
+caixa-indice.#{$mdc_medyn} .indice-style .titulo--h9 {
+    display: block;
+    background-color: $cor-2;
+    font-family: AkzidenzGroteskMedium;
+    font-size: 1.1em;
+    padding: 7px 10px 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    .olho {
+        background-color: #ffffff;
+    }
+
+    area-indice & {
+        font-size: 1.1rem;
+        border-bottom-width: 2px;
+        padding: 0;
+    }
+}

@@ -1,0 +1,498 @@
+/* Imagens - Específicas */
+
+.duvidas-academicas {
+	background-image: url(../../imagens-componentes/background-duvidas-academicas.jpg);
+}
+
+.questao-apostila {
+	background-image: url(../../imagens-componentes/background-questoes-da-apostila.jpg);
+}
+
+.tabela-medicamentos {
+	background-image: url(../../imagens-componentes/background-tabela-de-exames.jpg);
+}
+
+.drogas-apostila {
+	background-image: url(../../imagens-componentes/background-drogas.jpg);
+}
+
+.bonus-apostila {
+	background-image: url(../../imagens-componentes/background-bonus.jpg);
+}
+
+.duvidas-academicas,
+.questao-apostila,
+.tabela-medicamentos,
+.drogas-apostila,
+.bonus-apostila {
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-bottom: 30px;
+	background-color: #1b5565;
+	padding: 20px;
+	position: relative;
+	line-height: 20px;
+	/* font-size: 0.75em; */
+}
+
+.duvidas-academicas::before {
+	content: "Dúvidas Acadêmicas do Capítulo";
+}
+
+.questao-apostila::before {
+	content: "Questões da Apostila";
+}
+
+.tabela-medicamentos::before {
+	content: "Tabela de Exames";
+}
+
+.drogas-apostila::before {
+	content: "Drogas";
+}
+
+.bonus-apostila::before {
+	content: "Bônus";
+}
+
+.duvidas-academicas::before,
+.questao-apostila::before,
+.tabela-medicamentos::before,
+.drogas-apostila::before,
+.bonus-apostila::before {
+	color: white;
+	font-size: 26px !important;
+	font-weight: bold;
+	font-family: FSEmericBold;
+	text-align: left;
+	display: block;
+	position: absolute;
+	top: 20px;
+	line-height: 32px;
+	width: calc(100% - 40px);
+}
+
+/* Textos - Específicas */
+
+.duvidas-academicas::after {
+	content: "Confira as dúvidas acadêmicas do capítulo clicando aqui";
+}
+
+.questao-apostila::after {
+	content: "Realize as questões de concursos selecionadas para esta apostila e depois confira os comentários da nossa equipe acadêmica.";
+}
+
+.tabela-medicamentos::after {
+	content: "Exames laboratoriais em clínica médica.";
+}
+
+.drogas-apostila::after {
+	content: "Principais drogas utilizadas nessa apostila.";
+}
+
+.bonus-apostila::after {
+	content: "Confira o conteúdo bônus desta apostila.";
+}
+
+.questao-apostila::after,
+.tabela-medicamentos::after,
+.drogas-apostila::after,
+.bonus-apostila::after,
+.duvidas-academicas::after {
+	color: white;
+	font-size: 17px !important;
+	text-align: left;
+	display: block;
+	width: -webkit-fill-available;
+	font-family: FSEmericBook;
+	position: relative;
+}
+
+/* ------------------- */
+/* Botão - Específicos */
+/* ------------------- */
+
+.botao-duvidas-academicas {
+	background: #bce1e9;
+}
+
+.botao-questao-apostila {
+	background: #c3f2cd;
+}
+
+.botao-tabela-medicamentos {
+	background: #f8c0c0;
+}
+
+.botao-drogas-apostila {
+	background: #f2e2c3;
+}
+
+.botao-bonus-apostila {
+	background: #dbc3f2;
+}
+
+.botao-questao-apostila,
+.botao-tabela-medicamentos,
+.botao-drogas-apostila,
+.botao-bonus-apostila,
+.botao-duvidas-academicas {
+	display: inline-block;
+	position: absolute;
+	text-align: center;
+	padding: 7px;
+	border-radius: 100px;
+	font-size: 13px !important;
+	font-family: FSEmericBold;
+	text-transform: uppercase;
+	bottom: 20px;
+}
+
+.botao-duvidas-academicas::before {
+	color: #256e7f;
+	content: "Teste seu conhecimento";
+}
+
+.botao-questao-apostila::before {
+	color: #476458;
+	content: "Realizar as questões";
+}
+
+.botao-tabela-medicamentos::before {
+	color: #633535;
+	content: "Ver tabela";
+}
+
+.botao-drogas-apostila::before {
+	color: #9f7233;
+	content: "Ver tabela";
+}
+
+.botao-bonus-apostila::before {
+	color: #6334b0;
+	content: "Ver conteúdo";
+}
+
+.botao-questao-apostila::before,
+.botao-tabela-medicamentos::before,
+.botao-drogas-apostila::before,
+.botao-bonus-apostila::before,
+.botao-duvidas-academicas::before {
+	padding: 15px;
+}
+
+/* --------------*/
+/* MEDIA QUERIES */
+/* --------------*/
+
+/* Small */
+@media screen and (max-width: 321px) {
+	/* Dúvidas Acadêmicas */
+
+	.duvidas-academicas {
+		height: 240px;
+	}
+
+	.duvidas-academicas::after {
+		top: 110px;
+	}
+
+	/* Questões da Apostila */
+
+	.questao-apostila {
+		height: 270px;
+	}
+
+	.questao-apostila::after {
+		top: 90px;
+	}
+
+	/* Tabela de Medicamentos */
+
+	.tabela-medicamentos {
+		height: 180px;
+	}
+
+	.tabela-medicamentos::after {
+		top: 50px;
+	}
+
+	/* Drogas */
+
+	.drogas-apostila {
+		height: 150px;
+	}
+
+	.drogas-apostila::after {
+		top: 50px;
+	}
+
+	/* Bônus */
+
+	.bonus-apostila {
+		height: 150px;
+	}
+
+	.bonus-apostila::after {
+		top: 50px;
+	}
+}
+
+/* Middle */
+@media screen and (min-width: 321px) and (max-width: 767px) {
+	/* Dúvidas Acadêmicas */
+
+	.duvidas-academicas {
+		height: 210px;
+	}
+
+	.duvidas-academicas::after {
+		top: 75px;
+	}
+
+	/* Questões da Apostila */
+
+	.questao-apostila {
+		height: 230px;
+	}
+
+	.questao-apostila::after {
+		top: 55px;
+	}
+
+	/* Tabela de Medicamentos */
+
+	.tabela-medicamentos {
+		height: 150px;
+	}
+
+	.tabela-medicamentos::after {
+		top: 40px;
+	}
+
+	/* Drogas */
+
+	.drogas-apostila {
+		height: 150px;
+	}
+
+	.drogas-apostila::after {
+		top: 50px;
+	}
+
+	/* Bônus */
+
+	.bonus-apostila {
+		height: 150px;
+	}
+
+	.bonus-apostila::after {
+		top: 50px;
+	}
+}
+
+/* Large */
+@media screen and (min-width: 768px) {
+	/* Dúvidas Acadêmicas */
+
+	.duvidas-academicas {
+		height: 160px;
+	}
+
+	.duvidas-academicas::after {
+		top: 48px;
+	}
+
+	/* Questões da Apostila */
+
+	.questao-apostila {
+		height: 180px;
+	}
+
+	.questao-apostila::after {
+		top: 45px;
+	}
+
+	/* Tabela de Medicamentos */
+
+	.tabela-medicamentos {
+		height: 160px;
+	}
+
+	.tabela-medicamentos::after {
+		top: 48px;
+	}
+
+	/* Drogas */
+
+	.drogas-apostila {
+		height: 130px;
+	}
+
+	.drogas-apostila::after {
+		top: 50px;
+	}
+
+	/* Bônus */
+
+	.bonus-apostila {
+		height: 130px;
+	}
+
+	.bonus-apostila::after {
+		top: 50px;
+	}
+}
+
+// @font-face {
+// 	font-family: FSEmericBold;
+// 	src: url("../../fonts-componentes/FSEmeric-Bold.otf");
+// }
+
+// @font-face {
+// 	font-family: FSEmericBook;
+// 	src: url("../../fonts-componentes/FSEmeric-Book.otf");
+// }
+
+// $duvidas-academicas: (
+// 	nome: duvidas-academicas,
+// 	fundo: url(../../imagens-componentes/background-duvidas-academicas.jpg),
+// 	titulo: "Dúvidas Acadêmicas do Capítulo",
+// 	texto: "Confira as dúvidas acadêmicas do capítulo clicando aqui",
+// 	fundo-botao: #bce1e9,
+// 	texto-botao: "Teste seu conhecimento",
+// 	cor-texto-botao: #256e7f,
+// 	sm-altura: 240px,
+// 	sm-posicao: 110px,
+// 	md-altura: 210px,
+// 	md-posicao: 75px,
+// 	lg-altura: 160px,
+// 	lg-posicao: 48px
+// );
+
+// $questao-apostila: (
+// 	nome: questao-apostila,
+// 	fundo: url(../../imagens-componentes/background-questoes-da-apostila.jpg),
+// 	titulo: "Questões da Apostila",
+// 	texto:
+// 		"Realize as questões de concursos selecionadas para esta apostila e depois confira os comentários da nossa equipe acadêmica.",
+// 	fundo-botao: #c3f2cd,
+// 	texto-botao: "Realizar as questões",
+// 	cor-texto-botao: #476458,
+// 	sm-altura: 270px,
+// 	sm-posicao: 90px,
+// 	md-altura: 230px,
+// 	md-posicao: 55px,
+// 	lg-altura: 180px,
+// 	lg-posicao: 45px
+// );
+
+// $tabela-medicamentos: (
+// 	nome: tabela-medicamentos,
+// 	fundo: url(../../imagens-componentes/background-tabela-de-exames.jpg),
+// 	titulo: "Tabela de Exames",
+// 	texto: "Exames laboratoriais em clínica médica.",
+// 	fundo-botao: #f8c0c0,
+// 	texto-botao: "Ver tabela",
+// 	cor-texto-botao: #633535,
+// 	sm-altura: 180px,
+// 	sm-posicao: 50px,
+// 	md-altura: 150px,
+// 	md-posicao: 40px,
+// 	lg-altura: 160px,
+// 	lg-posicao: 48px
+// );
+
+// @each $banner in $duvidas-academicas, $questao-apostila, $tabela-medicamentos {
+// 	.#{map-get($banner, nome)} {
+// 		background-image: map-get($banner, fundo);
+// 		display: block;
+// 		background-size: cover;
+// 		background-repeat: no-repeat;
+// 		background-position: center;
+// 		margin-bottom: 30px;
+// 		background-color: #1b5565;
+// 		padding: 20px;
+// 		position: relative;
+// 		line-height: 20px;
+
+// 		&::before {
+// 			content: map-get($banner, titulo);
+// 			color: white;
+// 			font-size: 26px !important;
+// 			font-weight: bold;
+// 			font-family: FSEmericBold;
+// 			text-align: left;
+// 			display: block;
+// 			position: absolute;
+// 			top: 20px;
+// 			line-height: 32px;
+// 			width: calc(100% - 40px);
+// 		}
+
+// 		&::after {
+// 			content: map-get($banner, texto);
+// 			color: white;
+// 			font-size: 17px !important;
+// 			text-align: left;
+// 			display: block;
+// 			width: -webkit-fill-available;
+// 			font-family: FSEmericBook;
+// 			position: relative;
+// 		}
+// 	}
+
+// 	.botao-#{map-get($banner, nome)} {
+// 		display: inline-block;
+// 		position: absolute;
+// 		text-align: center;
+// 		padding: 7px;
+// 		border-radius: 100px;
+// 		font-size: 13px !important;
+// 		font-family: FSEmericBold;
+// 		text-transform: uppercase;
+// 		bottom: 20px;
+// 		background-color: map-get($banner, fundo-botao);
+
+// 		&::before {
+// 			content: map-get($banner, texto-botao);
+// 			color: map-get($banner, cor-texto-botao);
+// 			padding: 15px;
+// 		}
+// 	}
+
+// 	// Dispositivos pequenos
+// 	@media screen and (max-width: 321px) {
+// 		.#{map-get($banner, nome)} {
+// 			height: map-get($banner, sm-altura);
+
+// 			&::after {
+// 				top: map-get($banner, sm-posicao);
+// 			}
+// 		}
+// 	}
+
+// 	// Dispositivos médios
+// 	@media screen and (min-width: 322px) and (max-width: 767px) {
+// 		.#{map-get($banner, nome)} {
+// 			height: map-get($banner, md-altura);
+
+// 			&::after {
+// 				top: map-get($banner, md-posicao);
+// 			}
+// 		}
+// 	}
+
+// 	// Dispositivos grandes
+// 	@media screen and (min-width: 768) {
+// 		.#{map-get($banner, nome)} {
+// 			height: map-get($banner, lg-altura);
+
+// 			&::after {
+// 				top: map-get($banner, lg-posicao);
+// 			}
+// 		}
+// 	}
+// }

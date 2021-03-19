@@ -1,0 +1,36 @@
+.#{$cpmed_extensivo} {
+    .caixa--0 {
+        @include propriedades-saiba-mais;     
+
+        &__filho--1 {
+            @include propriedades-saiba-mais__titulo;
+
+            background-color: $cor-1;
+        }
+
+        &__filho--2 {
+            @include propriedades-saiba-mais__conteudo;
+
+            background-color: $cor-4;
+
+            .paragrafo {
+                .figura {
+                    color: $cor-5;
+                }
+            }
+
+            .olho {
+                background-color: $cor-1;
+            }
+
+            @for $lista from 1 through 9 {
+                .lista-bullet-#{$lista}::before {
+                    color: $cor-3;
+                }
+            }
+						comp-lista-flex[data-marker*="bullet"]::before {
+							color: $cor-3;
+						}
+        }
+    }
+}

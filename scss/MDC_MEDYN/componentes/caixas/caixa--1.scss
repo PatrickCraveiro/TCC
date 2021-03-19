@@ -1,0 +1,24 @@
+.#{$mdc_medyn} {
+  .caixa--1 {
+    @include ard-std-caixa;
+    background-color: $cor-5;
+
+    &__filho--1 {
+      @include caixa-titulo;
+    }
+
+    &__filho--2 {
+      .paragrafo {
+        @include caixa-texto;
+
+        &.negrito.italico,
+        &.negrito .italico,
+        .negrito.italico,
+        .negrito .italico {
+          font-family: UniversLTPro-BoldCond;
+          font-style: italic !important;
+        }
+      }
+    }
+  }
+}

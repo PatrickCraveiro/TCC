@@ -1,0 +1,23 @@
+.#{$intensivao} {
+	.caixa--contexto {
+		@include ard-std-caixa(null);
+
+		&__titulo {
+			display: block;
+			text-align: center;
+			padding: $ard-padding-caixas;
+			color: #fff;
+			background-color: $cor-3;
+			font-size: 1.4em;
+			font-family: ZillaSlab-Bold;
+			@include italico(ZillaSlab-BoldItalic);
+			@include bordas(10px, top-right-radius, top-left-radius);
+		}
+
+		&__conteudo {
+			@include ard-std-caixa($margin: null);
+			@include bordas(10px, bottom-right-radius, bottom-left-radius);
+			background-color: $cor-fundo-contexto;
+		}
+	}
+}

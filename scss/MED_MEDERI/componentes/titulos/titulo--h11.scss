@@ -1,0 +1,30 @@
+.#{$med_mederi} .cap .container-titulo--h11,
+caixa-indice.#{$med_mederi} .indice-style .container-titulo--h11 {
+  display: flex;
+  align-items: center;
+
+  .titulo--h11 {
+    display: block;
+    border-bottom: 2px solid $cor-1;
+    line-height: initial;
+    font-family: NotoSans-Medium;
+    font-size: 1.6em;
+    text-align: left;
+    padding-top: 5px;
+    width: fit-content;
+
+    area-indice & {
+      font-size: 0.85rem;
+      padding: 0;
+      border-bottom-width: 4px;
+    }
+  }
+}
+
+.titulo--h11__irmao--1 {
+  @include propriedades-olho(1.75em, 1.40em, $font-size: 1.5em);
+
+  display: block;
+  background-color: $cor-2;
+  margin: 8px 0 0 5px;
+}

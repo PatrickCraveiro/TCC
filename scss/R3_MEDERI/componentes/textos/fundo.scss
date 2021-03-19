@@ -1,0 +1,17 @@
+.#{$r3_mederi} {
+    $fundo: (
+        0: #fff,
+        1: $cor-3,
+        2: $cor-2,
+        3: $cor-4,
+        4: $cor-5,
+        5: $cor-3,
+        6: $cor-1,
+    );
+
+    @each $name, $background in $fundo {
+        .fundo--#{$name} {
+            background-color: $background;
+        }
+    }
+}

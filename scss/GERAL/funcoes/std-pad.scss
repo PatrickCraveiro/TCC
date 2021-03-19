@@ -1,0 +1,23 @@
+///////////////////
+// PADDING PADRÃO:
+///////////////////
+// No MSPro, o texto recebe um pequeno espaço na parte inferior.
+// Para compensar, os componentes (principalmente títulos) devem
+// geralmente ter 5px a menos de padding abaixo.
+///////////////////
+// Caso isso mude algum dia, basta alterar essa função para refletir
+// o comportamento adequado.
+///////////////////
+// A função foi feita para padding simétrico, por isso, passe apenas
+// um ou dois valores.
+///////////////////
+
+@function std-pad($valor, $desvio: 5px) {
+    @if(length($valor) > 2) {
+        @warn 'Funcao std-pad deve ser chamada com 1 a 2 valores';
+    }
+	@return nth($valor, 1) nth($valor, length($valor))
+		max(0, (nth($valor, 1) - $desvio)) nth($valor, length($valor));
+}
+
+// SE O QUILL DEIXAR DE EXISTIR, VERIFICAR SE ESPAÇAMENTO EMBAIXO PRECISA SER AUMENTADO.

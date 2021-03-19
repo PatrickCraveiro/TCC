@@ -1,0 +1,15 @@
+.#{$med_medwriters} .cap .titulo--h5,
+caixa-indice.#{$med_medwriters} .indice-style .titulo--h5 {
+  @include titulos-medwriters;
+
+  border-top: 1px solid $cor-2;
+  color: $cor-15;
+  font-family: NotoSerif-SemiBold;
+  font-size: 1.31em;
+
+  area-indice & {
+    font-size: 1.3rem;
+    border-top-width: 2px;
+    padding: 0;
+  }
+}

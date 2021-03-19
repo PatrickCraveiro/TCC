@@ -1,0 +1,30 @@
+.#{$mdc_medyn} {
+  .caixa--7 {
+    @include propriedade-saiba-mais-mdc;
+    
+    &__filho--1 {
+      @include propriedade-saiba-mais-mdc__titulo;
+
+      border-bottom: 3px solid $cor-1;
+      color: $cor-1;
+    }
+
+    &__filho--2 {
+      @include propriedade-saiba-mais-mdc__conteudo;
+      
+      background-color: $cor-3;
+      color: #fff;
+
+      .paragrafo {
+
+        &.negrito.italico,
+        &.negrito .italico,
+        .negrito.italico,
+        .negrito .italico {
+          font-family: UniversLTPro-BoldCond;
+          font-style: italic !important;
+        }
+      }
+    }
+  }
+}

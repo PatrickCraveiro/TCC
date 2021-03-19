@@ -1,0 +1,15 @@
+.#{$intensivao} {
+	.palavra-dica {
+		font-family: Exo-Bold;
+		color: $cor-3;
+		border-bottom: 3px solid $cor-3;
+
+		&-texto {
+			display: none;
+
+			&.aparece {
+				display: block;
+			}
+		}
+	}
+}

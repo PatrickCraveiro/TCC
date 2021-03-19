@@ -1,0 +1,15 @@
+.#{$med_mederi} {
+  .olho {
+
+    @each $i in (destaque--1 $cor-1,
+      destaque--2 $cor-2,
+      destaque--3 $cor-3) {
+
+      .#{nth($i, 1)},
+      &.#{nth($i, 1)} {
+        background-color: nth($i, 2);
+      }
+    }
+  }
+}
+

@@ -1,0 +1,38 @@
+.#{$r3_mederi} {
+  .palavra-dica {
+    display: inline;
+    color: $cor-popup;
+    font-family: NotoSerif-Bold;
+    border-bottom: 1px solid $cor-popup;
+
+    .palavra-dica__texto,
+    .palavra-dica-texto {
+      display: none;
+      // color: $cor-0;
+      // font-family: NotoSerif-Regular;
+      // margin: $margem-palavra-dica-r3;
+      // padding: $padding-caixas-r3;
+      // background-color: #ffe0b2; //cor setada na mão pq esse componente só existirá no nosso browser
+      // border: 1px solid $cor-11;
+
+      // &::before {
+      //   content: "*";
+      // }
+    }
+  }
+
+  &.apostila .palavra-dica-texto[style*="display: block;"],
+  &.apostila .palavra-dica__texto[style*="display: block;"] {
+    display: none !important;
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   .palavra-dica {
+//     .palavra-dica__texto,
+//     .palavra-dica-texto {
+//       color: $cor-0-modo-noturno;
+//       background-color: $cor-24-modo-noturno;
+//     }
+//   }
+// }

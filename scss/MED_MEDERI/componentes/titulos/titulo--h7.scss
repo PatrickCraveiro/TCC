@@ -1,0 +1,17 @@
+.#{$med_mederi} .cap .titulo--h7,
+caixa-indice.#{$med_mederi} .indice-style .titulo--h7 {
+  display: block;
+  border-bottom: 2px solid $cor-1;
+  color: $cor-2;
+  font-family: NotoSans-Medium;
+  font-size: 1.3em;
+  text-align: left;
+  padding: 5px 5px 0;
+  width: fit-content;
+
+  area-indice & {
+    font-size: 0.85rem;
+    padding: 0;
+    border-bottom-width: 4px;
+  }
+}

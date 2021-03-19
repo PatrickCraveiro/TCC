@@ -1,0 +1,16 @@
+.#{$med_mederi} .cap .titulo--h5,
+caixa-indice.#{$med_mederi} .indice-style .titulo--h5 {
+  @include topicos;
+
+  background-color: $cor-4;
+  border: 2px solid $cor-3;
+  color: $cor-1;
+  font-family: NotoSans-Regular;
+  font-size: 1.4em;
+
+  area-indice & {
+    font-size: 0.85rem;
+    padding: 0;
+    border-bottom-width: 4px;
+  }
+}

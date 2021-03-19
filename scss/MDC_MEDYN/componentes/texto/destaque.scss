@@ -1,0 +1,19 @@
+.#{$mdc_medyn} {
+  .destaque {
+    &--1 {
+      color: $cor-1;
+    }
+
+    &--2 {
+      color: $cor-2;
+    }
+
+    &--3 {
+      color: $cor-3;
+    }
+
+    &--4 {
+      color: $cor-4;
+    }
+  }
+}

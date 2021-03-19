@@ -5,11 +5,19 @@
   "main": "main.js",
   "scripts": {
     "bundle": "gulp bundle",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "gulp build && node js/buildHtml.js"
   },
   "author": "Patrick Mateus Craveiro",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.5"
+    "electron": "^10.1.5",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "jsdom": "^16.4.0"
   }
 }

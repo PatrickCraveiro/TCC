@@ -1,0 +1,9 @@
+.#{$intensivao} {
+    .lista {
+        margin-bottom: $ard-margem-lista;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.#{$med_medwriters} .cap .titulo--h6,
+caixa-indice.#{$med_medwriters} .indice-style .titulo--h6 {
+  @include titulos-medwriters;
+
+  border-left: 25px solid $cor-1;
+  color: $cor-1;
+  font-size: 1.18em;
+  font-family: NotoSerif-Medium;
+
+  area-indice & {
+    font-size: 1.3rem;
+    border-bottom-width: 2px;
+    padding: 0;
+  }
+}

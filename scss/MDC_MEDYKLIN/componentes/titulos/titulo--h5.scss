@@ -1,0 +1,15 @@
+.#{$mdc_medyklin} .cap .titulo--h5,
+caixa-indice.#{$mdc_medyklin} .indice-style .titulo--h5 {
+    display: block;
+    border-left: 6px solid $cor-4;
+    font-family: ArialMTStd-Black;
+    font-size: 1.2em;
+    padding: 5px 5px 0;
+    width: -webkit-fill-available;
+
+    area-indice & {
+        font-size: 0.85rem;
+        border-bottom-width: 2px;
+        padding: 0;
+    }
+}

@@ -1,0 +1,20 @@
+.#{$med_medwriters} {
+  .caixa--10 {
+    @include caixa-medwriters;
+
+    border-right: 1px solid $cor-15;
+
+    &__filho--1 {
+      @include caixa-titulo-medwriters;
+
+      background-color: $cor-15;
+      border-right: 1px solid $cor-15;
+    }
+
+    &__filho--2 {
+      .paragrafo {
+        padding: 5px 10px 0;
+      }
+    }
+  }
+}

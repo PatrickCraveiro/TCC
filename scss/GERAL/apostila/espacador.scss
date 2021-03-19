@@ -1,0 +1,12 @@
+
+.espacador {
+    display: block;
+    margin: 10px 0;
+}
+
+@each $i in (10, 20, 30) {
+    .espacador-#{$i} {
+        display: block;
+        margin: #{$i}px 0;
+    }
+}

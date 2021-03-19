@@ -1,0 +1,22 @@
+.#{$intensivao} {
+  .paragrafo {
+    font-family: Exo-Regular;
+    color: $cor-0;
+    margin-bottom: $ard-margem-paragrafo;
+    line-height: $ard-line-height;
+
+    @include negrito(Exo-Bold);
+    @include italico(Exo-Italic);
+    @include negrito-italico(Exo-BoldItalic);
+
+    &.intro-questoes {
+      color: $cor-2;
+      font-family: Exo-SemiBold;
+      @include italico(Exo-SemiBoldItalic);
+    }
+
+    &.legenda {
+      padding-top: 5px;
+    }
+  }
+}

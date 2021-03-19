@@ -1,0 +1,157 @@
+/*-------------------------------------------------*/
+/*--------------------- IMAGENS -------------------*/
+/*-------------------------------------------------*/
+
+.nb-duvidas-academicas {
+  background-image: url(../../imagens-componentes/background-duvidas-academicas.jpg);
+}
+
+.nb-questoes-apostila {
+  background-image: url(../../imagens-componentes/background-questoes-da-apostila.jpg);
+}
+
+.nb-tabela-exames {
+  background-image: url(../../imagens-componentes/background-tabela-de-exames.jpg);
+}
+
+.nb-drogas-apostila {
+  background-image: url(../../imagens-componentes/background-drogas.jpg);
+}
+
+.nb-bonus-apostila {
+  background-image: url(../../imagens-componentes/background-bonus.jpg);
+}
+
+.nb-duvidas-academicas__titulo,
+.nb-questoes-apostila__titulo,
+.nb-tabela-exames__titulo,
+.nb-drogas-apostila__titulo,
+.nb-bonus-apostila__titulo,
+.nb-duvidas-academicas__conteudo,
+.nb-questoes-apostila__conteudo,
+.nb-tabela-exames__conteudo,
+.nb-drogas-apostila__conteudo,
+.nb-bonus-apostila__conteudo,
+.nb-duvidas-academicas__botao,
+.nb-questoes-apostila__botao,
+.nb-tabela-exames__botao,
+.nb-drogas-apostila__botao,
+.nb-bonus-apostila__botao {
+  margin: 0 20px;
+}
+
+.nb-duvidas-academicas,
+.nb-questoes-apostila,
+.nb-tabela-exames,
+.nb-drogas-apostila,
+.nb-bonus-apostila {
+  display: flex;
+  background-position: center center;
+  background-size: cover;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+.nb-duvidas-academicas__titulo,
+.nb-questoes-apostila__titulo,
+.nb-tabela-exames__titulo,
+.nb-drogas-apostila__titulo,
+.nb-bonus-apostila__titulo {
+  font-family: FSEmericBold;
+  font-size: 28px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.nb-duvidas-academicas__conteudo,
+.nb-questoes-apostila__conteudo,
+.nb-tabela-exames__conteudo,
+.nb-drogas-apostila__conteudo,
+.nb-bonus-apostila__conteudo {
+  font-family: FSEmericBook;
+  // text-align: left;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.nb-duvidas-academicas__botao,
+.nb-questoes-apostila__botao,
+.nb-tabela-exames__botao,
+.nb-drogas-apostila__botao,
+.nb-bonus-apostila__botao {
+  padding: 10px 15px;
+  font-family: FSEmericBold;
+  border-radius: 100px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.nb-duvidas-academicas__botao {
+  background: #bce1e9;
+  color: #256e7f;
+}
+
+.nb-questoes-apostila__botao {
+  background: #c3f2cd;
+  color: #476458;
+}
+
+.nb-tabela-exames__botao {
+  background: #f8c0c0;
+  color: #633535;
+}
+
+.nb-drogas-apostila__botao {
+  background: #f2e2c3;
+  color: #9f7233;
+}
+
+.nb-bonus-apostila__botao {
+  background: #dbc3f2;
+  color: #6334b0;
+}
+
+.nb-flex-colunas {
+  display: flex;
+}
+
+.nb-tabela-exames {
+  margin-right: 15px;
+}
+
+.nb-drogas-apostila {
+  margin-right: 15px;
+}
+
+// .nb-bonus-apostila {
+//   margin-left: 15px;
+// }
+
+
+
+@media screen and (max-width: 767px) {
+  .nb-flex-colunas {
+	flex-direction: column;
+  }
+
+  .nb-duvidas-academicas,
+  .nb-questoes-apostila,
+  .nb-tabela-exames,
+  .nb-drogas-apostila,
+  .nb-bonus-apostila {
+    height: 320px;
+  }
+
+  .nb-drogas-apostila,
+  .nb-bonus-apostila {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,8 @@
+.apostila-container span {
+  display: inline-block;
+}
+.apostila .cap span:not(.olho),
+.apostila .paragrafo span:not(.olho),
+.apostila .ard-std-titulo span:not(.olho) {
+	display: inline;
+}

@@ -1,0 +1,26 @@
+.#{$cpmed_extensivo} {
+    .caixa--1 {
+        @include ard-std-caixa;
+        @include italico(NotoSerif-Bold);
+        @include negrito(NotoSerif-Bold);
+        @include negrito-italico(NotoSerif-BoldItalic);
+                
+        display: block;
+        border: 2px solid $cor-1;
+        
+        &__filho--1 {
+            @include italico(NotoSerif-SemiBoldItalic);
+
+            display: block;
+
+            color: $cor-3;
+            font-family: NotoSerif-SemiBold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .caixa-flex {
+        display: flex;
+    }
+}

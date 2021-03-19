@@ -1,0 +1,27 @@
+.#{$med_mederi} {
+  .questoes {
+    font-family: NotoSerif-Italic;
+
+    .botao-questoes {
+      background-color: $cor-2;
+      border-color: $cor-1;
+      font-family: NotoSans-Medium;
+    }
+
+    .resposta-questoes {
+      font-family: NotoSerif-Regular;
+			padding: 5px;
+
+      >.paragrafo:first-child::before {
+        content: "R. ";
+        color: $cor-2;
+        font-family: NotoSerif-Bold;
+      }
+    }
+
+    .titulo-questoes {
+      font-family: NotoSerif-Italic;
+    }
+  }
+}
+

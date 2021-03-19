@@ -1,0 +1,28 @@
+.#{$mdc_medyklin} .topico--h1 {
+  display: block;
+
+  background-color: $cor-7;
+  color: #fff;
+  font-size: 1.3em;
+  font-family: ArialMTStd-Black;
+  padding: 7px 10px 2px;
+  position: relative;
+  width: -webkit-fill-available;
+
+  &::after {
+    display: block;
+
+    background-color: #fff;
+    border-bottom: 3px solid $cor-7;
+    content: "";
+    margin-top: 6px;
+    left: 0;
+    position: absolute;
+    width: -webkit-fill-available;
+  }
+
+  area-indice & {
+    background-color: #fff;
+    font-size: 1.2rem;
+  }
+}

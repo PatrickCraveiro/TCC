@@ -1,0 +1,17 @@
+.#{$medeletro} .cap .titulo--h3,
+caixa-indice.#{$medeletro} .indice-style .titulo--h3 {
+  display: block;
+  padding: $padding-titulos-2-r3;
+  background-color: $cor-1;
+  color: #fff;
+  font-family: NotoSans-Light;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  line-height: 1.1;
+
+  area-indice & {
+    font-size: 1.3rem;
+    border-bottom-width: 2px;
+    padding: 0;
+  }
+}

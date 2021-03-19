@@ -1,0 +1,22 @@
+.#{$intensivao} {
+  .paragrafo {
+    font-family: OpenSans-Regular;
+    color: $cor-0;
+    margin-bottom: $ard-margem-paragrafo;
+    line-height: $ard-line-height;
+
+    @include negrito(OpenSans-Bold);
+    @include italico(OpenSans-Italic);
+    @include negrito-italico(OpenSans-BoldItalic);
+
+    &.intro-questoes {
+      color: $cor-2;
+      font-family: OpenSans-Bold;
+      @include italico(OpenSans-BoldItalic);
+    }
+
+    &.legenda {
+      padding-top: 5px;
+    }
+  }
+}

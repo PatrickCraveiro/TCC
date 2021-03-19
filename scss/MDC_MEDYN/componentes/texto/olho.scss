@@ -1,0 +1,19 @@
+.#{$mdc_medyn} {
+  .olho {
+    &.destaque--1 {
+      background-color: $cor-1;
+    }
+
+    &.destaque--2 {
+      background-color: $cor-2;
+    }
+
+    &.destaque--3 {
+      background-color: $cor-3;
+    }
+
+    &.destaque--4 {
+      background-color: $cor-4;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.#{$cpmed_extensivo} .cap .container-titulo--h1,
+caixa-indice.#{$cpmed_extensivo} .indice-style .container-titulo--h1 {
+    display: block;
+
+    background-color: $cor-1;
+    padding: 10px 10px 5px;
+    width: -webkit-fill-available;
+
+    .titulo--h1 {
+        display: block;
+        color: #fff;
+        line-height: 1.2;
+        font-family: NotoSans-CondensedBold;
+        font-size: 2em;
+
+        area-indice & {
+            font-size: 1.3rem;
+            border-bottom-width: 2px;
+            padding: 0;
+        }
+    }
+
+    .titulo--h1__irmao--1 {
+        display: block;
+
+        color: #fff;
+        font-family: NotoSans-Condensed;
+    }
+}

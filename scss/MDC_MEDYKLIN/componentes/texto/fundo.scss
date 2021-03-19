@@ -1,0 +1,17 @@
+.#{$mdc_medyklin} {
+    $fundo: (
+        0: #fff,
+        1: $cor-1,
+        2: $cor-4,
+        3: $cor-6,
+        4: $cor-7,
+        5: $cor-9,
+        6: $cor-10,
+    );
+
+    @each $name, $background in $fundo {
+        .fundo--#{$name} {
+            background-color: $background;
+        }
+    }
+}

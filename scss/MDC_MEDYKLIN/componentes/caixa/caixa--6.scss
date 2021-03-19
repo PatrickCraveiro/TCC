@@ -1,0 +1,22 @@
+.#{$mdc_medyklin} {
+  .caixa--6 {
+    display: block;
+    width: -webkit-fill-available;
+    margin-bottom: $ard-margem-caixas;
+
+    &__filho--1 {
+      display: block;
+      background-color: #fee5d3;
+      color: #e74315;
+      font-family: ArialMTStd;
+      padding: 8px 8px 4px;
+    }
+
+    &__filho--2 {
+      display: block;
+      background-color: #e6e6e6;
+      font-family: ArialMTStd;
+      padding: 8px 8px 4px;
+    }
+  }
+}

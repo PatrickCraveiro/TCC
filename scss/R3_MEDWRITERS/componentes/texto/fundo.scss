@@ -1,0 +1,17 @@
+.#{$r3_medwriters} {
+    $fundo: (
+        0: #fff,
+        1: $cor-2,
+        2: $cor-3,
+        3: $cor-4,
+        4: $cor-4,
+        5: $cor-5,
+        6: $cor-3,
+    );
+
+    @each $name, $background in $fundo {
+        .fundo--#{$name} {
+            background-color: $background;
+        }
+    }
+}

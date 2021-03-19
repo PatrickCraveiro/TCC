@@ -1,0 +1,23 @@
+.#{$medeletro} {
+  .caixa--0 {
+    display: block;
+    margin: $margem-caixas-r3;
+
+    .caixa--0__filho--1 {
+      @include caixa-medeletro;
+
+      color: #fff;
+      font-size: 1.2em;
+      font-family: NotoSans-Bold;
+      background-color: $cor-2;
+      border-bottom: 5px dashed #ef4752;
+    }
+
+    .caixa--0__filho--2 {
+      @include caixa-medeletro;
+
+      font-family: NotoSans-Regular;
+      background-color: $cor-12;
+    }
+  }
+}

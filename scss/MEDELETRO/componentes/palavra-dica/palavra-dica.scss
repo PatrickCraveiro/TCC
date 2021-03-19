@@ -1,0 +1,23 @@
+.#{$medeletro} {
+  .palavra-dica {
+    display: inline;
+    color: $cor-11;
+    font-family: NotoSans-Bold;
+    border-bottom: 1px solid $cor-11;
+
+    .palavra-dica__texto,
+    .palavra-dica-texto {
+      background-color: $cor-8;
+      border: 1px solid $cor-11;
+      display: none;
+      margin: $margem-caixas-r3;
+      padding: $padding-caixas-r3;
+      font-family: NotoSans-Regular;
+      color: $cor-11;
+
+      &::before {
+        content: "*";
+      }
+    }
+  }
+}

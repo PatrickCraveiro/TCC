@@ -1,0 +1,45 @@
+.#{$cpmed_extensivo} {
+  .paragrafo {
+    font-family: NotoSerif-Regular;
+    line-height: $ard-line-height;
+    margin-bottom: $ard-margem-paragrafo;
+
+    @include negrito(NotoSerif-Bold);
+    @include italico(NotoSerif-Italic);
+    @include negrito-italico(NotoSerif-BoldItalic);
+
+    &.capitalizado {
+      font-family: NotoSerif-Regular;
+      padding-right: 0;
+
+      &::first-letter {
+        color: $cor-1;
+        font-size: 3.5em;
+        line-height: 0.75;
+        font-family: NotoSerif-Bold;
+      }
+    }
+
+    &.alternativo {
+      &::first-letter {
+        color: #fff;
+        background-color: $cor-8;
+        padding: 0px 5px;
+      }
+    }
+
+    &.intro-questoes {
+      display: block;
+      color: $cor-3;
+      margin-bottom: $ard-margem-paragrafo;
+      font-family: NotoSans-MediumItalic;
+    }
+
+    &.legenda {
+      @include legenda-mederi;
+
+      background-color: $cor-3;
+      font-family: NotoSans-Light;
+    }
+  }
+}

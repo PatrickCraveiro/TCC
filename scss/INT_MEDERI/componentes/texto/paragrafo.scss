@@ -1,0 +1,17 @@
+.#{$int_mederi}.decoreba {
+  .paragrafo {
+    color: $cor-0;
+    font-family: NotoSerif-Regular;
+
+    @include negrito(NotoSerif-Bold);
+    @include italico(NotoSerif-Italic);
+    @include negrito-italico(NotoSerif-BoldItalic);
+  }
+
+  .sup,
+  .sub,
+  span[style*="vertical-align: super;"],
+  span[style*="vertical-align: sub;"] {
+    font-size: 0.85em;
+  }
+}

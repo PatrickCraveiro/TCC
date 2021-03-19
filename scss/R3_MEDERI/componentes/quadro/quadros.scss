@@ -1,0 +1,176 @@
+.#{$r3_mederi} {
+  @mixin quadro-geral($cor-0-quadro: null) {
+    display: block;
+    padding: $padding-caixas-r3;
+    margin: $margem-caixas-r3;
+    font-family: NotoSerif-Regular;
+
+    .paragrafo {
+      color: $cor-0-quadro;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .quadro {
+    @include quadro-geral;
+
+    &--destaque {
+      display: flex;
+      background-color: $cor-8;
+      padding: $padding-caixas-r3;
+      margin: $margem-caixas-r3;
+      font-family: NotoSerif-Regular;
+
+      &::before {
+        content: "";
+        border-left: 1px solid $cor-2;
+      }
+
+      &__conteudo {
+        display: block;
+        padding-left: 10px;
+
+        .quadro--destaque__titulo {
+          display: block;
+          margin: $margem-titulos-r3;
+          text-decoration: underline;
+          color: $cor-2;
+          font-family: NotoSerif-SemiBold;
+          font-size: 1.3rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .destaque-secundario {
+            color: $cor-2;
+          }
+        }
+      }
+
+      .paragrafo:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--claro {
+      @include quadro-geral($cor-2);
+      background-color: $cor-5;
+      border: 1px solid $cor-2;
+
+      &.bg-azul {
+        background-color: #b5d5e5;
+        border: 1px solid #006991;
+
+        .paragrafo {
+          color: #006991;
+        }
+      }
+
+      &.bg-verde {
+        background-color: #b9d3c1;
+        border: 1px solid #00652e;
+
+        .paragrafo {
+          color: #00652e;
+        }
+      }
+
+      &.bg-amarelo {
+        background-color: #ffeacd;
+        border: 1px solid #faa61a;
+
+        .paragrafo {
+          color: #f05125;
+        }
+      }
+
+      &.bg-marrom {
+        background-color: #e9c3b4;
+        border: 1px solid #9e0b0f;
+
+        .paragrafo {
+          color: #9e0b0f;
+        }
+      }
+    }
+
+    &--escuro {
+      @include quadro-geral(#fff);
+      background-color: $cor-2;
+      display: block;
+
+      .paragrafo {
+        color: $cor-5;
+
+        .lista-seta-flexivel::before {
+          color: #fff;
+        }
+
+        .lista-quadrado-flexivel::before {
+          color: #fff;
+        }
+
+        .lista-seta-dois-flexivel::before {
+          color: #fff;
+        }
+      }
+
+      .quadro-resumo {
+        background-color: #fff;
+
+        .paragrafo {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   @mixin quadro-geral($cor-0-quadro: null) {
+//     .paragrafo {
+//       color: $cor-0-quadro;
+//     }
+//   }
+
+//   .quadro {
+//     @include quadro-geral;
+
+//     &--destaque {
+//       @include quadro-geral($cor-9);
+//       background-color: $cor-23-modo-noturno;
+
+//       .quadro--destaque__barra-lateral {
+//         border-left: 1px solid $cor-4;
+//       }
+
+//       .quadro--destaque__titulo {
+//         .quadro--destaque__titulo--conteudo {
+//           border-bottom: 2px solid $cor-4;
+//           color: $cor-1;
+//         }
+//       }
+
+//       .paragrafo {
+//         .destaque-secundario {
+//           color: $cor-3;
+//         }
+//       }
+//     }
+
+//     &--claro {
+//       @include quadro-geral($cor-5);
+//       background-color: $cor-23-modo-noturno;
+//       border: 1px solid $cor-1;
+//     }
+
+//     &--escuro {
+//       @include quadro-geral(#fff);
+//       background-color: $cor-12-modo-noturno;
+//     }
+//   }
+// }

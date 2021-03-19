@@ -1,0 +1,11 @@
+.#{$r3_mederi} {
+  &.modo-noturno {
+    background-color: #121212;
+
+    & .separador-item {
+      border-color: #ccc;
+      background-color: #222111;
+      color: #888;
+    }
+  }
+}

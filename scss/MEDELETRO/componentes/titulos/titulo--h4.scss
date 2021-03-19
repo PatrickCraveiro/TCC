@@ -1,0 +1,17 @@
+.#{$medeletro} .cap .titulo--h4,
+caixa-indice.#{$medeletro} .indice-style .titulo--h4 {
+  @include titulos-medeletro;
+
+  background-color: #fff;
+  border: 5px dashed $cor-2;
+  color: $cor-1;
+  font-family: NotoSans-Regular;
+  font-size: 1.7em;
+  text-transform: uppercase;
+
+  area-indice & {
+    font-size: 1.3rem;
+    border-bottom-width: 2px;
+    padding: 0;
+  }
+}

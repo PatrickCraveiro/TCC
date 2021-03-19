@@ -1,0 +1,68 @@
+.#{$mdc_medyn} {
+  .saiba-mais {
+    @include ard-std-caixa($padding: 0);
+
+    position: relative;
+
+    .paragrafo {
+      padding: 0;
+    }
+
+    &__titulo {
+      display: block;
+      color: $cor-4;
+      border-bottom: 2px solid $cor-4;
+      font-family: UniversLTStd-Bold_0;
+      width: -webkit-fill-available;
+    }
+
+    &__conteudo {
+      @include ard-std-caixa;
+
+      background-color: $cor-11;
+      border: none;
+
+      .paragrafo {
+        padding: 0;
+
+        &.negrito.italico,
+        &.negrito .italico,
+        .negrito.italico,
+        .negrito .italico {
+          font-family: UniversLTPro-BoldCond;
+          font-style: italic !important;
+        }
+        .lista-bullet-3 {
+          &::before {
+            color: $cor-4;
+          }
+        }
+      }
+    }
+
+    &__expandir {
+      background-color: $cor-10;
+    }
+
+    .tabela-caixa {
+      .tabela-linha {
+        border-bottom-color: $cor-4;
+      }
+
+      .tabela-coluna {
+        &.tabela--h1 {
+          color: #000;
+          border-bottom: 2px solid $cor-4;
+        }
+
+        .paragrafo {
+          .lista-bullet-3 {
+            &::before {
+              color: $cor-4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

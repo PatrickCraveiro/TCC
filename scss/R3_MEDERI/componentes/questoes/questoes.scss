@@ -1,0 +1,93 @@
+.#{$r3_mederi} {
+  .tabela .questoes .paragrafo {
+    color: #fff !important;
+  }
+
+  .questoes {
+    background-color: $cor-2;
+    margin: $margem-caixas-r3;
+    padding: $padding-caixas-r3;
+    color: #fff;
+
+    .paragrafo {
+      padding-left: 0;
+      padding-right: 0;
+      font-family: NotoSerif-Regular;
+      @include negrito(NotoSerif-Bold);
+      color: #fff !important;
+    }
+
+    .quadro.resumo .paragrafo {
+      color: $cor-0;
+      padding: 5px;
+    }
+
+    .titulo-questoes,
+    .nb-titulo-questoes {
+      display: block;
+      font-family: NotoSerif-Italic;
+      font-size: 1.3em;
+      padding: 0;
+      font-style: initial;
+      color: #fff;
+    }
+
+    .botao-questoes {
+      display: block;
+      background-color: $cor-2;
+      border: 1px solid $cor-1;
+      text-transform: uppercase;
+      font-family: NotoSans-Medium;
+      padding: $padding-caixas-r3;
+      width: fit-content;
+    }
+
+    .resposta-questoes {
+      background-color: $cor-8;
+      font-family: NotoSans-Regular;
+
+      .paragrafo {
+        color: $cor-0 !important;
+      }
+
+      >.paragrafo:first-child::before {
+        content: "R. ";
+        color: $cor-2;
+        font-family: NotoSerif-Bold;
+      }
+    }
+
+    .container-imagem {
+      margin: 0 15px;
+    }
+  }
+}
+
+// .#{$r3_mederi}.modo-noturno {
+//   .questoes {
+//     background-color: $cor-22-modo-noturno;
+//     color: $cor-4;
+
+//     .paragrafo {
+//       color: $cor-7;
+//     }
+
+//     .botao-questoes {
+//       background-color: $cor-14-modo-noturno;
+//       border: none;
+//     }
+
+//     .resposta-questoes {
+//       background-color: $cor-14-modo-noturno;
+
+//       .paragrafo {
+//         color: $cor-9;
+//       }
+
+//       //gambi
+//       .destaque-secundario {
+//         color: $cor-1;
+//       }
+//     }
+//   }
+// }

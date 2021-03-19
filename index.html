@@ -2,15 +2,73 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Little diamond</title>
+  <link rel="stylesheet" href="dist/meditango-static.min.css">
 </head>
 
 <body>
 
-	<script src="../dist/app.min.js"></script>
+  <login-page>
+    <form action="" id="form" method="POST">
+      <div class="formulario-login">
+        <img class="login-logo" src="imagens/bg_login/logo-medgrupo.svg" alt="Meditango">
+        <h1 class="login-titulo">MEDITANGO</h1>
+      </div>
+
+      <div class="formulario-login">
+        <span id="errologin">
+        </span>
+        <div class="formulario-login__container">
+          <div class="formulario-user-icone">
+            <img src="imagens/bg_login/user-login.svg">
+          </div>
+          <input type="text" class="login-username" placeholder="USUÁRIO">
+        </div>
+        <div class="formulario-login__container">
+          <div class="formulario-user-icone--password">
+            <img src="imagens/bg_login/user-password.svg">
+          </div>
+          <input type="password" class="login-password" placeholder="SENHA">
+        </div>
+      </div>
+
+      <div class="formulario-login">
+				<a href="mainPaciente.html"> FAZER LOGIN CARALHO</a>
+        <input value="FAZER LOGIN"  class="btn-submit med-btn-padrao">
+				<input type="submit" value="REGISTRAR" class="btn-submit med-btn-padrao">
+      </div>
+
+		
+
+    </form>
+  </login-page>
+
+  <main-page>
+    <header>
+      <nome-apostila></nome-apostila>
+
+      <menu-ferramentas></menu-ferramentas>
+
+      <menu-devices>
+        <img device="desktop" id="desktop-view" title="Desktop" src="../imagens/icons/laptop.svg">
+        <img device="tablet" id="tablet-view" title="Tablet" src="../imagens/icons/tablet.svg">
+        <img device="mobile" id="mobile-view" title="Smartphone" src="../imagens/icons/smartphone.svg">
+      </menu-devices>
+    </header>
+
+    <main></main>
+
+    <footer>
+      <nome-usuario></nome-usuario>
+      <session-online>ONLINE</session-online>
+      <session-mode>NENHUMA APOSTILA ABERTA</session-mode>
+    </footer>
+  </main-page>
+
+    <script src="../dist/meditango-static.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,45 @@
+.#{$medeletro} {
+  @mixin geral {
+    display: block;
+    padding: $padding-caixas-r3;
+
+    .paragrafo {
+      color: $cor-3;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .saiba-mais,
+  .saiba-mais-med--expandido {
+    display: block;
+    margin: $margem-caixas-r3;
+    position: relative;
+    overflow: hidden;
+
+
+    .saiba-mais__titulo {
+      @include geral;
+
+      color: #fff;
+      font-size: 1.2em;
+      font-family: NotoSans-Bold;
+      background-color: $cor-2;
+      border-bottom: 5px dashed #ef4752;
+    }
+
+    .saiba-mais__conteudo {
+      @include geral;
+
+      font-family: NotoSans-Regular;
+      background-color: $cor-12;
+    }
+
+  }
+
+  .saiba-mais__expandir {
+    background-color: $cor-3;
+  }
+}
