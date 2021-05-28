@@ -1,0 +1,23 @@
+{
+  "name": "tcc-backend",
+  "version": "1.0.0",
+  "description": "backend projeto tcc",
+  "entry point": "(index.js) server.js",
+  "test command": "gulp test",
+  "git repository": "https://github.com/PatrickCraveiro/TCC",
+  "keywords": [
+    "nodejs, express, mysql, restapi"
+  ],
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Craveiro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
