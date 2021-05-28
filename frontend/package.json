@@ -1,0 +1,40 @@
+{
+  "name": "hdjarvis",
+  "version": "1.0.0",
+  "description": "Centralizador de widgets para o Help Desk",
+  "main": "index.js",
+  "dependencies": {
+    "graceful-fs": "4.2.3",
+    "moment": "^2.22.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "vue": "^2.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "gulp default",
+    "start": "npx npm-force-resolutions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MEDGRUPOGIT/HD-Jarvis.git"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
+  },
+  "author": "MEDGRUPO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MEDGRUPOGIT/HD-Jarvis/issues"
+  },
+  "homepage": "https://github.com/MEDGRUPOGIT/HD-Jarvis#readme"
+}
