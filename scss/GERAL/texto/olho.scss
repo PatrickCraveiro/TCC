@@ -1,7 +1,0 @@
-// Para alterar a cor do olho em um tema, altere o 'background-color'.
-.olho {
-	@include propriedades-olho;
-
-	background-color: currentColor;
-	vertical-align: middle;
-}

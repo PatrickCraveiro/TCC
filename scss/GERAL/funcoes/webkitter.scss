@@ -1,4 +1,0 @@
-@mixin webkitter($prop, $valor) {
-	#{$prop}: $valor;
-	-webkit-#{$prop}: $valor;
-}
