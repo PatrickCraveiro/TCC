@@ -222,26 +222,63 @@ function cadastro() {
   document.querySelector(".button-cadastro").classList.add("verde");
 }
 
-// function feedbackCadastro() {
-//   let feedbackCadastro = document.querySelector(".feedbackCadastro");
-//   return LoadingPage.for([
-//     {
-//       description: "Cadastrando nova Clínica",
-//       promise: async () => {
-//         return new Promise((resolve) => {
-//           setTimeout(() => {
-//             feedbackCadastro.innerHTML =
-//               "<p> Clínica cadastrada com sucesso. </p>";
-//             setTimeout(() => {
-//               resolve();
-//             }, 300);
-//           }, 300);
-//         });
-//       },
-//     },
-//   ]);
-//   console.log(feedbackCadastro);
-// }
+function cadastroFuncionario() {
+  let modalCadastro = document.createElement("div");
+  modalCadastro.classList.add("modalCadastro");
+  modalCadastro.innerHTML = `<div class="download-window-fade"><div class="download-window">
+    <header-download>
+        <div>
+            Cadastrar nova Clínica
+        </div>
+        <div class="download-window__btn-close" onclick="fechaModalDownload()">
+            x
+        </div>
+    </header-download>
+
+    <main-download>
+        <div class="download-window__area--select">
+
+        <form class="formulario cadastro" id="formCadastroFuncionario" onsubmit="consultaAPIController.cadastroFuncionario(event)">
+  
+    <label class="labelCadastro">
+    <span>Nome:</span>
+    <input class="inputCadastro name=">
+  </label>
+  <label class="labelCadastro">
+  <span>Email:</span>
+  <input class="inputCadastro name=">
+    </label>
+    <label class="labelCadastro">
+    <span>CNPJ da Clínica:</span>
+    <input class="inputCadastro name=">
+  </label>
+  <label class="labelCadastro">
+  <span>Cargo:</span>
+  <select name="select">
+  <option>Enfermeiro</option>
+  <option> selected>Médico</option>
+  <option>ADM</option>
+  <option>Auxiliar de serviços gerais</option>
+  <option>Recepcionista</option>
+</select>
+</label>
+
+<button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
+<label class="cadastro btn-primary btn-sm btn-graficos" onclick="feedbackCadastro()">Cadastrar
+                </label>
+  
+</form>
+
+        </div>
+    </main-download>
+
+    <footer-download class="feedbackCadastro">
+
+    </footer-download>
+</div></div>`;
+  document.body.appendChild(modalCadastro);
+  document.querySelector(".button-cadastro").classList.add("verde");
+}
 
 function formatarDataAtual(dias) {
   var myDate = new Date();

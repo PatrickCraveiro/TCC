@@ -66,7 +66,7 @@ class ConsultaAPIController {
           ).value;
           filtro = eval("filtro");
 
-          console.log(filtro);
+          console.log(response);
 
           if (filtro != "Todas") {
             consultaClinica.update(response, filtro, filtroTxt);
@@ -96,6 +96,91 @@ class ConsultaAPIController {
         description: "Pesquisando Clínicas",
         promise: async () => {
           const response = await fetch("http://localhost:3050/customers", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+          let feedbackCadastro = document.querySelector(".feedbackCadastro");
+          feedbackCadastro.innerHTML =
+            "<p> Clínica cadastrada com sucesso. </p>";
+        },
+      },
+    ]);
+  }
+
+  async pesquisaFuncionario(event) {
+    event.preventDefault();
+
+    let vm = this;
+    let consultaFuncionario = new ConsultaFuncionario(
+      document.querySelector(".pesquisaFuncionarioBtn")
+    );
+
+    return LoadingPage.for([
+      {
+        description: "Pesquisando Funcionários",
+        promise: async () => {
+          const response = await fetch("http://localhost:3050/funcionario", {
+            method: "GET",
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+
+          let filtro = document.querySelector("#funcionarioConsultaSelect").value;
+          const filtroTxt = document.querySelector(
+            "#funcionarioConsultaText"
+          ).value;
+          filtro = eval("filtro");
+
+          console.log(response);
+
+          if (filtro != "Todos") {
+            consultaFuncionario.update(response, filtro, filtroTxt);
+          } else {
+            consultaFuncionario.update(response);
+          }
+        },
+      },
+    ]);
+  }
+
+  async cadastroFuncionario(event) {
+    event.preventDefault();
+    let form = {};
+    let formPreenchido = document.querySelectorAll(
+      "#formCadastroFuncionario >*> input"
+    );
+    let formCargo = document.querySelector(
+      "#formCadastroFuncionario >*> select"
+    );
+
+    form.idFuncionario = 0;
+    form.idClinica = Number(formPreenchido[2].value);
+    form.email = formPreenchido[1].value;
+    form.nome = formPreenchido[0].value;
+    form.cargo = formCargo.value
+
+    return LoadingPage.for([
+      {
+        description: "Pesquisando Clínicas",
+        promise: async () => {
+          const response = await fetch("http://localhost:3050/funcionario", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",

@@ -2,9 +2,10 @@ const sql = require("./db.js");
 
 // constructor
 const Funcionario = function(funcionario) {
+  this.nome = funcionario.nome
   this.email = funcionario.email;
-  this.name = funcionario.name;
-  this.active = funcionario.active;
+  this.idClinica = funcionario.idClinica;
+  this.cargo = funcionario.cargo;
 };
 
 Funcionario.create = (newFuncionario, result) => {
