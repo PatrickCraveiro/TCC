@@ -29,3 +29,25 @@ class Apostila {
     }
     
 }
+
+class Clinica {
+
+    constructor(id, email, name) {
+        this._id = id;
+        this._email = email;
+        this._name = name;
+    }
+
+    get id() {
+        return this._id;
+    }
+
+    get email() {
+        return this._email;
+    }
+
+    get name() {
+        return this._name;
+    }
+    
+}

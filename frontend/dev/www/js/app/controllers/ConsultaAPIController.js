@@ -39,44 +39,17 @@ class ConsultaAPIController {
   async pesquisaClinica(event) {
     event.preventDefault();
 
-    console.log("oi");
     let vm = this;
-
-    // let idAluno = document.querySelector('.pesquisaClinicaBtn').value;
-
     let consultaClinica = new ConsultaClinica(
       document.querySelector(".pesquisaClinicaBtn")
     );
     consultaClinica.loading();
 
-    let infoTabela = {
-      email: "patrick@craveiro.com",
-      name: "PAtrick",
-      active: 0,
-    };
-    console.log(JSON.stringify(infoTabela));
-
     return LoadingPage.for([
       {
         description: "Pesquisando Clínicas",
         promise: async () => {
-          // const response = await fetch("http://localhost:3001/customers", {
-          //     method: "POST",
-          //     mode: 'cors',
-          //     cache: 'no-cache',
-          //     headers: {
-          //       'Content-Type': 'application/json',
-          //     },
-          //     body: JSON.stringify(infoTabela),
-          //   })
-          //     .then((response) => {
-          //       return response.json();
-          //     })
-          //     .catch((rejected) => {
-          //       console.error("Erro na requisição", rejected);
-          //       return false;
-          //     });
-          const response = await fetch("http://localhost:3001/customers", {
+          const response = await fetch("http://localhost:3050/customers", {
             method: "GET",
           })
             .then((response) => {
@@ -96,43 +69,10 @@ class ConsultaAPIController {
           console.log(filtro);
 
           if (filtro != "Todas") {
-            response.map((n2) => {
-              switch (filtro) {
-                case "name":
-                  if (n2.name.match(`${filtroTxt}`)) {
-                    vm._listaConsultaAPI.consultas = new Apostila(
-                      n2.id,
-                      n2.email,
-                      n2.name
-                    );
-                  }
-                  break;
-
-                case "email":
-                  if (n2.email.match(`${filtroTxt}`)) {
-                    vm._listaConsultaAPI.consultas = new Apostila(
-                      n2.id,
-                      n2.email,
-                      n2.name
-                    );
-                  }
-                  break;
-
-                default:
-                  break;
-              }
-            }, consultaClinica.update(vm.ordenar("id")));
+            consultaClinica.update(response, filtro, filtroTxt);
           } else {
-            response.map((n2) => {
-              vm._listaConsultaAPI.consultas = new Apostila(
-                n2.id,
-                n2.email,
-                n2.name
-              );
-            }, consultaClinica.update(vm.ordenar("id")));
+            consultaClinica.update(response);
           }
-
-          console.log(response);
         },
       },
     ]);
@@ -155,7 +95,7 @@ class ConsultaAPIController {
       {
         description: "Pesquisando Clínicas",
         promise: async () => {
-          const response = await fetch("http://localhost:3001/customers", {
+          const response = await fetch("http://localhost:3050/customers", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
@@ -171,9 +111,9 @@ class ConsultaAPIController {
               console.error("Erro na requisição", rejected);
               return false;
             });
-            let feedbackCadastro = document.querySelector(".feedbackCadastro");
-            feedbackCadastro.innerHTML =
-              "<p> Clínica cadastrada com sucesso. </p>";
+          let feedbackCadastro = document.querySelector(".feedbackCadastro");
+          feedbackCadastro.innerHTML =
+            "<p> Clínica cadastrada com sucesso. </p>";
         },
       },
     ]);

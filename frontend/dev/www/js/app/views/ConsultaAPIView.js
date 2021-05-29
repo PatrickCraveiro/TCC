@@ -7,31 +7,57 @@ class ConsultaClinica {
     this._elemento.innerHTML = '<div id="preloader"></div>';
   }
 
-  update(model) {
+  update(model, filtro, filtroTxt) {
     this._elemento.innerHTML = `
         <div class="row">
             <table><tbody>
-                <tr class="tabela-coluna">
+                <tr class="tabela-coluna" id="pai">
                     <th>NOME</th> 
                     <th>CNPJ</th> 
                     <th>CIDADE</th>
                 </tr> 
-                ${console.log(model,'model'),
-                     model.map((n) => {
-                      return `
-                      <tr class="tabela-coluna">
+                ${model.map((n) => {
+                  console.log(filtroTxt);
+                  if (filtro) {
+                    switch (filtro) {
+                      case "name":
+                        if (n.name.match(`${filtroTxt}`)) {
+                          return ` <tr class="tabela-coluna">
+                         <td>${n.id}</td>
+                         <td>${n.email}</td>
+                         <td>${n.name}</td>
+                     </tr>`;
+                        }
+                        break;
+
+                      case "email":
+                        if (n.email.match(`${filtroTxt}`)) {
+                          return ` <tr class="tabela-coluna">
                           <td>${n.id}</td>
-                          <td>${n.nome}</td>
-                          <td>${n.tema}</td>
+                          <td>${n.email}</td>
+                          <td>${n.name}</td>
                       </tr>`;
-                    })
-                    .join("")}
+                        }
+                        break;
+
+                      default:
+                        break;
+                    }
+                  } else {
+                    return `
+                    <tr class="tabela-coluna">
+                        <td>${n.id}</td>
+                        <td>${n.email}</td>
+                        <td>${n.name}</td>
+                    </tr>`;
+                  }
+                })}
             </tbody></table>
-        </div>`
+        </div>`;
   }
 }
 
-class ConsultaAPIView{
+class ConsultaAPIView {
   constructor(elemento) {
     this._elemento = elemento;
   }

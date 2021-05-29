@@ -250,8 +250,7 @@ async function pesquisaClinica() {
   };
   console.log(JSON.stringify(infoTabela))
   
-
-  const response = await fetch("http://localhost:3001/customers", {
+  const response = await fetch("http://localhost:3050/customers", {
     method: "POST",
     mode: 'cors',
     cache: 'no-cache',
