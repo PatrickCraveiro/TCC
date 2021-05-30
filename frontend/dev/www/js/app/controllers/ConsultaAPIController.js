@@ -204,6 +204,85 @@ class ConsultaAPIController {
     ]);
   }
 
+  cadastroLogin2(event) {
+    event.preventDefault();
+
+    let vm = this;
+
+    console.log('oi2222222')
+
+    // console.log('isso')
+
+    
+    // let form = {};
+    // let formPreenchido = document.querySelectorAll(
+    //   "formCadastroLogin >*> input"
+    // );
+
+    // form.login = 0;
+    // form.senha = Number(formPreenchido[2].value);
+    // form.email = formPreenchido[1].value;
+    // form.adm = false;
+
+    // console.log(form)
+
+    // return LoadingPage.for([
+    //   {
+    //     description: "Pesquisando Clínicas",
+    //     promise: async () => {
+    //       const response = await fetch("http://localhost:3050/login", {
+    //         method: "POST",
+    //         mode: "cors",
+    //         cache: "no-cache",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(form),
+    //       })
+    //         .then((response) => {
+    //           return response.json();
+    //         })
+    //         .catch((rejected) => {
+    //           console.error("Erro na requisição", rejected);
+    //           return false;
+    //         });
+    //       let feedbackCadastro = document.querySelector(".feedbackCadastro");
+    //       feedbackCadastro.innerHTML =
+    //         "<p> cadastrado com sucesso </p>";
+    //     },
+    //   },
+    // ]);
+  }
+
+  async formLogin(){
+    let formLogin = document.querySelector("#formLogin");
+    console.log(formLogin[0].value)
+
+    let formPreenchido = {};
+    
+    formPreenchido.login = formLogin[0].value;
+    formPreenchido.senha = formLogin[1].value;
+
+    return LoadingPage.for([
+      {
+        description: "Fazendo login",
+        promise: async () => {
+          const response = await fetch("http://localhost:3050/logins", {
+            method: "GET"
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+          console.log(response)
+        },
+      },
+    ]);
+  }
+
   consultaApostilasPermitidas(event) {
     event.preventDefault();
     let vm = this;

@@ -5,10 +5,11 @@ const Login = function(login) {
   this.login = login.login;
   this.senha = login.senha;
   this.email = login.email;
+  this.email = login.adm;
 };
 
 Login.create = (newLogin, result) => {
-  sql.query("INSERT INTO logins SET ?", newLogin, (err, res) => {
+  sql.query("INSERT INTO Login SET ?", newLogin, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -21,7 +22,7 @@ Login.create = (newLogin, result) => {
 };
 
 Login.findById = (loginId, result) => {
-  sql.query(`SELECT * FROM logins WHERE id = ${loginId}`, (err, res) => {
+  sql.query(`SELECT * FROM Login WHERE id = ${loginId}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -40,21 +41,21 @@ Login.findById = (loginId, result) => {
 };
 
 Login.getAll = result => {
-  sql.query("SELECT * FROM logins", (err, res) => {
+  sql.query("SELECT * FROM Login", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log("logins: ", res);
+    console.log("Login: ", res);
     result(null, res);
   });
 };
 
 Login.updateById = (id, login, result) => {
   sql.query(
-    "UPDATE logins SET login = ?, senha = ?, email = ? WHERE id = ?",
+    "UPDATE Login SET login = ?, senha = ?, email = ? WHERE id = ?",
     [login.login, login.senha, login.email, id],
     (err, res) => {
       if (err) {
@@ -76,7 +77,7 @@ Login.updateById = (id, login, result) => {
 };
 
 Login.remove = (id, result) => {
-  sql.query("DELETE FROM logins WHERE id = ?", id, (err, res) => {
+  sql.query("DELETE FROM Login WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -95,14 +96,14 @@ Login.remove = (id, result) => {
 };
 
 Login.removeAll = result => {
-  sql.query("DELETE FROM logins", (err, res) => {
+  sql.query("DELETE FROM Login", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log(`deleted ${res.affectedRows} logins`);
+    console.log(`deleted ${res.affectedRows} Login`);
     result(null, res);
   });
 };

@@ -1,0 +1,227 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    padding: 1px 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/curso-de-medicina-640x340.jpg');
+    background-size: cover;
+    color: #fff;
+    font-family: "Comfortaa", "Helvetica", sans-serif;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.centraliza{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.login {
+    max-width: 350px;
+    min-height: 500px;
+    margin: 30px auto;
+    background-color: rgba(10, 10, 10, .68);
+    border-radius: 3%;
+}
+
+.login-icon-field {
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+   
+}
+.pqpnaoaguentomais{
+    width: 100%;
+    height: 100%;
+}
+.img{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+ 
+}
+
+.login-icon {
+    margin: 50px 65px;
+}
+
+.login-form {
+    padding: 8px 20px 20px;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.username-row {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.password-row {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid;
+    width: 80%;
+}
+
+.user-icon .user-path {
+    -webkit-animation: dash 3s .8s linear forwards;
+    animation: dash 3s .8s linear forwards;
+}
+
+input.inputLogin {
+    width: 195px;
+    height: 30px;
+    margin: 5px 0;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .4);
+}
+
+input::-moz-placeholder {
+    color: rgba(255, 255, 255, .4);
+}
+
+.call-to-action {
+    flex-wrap: wrap;
+    margin: 22px 0;
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    display: block;
+    width: 240px;
+    height: 40px;
+    padding: 0;
+    margin: 10px 20px 10px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #22c08a;
+    border: none;
+    border-radius: 20px;
+    transition: background-color .10s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button:hover {
+    background-color: #26d69a;
+}
+
+button:active {
+    background-color: #1eaa7a;
+}
+
+p {
+    display: inline-block;
+    width: 200px;
+    margin: 0 40px;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .4);
+}
+
+p a {
+    color: #fff;
+}
+
+label, p a:hover {
+    -webkit-cursor: pointer;
+    cursor: pointer;
+}
+
+@-webkit-keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}

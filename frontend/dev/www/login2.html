@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../dist/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../scss/login.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="login" class="login">
+      <div class="login-icon-field">
+        <div class="img">
+          <img class="pqpnaoaguentomais" src="../img/icon.png" alt="">
+        </div>
+      </div>
+      <div class="login-form">
+        <form class="centraliza" id="formLogin">
+
+                <tr>  
+                    <td><input class="inputLogin" required class="username-row" type="text" name="name" id="username-row" placeholder="Login"></td>
+                </tr>
+
+                    <td><input class="inputLogin" required class="password-row" type="password" name="password" id="password-row" placeholder="Senha"></td>
+                </div>
+
+                <button id="login-button" onclick="formLogin()">Entrar</button>
+  
+      <p onclick="cadastroLogin()">Ainda não tem conta? </p>
+    </form>
+    </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../dist/jquery-1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="../../dist/bootstrap.min.js"></script>
+    <script src="../../dist/vue.js"></script>
+    <script src="../www/js/main.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../www/js/grafico.js"></script>
+    <script src="https://apis.google.com/js/auth.js"></script>
+    <script src="../www/js/consultaApi.js"></script>
+    <script src="../www/js/app/models/Apostila.js"></script>
+    <script src="../www/js/login.js"></script>
+    <script src="../www/js/app/models/ListaConsultaAPI.js"></script>
+    <script src="../www/js/app/controllers/ConsultaAPIController.js"></script>
+    <script src="../www/js/app/controllers/ConsultaAPIControllerFuncionario.js"></script>
+    <script src="../www/js/app/views/ConsultaAPIView.js"></script>
+
+</body>
+</html>

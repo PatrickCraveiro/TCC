@@ -10,9 +10,10 @@ exports.create = (req, res) => {
   
     // Create a Login
     const login = new Login({
+      login: req.body.login,
+      senha: req.body.senha,
       email: req.body.email,
-      name: req.body.name,
-      active: req.body.active
+      adm: req.body.adm
     });
   
     // Save Login in the database
