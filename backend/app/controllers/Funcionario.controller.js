@@ -1,4 +1,4 @@
-const Funcionario = require("..//models//funcionario.model.js");
+const Funcionario = require("../models/funcionario.model.js");
 
 exports.create = (req, res) => {
   // Validate request
@@ -8,7 +8,7 @@ exports.create = (req, res) => {
     });
   }
 
-  // Create a Customer
+  // Create a Clinica
   const funcionario = new Funcionario({
     id: req.body.id,
     email: req.body.email,
@@ -16,12 +16,12 @@ exports.create = (req, res) => {
     cargo: req.body.cargo
   });
 
-  // Save Customer in the database
+  // Save Clinica in the database
   Funcionario.create(funcionario, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Customer."
+          err.message || "Some error occurred while creating the Clinica."
       });
     else res.send(data);
   });
@@ -44,11 +44,11 @@ exports.findOne = (req, res) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Customer with id ${req.params.funcionarioId}.`
+          message: `Not found Clinica with id ${req.params.funcionarioId}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Customer with id " + req.params.funcionarioId
+          message: "Error retrieving Clinica with id " + req.params.funcionarioId
         });
       }
     } else res.send(data);
@@ -70,11 +70,11 @@ exports.update = (req, res) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Customer with id ${req.params.funcionarioId}.`
+            message: `Not found Clinica with id ${req.params.funcionarioId}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Customer with id " + req.params.funcionarioId
+            message: "Error updating Clinica with id " + req.params.funcionarioId
           });
         }
       } else res.send(data);
@@ -87,14 +87,14 @@ exports.delete = (req, res) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Customer with id ${req.params.funcionarioId}.`
+          message: `Not found Clinica with id ${req.params.funcionarioId}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Customer with id " + req.params.funcionarioId
+          message: "Could not delete Clinica with id " + req.params.funcionarioId
         });
       }
-    } else res.send({ message: `Customer was deleted successfully!` });
+    } else res.send({ message: `Clinica was deleted successfully!` });
   });
 };
 
@@ -103,8 +103,8 @@ exports.deleteAll = (req, res) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all customers."
+          err.message || "Some error occurred while removing all clinica."
       });
-    else res.send({ message: `All Customers were deleted successfully!` });
+    else res.send({ message: `All Clinica were deleted successfully!` });
   });
 };

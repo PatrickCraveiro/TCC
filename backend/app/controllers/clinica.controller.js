@@ -1,4 +1,4 @@
-const Customer = require("..//models//customer.model.js");
+const Clinica = require("..//models//clinica.model.js");
 
 exports.create = (req, res) => {
     // Validate request
@@ -8,19 +8,19 @@ exports.create = (req, res) => {
       });
     }
   
-    // Create a Customer
-    const customer = new Customer({
-      email: req.body.email,
-      name: req.body.name,
-      active: req.body.active
+    // Create a Clinica
+    const clinica = new Clinica({
+      CNPJ: req.body.CNPJ,
+      nome: req.body.nome,
+      cidade: req.body.cidade
     });
   
-    // Save Customer in the database
-    Customer.create(customer, (err, data) => {
+    // Save Clinica in the database
+    Clinica.create(clinica, (err, data) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the Customer."
+            err.message || "Some error occurred while creating the Clinica."
         });
       else res.send(data);
     });
@@ -28,11 +28,11 @@ exports.create = (req, res) => {
 
 
   exports.findAll = (req, res) => {
-    Customer.getAll((err, data) => {
+    Clinica.getAll((err, data) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving customers."
+            err.message || "Some error occurred while retrieving clinicas."
         });
       else res.send(data);
     });
@@ -40,15 +40,15 @@ exports.create = (req, res) => {
 
 
   exports.findOne = (req, res) => {
-    Customer.findById(req.params.customerId, (err, data) => {
+    Clinica.findById(req.params.clinicaId, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Customer with id ${req.params.customerId}.`
+            message: `Not found Clinica with id ${req.params.clinicaId}.`
           });
         } else {
           res.status(500).send({
-            message: "Error retrieving Customer with id " + req.params.customerId
+            message: "Error retrieving Clinica with id " + req.params.clinicaId
           });
         }
       } else res.send(data);
@@ -63,18 +63,18 @@ exports.create = (req, res) => {
       });
     }
   
-    Customer.updateById(
-      req.params.customerId,
-      new Customer(req.body),
+    Clinica.updateById(
+      req.params.clinicaId,
+      new Clinica(req.body),
       (err, data) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Not found Customer with id ${req.params.customerId}.`
+              message: `Not found Clinica with id ${req.params.clinicaId}.`
             });
           } else {
             res.status(500).send({
-              message: "Error updating Customer with id " + req.params.customerId
+              message: "Error updating Clinica with id " + req.params.clinicaId
             });
           }
         } else res.send(data);
@@ -83,28 +83,28 @@ exports.create = (req, res) => {
   };
 
   exports.delete = (req, res) => {
-    Customer.remove(req.params.customerId, (err, data) => {
+    Clinica.remove(req.params.clinicaId, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Customer with id ${req.params.customerId}.`
+            message: `Not found Clinica with id ${req.params.clinicaId}.`
           });
         } else {
           res.status(500).send({
-            message: "Could not delete Customer with id " + req.params.customerId
+            message: "Could not delete Clinica with id " + req.params.clinicaId
           });
         }
-      } else res.send({ message: `Customer was deleted successfully!` });
+      } else res.send({ message: `Clinica was deleted successfully!` });
     });
   };
 
   exports.deleteAll = (req, res) => {
-    Customer.removeAll((err, data) => {
+    Clinica.removeAll((err, data) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while removing all customers."
+            err.message || "Some error occurred while removing all clinicas."
         });
-      else res.send({ message: `All Customers were deleted successfully!` });
+      else res.send({ message: `All Clinicas were deleted successfully!` });
     });
   };
