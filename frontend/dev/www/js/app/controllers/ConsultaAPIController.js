@@ -49,7 +49,7 @@ class ConsultaAPIController {
       {
         description: "Pesquisando Clínicas",
         promise: async () => {
-          const response = await fetch("http://localhost:3050/customers", {
+          const response = await fetch("http://18.231.113.43:3050/clinica", {
             method: "GET",
           })
             .then((response) => {
@@ -76,8 +76,6 @@ class ConsultaAPIController {
         },
       },
     ]);
-
-    console.log(response);
   }
 
   async cadastroClinica(event) {
@@ -87,15 +85,15 @@ class ConsultaAPIController {
       "#formCadastroClinica >*> input"
     );
 
-    form.name = formPreenchido[0].value;
-    form.email = formPreenchido[1].value;
-    form.id = formPreenchido[2].value;
+    form.CNPJ = formPreenchido[1].value;
+    form.nome = formPreenchido[0].value;
+    form.cidade = formPreenchido[2].value;
 
     return LoadingPage.for([
       {
-        description: "Pesquisando Clínicas",
+        description: "Cadastrando Clínica",
         promise: async () => {
-          const response = await fetch("http://localhost:3050/customers", {
+          const response = await fetch("http://18.231.113.43:3050/clinica", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",

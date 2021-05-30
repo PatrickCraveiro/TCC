@@ -45,9 +45,9 @@ class ConsultaClinica {
                   } else {
                     return `
                     <tr class="tabela-coluna">
-                        <td>${n.id}</td>
-                        <td>${n.email}</td>
-                        <td>${n.name}</td>
+                        <td>${n.nome}</td>
+                        <td>${n.CNPJ}</td>
+                        <td>${n.cidade}</td>
                     </tr>`;
                   }
                 })}

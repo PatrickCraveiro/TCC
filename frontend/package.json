@@ -1,7 +1,7 @@
 {
-  "name": "hdjarvis",
+  "name": "TCC",
   "version": "1.0.0",
-  "description": "Centralizador de widgets para o Help Desk",
+  "description": "Trabalho de Conclusão de Curso",
   "main": "index.js",
   "dependencies": {
     "graceful-fs": "4.2.3",
@@ -26,15 +26,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MEDGRUPOGIT/HD-Jarvis.git"
+    "url": "git+https://github.com/PatrickCraveiro/TCC.git"
   },
   "resolutions": {
     "graceful-fs": "4.2.3"
   },
-  "author": "MEDGRUPO",
+  "author": "Patrick Craveiro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MEDGRUPOGIT/HD-Jarvis/issues"
+    "url": "https://github.com/PatrickCraveiro/TCC"
   },
-  "homepage": "https://github.com/MEDGRUPOGIT/HD-Jarvis#readme"
+  "homepage": "https://github.com/PatrickCraveiro/TCC/#readme"
 }
