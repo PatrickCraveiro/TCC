@@ -1,4 +1,4 @@
-const Funcionario = require("../models/funcionario.model.js");
+const funcionario = require("../models/funcionario.model.js");
 
 exports.create = (req, res) => {
   // Validate request
@@ -9,7 +9,7 @@ exports.create = (req, res) => {
   }
 
   // Create a Clinica
-  const funcionario = new Funcionario({
+  const funcionario = new funcionario({
     id: req.body.id,
     email: req.body.email,
     nome: req.body.nome,
@@ -17,7 +17,7 @@ exports.create = (req, res) => {
   });
 
   // Save Clinica in the database
-  Funcionario.create(funcionario, (err, data) => {
+  funcionario.create(funcionario, (err, data) => {
     if (err)
       res.status(500).send({
         message:
@@ -28,11 +28,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Funcionario.getAll((err, data) => {
+  funcionario.getAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Funcionarios."
+          err.message || "Some error occurred while retrieving funcionarios."
       });
     else res.send(data);
   });
@@ -40,7 +40,7 @@ exports.findAll = (req, res) => {
 
 
 exports.findOne = (req, res) => {
-  Funcionario.findById(req.params.funcionarioId, (err, data) => {
+  funcionario.findById(req.params.funcionarioId, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
@@ -63,9 +63,9 @@ exports.update = (req, res) => {
     });
   }
 
-  Funcionario.updateById(
+  funcionario.updateById(
     req.params.funcionarioId,
-    new Funcionario(req.body),
+    new funcionario(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
@@ -83,7 +83,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Funcionario.remove(req.params.funcionarioId, (err, data) => {
+  funcionario.remove(req.params.funcionarioId, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
@@ -99,7 +99,7 @@ exports.delete = (req, res) => {
 };
 
 exports.deleteAll = (req, res) => {
-  Funcionario.removeAll((err, data) => {
+  funcionario.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
