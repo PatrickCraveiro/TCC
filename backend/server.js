@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // simple route
 require("./app/routes/customer.routes.js")(app);
 require("./app/routes/login.routes.js")(app);
-require("./app/routes/funcionario.routes.js")(app);
 
 // set port, listen for requests
 app.listen(3050, () => {
