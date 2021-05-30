@@ -1,4 +1,4 @@
-const Login = require("../models/login.model.js");
+const login = require("../models/login.model.js");
 
 exports.create = (req, res) => {
     // Validate request
@@ -8,20 +8,20 @@ exports.create = (req, res) => {
       });
     }
   
-    // Create a Login
-    const login = new Login({
+    // Create a login
+    const login = new login({
       login: req.body.login,
       senha: req.body.senha,
       email: req.body.email,
       adm: req.body.adm
     });
   
-    // Save Login in the database
-    Login.create(login, (err, data) => {
+    // Save login in the database
+    login.create(login, (err, data) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the Login."
+            err.message || "Some error occurred while creating the login."
         });
       else res.send(data);
     });
@@ -29,7 +29,7 @@ exports.create = (req, res) => {
 
 
   exports.findAll = (req, res) => {
-    Login.getAll((err, data) => {
+    login.getAll((err, data) => {
       if (err)
         res.status(500).send({
           message:
@@ -41,15 +41,15 @@ exports.create = (req, res) => {
 
 
   exports.findOne = (req, res) => {
-    Login.findById(req.params.loginId, (err, data) => {
+    login.findById(req.params.loginId, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Login with id ${req.params.loginId}.`
+            message: `Not found login with id ${req.params.loginId}.`
           });
         } else {
           res.status(500).send({
-            message: "Error retrieving Login with id " + req.params.loginId
+            message: "Error retrieving login with id " + req.params.loginId
           });
         }
       } else res.send(data);
@@ -64,18 +64,18 @@ exports.create = (req, res) => {
       });
     }
   
-    Login.updateById(
+    login.updateById(
       req.params.loginId,
-      new Login(req.body),
+      new login(req.body),
       (err, data) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Not found Login with id ${req.params.loginId}.`
+              message: `Not found login with id ${req.params.loginId}.`
             });
           } else {
             res.status(500).send({
-              message: "Error updating Login with id " + req.params.loginId
+              message: "Error updating login with id " + req.params.loginId
             });
           }
         } else res.send(data);
@@ -84,28 +84,28 @@ exports.create = (req, res) => {
   };
 
   exports.delete = (req, res) => {
-    Login.remove(req.params.loginId, (err, data) => {
+    login.remove(req.params.loginId, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Login with id ${req.params.loginId}.`
+            message: `Not found login with id ${req.params.loginId}.`
           });
         } else {
           res.status(500).send({
-            message: "Could not delete Login with id " + req.params.loginId
+            message: "Could not delete login with id " + req.params.loginId
           });
         }
-      } else res.send({ message: `Login was deleted successfully!` });
+      } else res.send({ message: `login was deleted successfully!` });
     });
   };
 
   exports.deleteAll = (req, res) => {
-    Login.removeAll((err, data) => {
+    login.removeAll((err, data) => {
       if (err)
         res.status(500).send({
           message:
             err.message || "Some error occurred while removing all logins."
         });
-      else res.send({ message: `All Logins were deleted successfully!` });
+      else res.send({ message: `All logins were deleted successfully!` });
     });
   };

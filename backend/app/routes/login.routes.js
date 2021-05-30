@@ -1,21 +1,21 @@
 module.exports = app => {
-    const Login = require("../controllers/login.controller.js");
+    const login = require("../controllers/login.controller.js");
   
-    // Create a new Login
-    app.post("/Login", Login.create);
+    // Create a new login
+    app.post("/login", login.create);
   
-    // Retrieve all Logins
-    app.get("/Login", Login.findAll);
+    // Retrieve all logins
+    app.get("/login", login.findAll);
   
-    // Retrieve a single Login with loginId
-    app.get("/Login/:loginId", Login.findOne);
+    // Retrieve a single login with loginId
+    app.get("/login/:loginId", login.findOne);
   
-    // Update a Login with loginId
-    app.put("/Login/:loginId", Login.update);
+    // Update a login with loginId
+    app.put("/login/:loginId", login.update);
   
-    // Delete a Login with loginId
-    app.delete("/Login/:loginId", Login.delete);
+    // Delete a login with loginId
+    app.delete("/login/:loginId", login.delete);
   
-    // Create a new Login
-    app.delete("/Login", Login.deleteAll);
+    // Create a new login
+    app.delete("/login", login.deleteAll);
   };
