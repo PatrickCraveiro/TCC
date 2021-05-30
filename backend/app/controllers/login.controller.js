@@ -1,4 +1,4 @@
-const login = require("../models/login.model.js");
+const login = require("..//models//login.model.js");
 
 exports.create = (req, res) => {
     // Validate request

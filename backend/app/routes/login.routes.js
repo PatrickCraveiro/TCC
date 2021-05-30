@@ -1,5 +1,5 @@
 module.exports = app => {
-    const login = require("../controllers/login.controller.js");
+    const login = require("..//controllers//login.controller.js");
   
     // Create a new login
     app.post("/login", login.create);
