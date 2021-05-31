@@ -205,9 +205,7 @@ function cadastro() {
 <input class="inputCadastro name=">
 </label>
 
-<button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
-<label class="cadastro btn-primary btn-sm btn-graficos" onclick="feedbackCadastro()">Cadastrar
-                </label>
+<button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Cadastrar</button>
   
 </form>
 
@@ -263,9 +261,7 @@ function cadastroFuncionario() {
 </select>
 </label>
 
-<button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
-<label class="cadastro btn-primary btn-sm btn-graficos" onclick="feedbackCadastro()">Cadastrar
-                </label>
+<button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Cadastrar</button>
   
 </form>
 

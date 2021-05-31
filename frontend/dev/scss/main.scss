@@ -235,7 +235,7 @@ div.row {
   
   .download-window, .generic-modal-content {
     margin: 0 auto;
-    width: 80vw;
+    width: 60vw;
     max-width: 1200px;
     min-height: 50vh;
     max-height: 80vh;
@@ -251,7 +251,7 @@ div.row {
   /* header */
   
   header-download, modal-header {
-    background: #232323;
+    background: #333;
     color:white;
     width: -webkit-fill-available;
     border-bottom: 1px solid #ccc;
@@ -328,7 +328,7 @@ div.row {
     font-size: 1.5em;
     font-family: arial;
     color: #FFFFFF;
-    background: #232323;
+    background: #333;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   }
   
@@ -529,7 +529,7 @@ div.row {
     width: 11%;
   }
 
-  label.cadastro.btn-primary.btn-sm.btn-graficos{
+  .cadastro.btn-primary.btn-sm.btn-graficos{
     margin-top: 2%;
     text-align: center;     
 }

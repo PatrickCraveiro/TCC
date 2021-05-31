@@ -12,10 +12,13 @@
     <title>TCC - MEDQUERY</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.min.css" rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+    <!-- <canvas id="myChart" style="width:100%; z-index: 99999999;"></canvas> -->
 </head>
 
 <body>
     <div class="container" id="app">
+      
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -34,12 +37,6 @@
                         <li v-bind:class="{active:abaAtiva=='relatorios'}" v-on:click="abaAtiva='relatorios'"
                             onclick="location.reload()">
                             <a href="javascript:;">ADMIN</a>
-                        </li>
-                        <li v-bind:class="{active:abaAtiva=='issues'}" v-on:click="abaAtiva='issues'">
-                            <a href="javascript:;">Abertura de Demandas</a>
-                        </li>
-                        <li v-bind:class="{active:abaAtiva=='adms'}" v-on:click="abaAtiva='adms'">
-                            <a href="javascript:;">Admins</a>
                         </li>
                         <li v-bind:class="{active:abaAtiva=='consultas'}" v-on:click="abaAtiva='consultas'">
                             <a href="javascript:;">Consultas</a>
@@ -95,10 +92,6 @@
 
             </div>
 
-        </div>
-
-        <!-- #relatórios -->
-        <div class="container" >
             <div class="row text-center">
                 <h1>Gerenciar Funcionários</h1>
                 <br>
@@ -121,98 +114,8 @@
             <div class="container pesquisaFuncionarioBtn">
 
             </div>
-        </div>
-
-        <!-- /#relatórios -->
-
-        <div class="container" v-if="abaAtiva=='issues'" id="issues">
-            <div id="" class="row text-center">
-
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Atenção!</strong> Os Links só funcionarão quando estiver logado em uma conta Github da
-                    Organização MEDGRUPO.
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-2 img-hover">
-                    <a href="https://github.com/MEDGRUPOGIT/area-restrita/issues/new" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/medgrupo2.png"
-                            alt="Restrita">
-                    </a>
-                    <p class="h4">Restrita</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a href="https://github.com/MEDGRUPOGIT/MsCross-Desktop/issues/new" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/mspro.png"
-                            alt="Medsoft Pro">
-                    </a>
-                    <p class="h4">MsPro-Desktop</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a href="https://github.com/MEDGRUPOGIT/Inscricoes/issues/new" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/medgrupo.png"
-                            alt="Inscrições">
-                    </a>
-                    <p class="h4">Inscrições</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a href="https://github.com/MEDGRUPOGIT/institucional-desktop/issues/new" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/medgrupo2.png"
-                            alt="Institucional">
-                    </a>
-                    <p class="h4">Institucional</p>
-                </div>
-            </div>
-        </div>
-        <!-- /#inssues -->
-
-
-        <div class="container" v-if="abaAtiva=='adms'" id="adms">
-            <div id="" class="row text-center">
-                <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-2 img-hover">
-                    <a href="http://medreader.medgrupo.com.br/clients" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/medsoft.png"
-                            alt="Restrita">
-                    </a>
-                    <p class="h4">Apps Kongros</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a a href="http://adm.medsoft.medgrupo.com.br/" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/mspro.png"
-                            alt="Medsoft Pro">
-                    </a>
-                    <p class="h4">Medsoft Desktop (Antigo)</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a href="http://ctrlpanel2.medgrupo.com.br/" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/controlpanel.png"
-                            alt="Inscrições">
-                    </a>
-                    <p class="h4">Painel de Controle</p>
-                </div>
-
-                <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                    <a href="https://medgrupo.freshdesk.com/" target="_blank">
-                        <img class="img-circle img-thumbnail img-responsive img-center" src="img/freshdesk.png"
-                            alt="Institucional">
-                    </a>
-                    <p class="h4">Freshdesk</p>
-                </div>
-
-            </div>
-
-            <hr />
 
         </div>
-        <!-- /#adms -->
-
 
         <div class="container" v-if="abaAtiva=='consultas'" id="consultas">
             <div class="row">
@@ -233,26 +136,6 @@
                             <button type="submit" class="btn btn-default btn-sm">Consultar</button>
                         </div>
                     </form>
-
-                    <form class="form" onSubmit="return consultaSlidesPermitidos();">
-                        <div class="form-group col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1">
-                            <label for="SlidesPermitidosAluno">Slides Permitidos</label>
-                            <input class="form-control input-sm" type="text" id="SlidesPermitidosAluno"
-                                placeholder="ID Aluno" />
-                            <input class="form-control input-sm" type="text" id="SlidesPermitidosApostila"
-                                placeholder="ID Apostila" />
-                            <button type="submit" class="btn btn-default btn-sm">Consultar</button>
-                        </div>
-                    </form>
-
-                    <form class="form" onSubmit="return consultaSlidesBaixados();">
-                        <div class="form-group col-sm-3 col-md-3">
-                            <label for="SlidesBaixados">Slides Baixados</label>
-                            <input class="form-control input-sm" type="text" id="SlidesBaixados"
-                                placeholder="ID Aluno" />
-                            <button type="submit" class="btn btn-default btn-sm">Consultar</button>
-                        </div>
-                    </form>
                 </div>
             </div>
             <!-- /row -->
@@ -265,98 +148,45 @@
 
         </div>
         <!-- /#consultas -->
-
         <div class="container" v-if="abaAtiva=='treinamento'" id="treinamento">
-            <div id="" class="row text-center">
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Atenção!</strong> Os Links só funcionarão quando estiver logado em uma conta de email do
-                    domínio MEDGRUPO.
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1b5sstWwSDOcju53NGXClSXlrwO1u7lSjSnWfbBDMYKk/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/apps.png"
-                                alt="Restrita">
-                        </a>
-                        <p class="h4">Principais Funcionalidades</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a a href="https://docs.google.com/document/d/13fV89MJDTF7AwiNiVi0qnlQhwhs9E-6qXxZNIe3ImFQ/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/helpdesk.png"
-                                alt="Medsoft Pro">
-                        </a>
-                        <p class="h4">Manual de Atendimento</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1tufFN3icty5wMIXSt0ww2j8DLqkNfTYGUczP4_PS2PU/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/block.png"
-                                alt="Inscrições">
-                        </a>
-                        <p class="h4">CPF Bloqueado</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1_mvuJqieo4TM8bU-7wyzMyWgBoNRUhxFmDLSOj_CDrU/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/qrcode.png"
-                                alt="Institucional">
-                        </a>
-                        <p class="h4">LoginCode</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1Q0VpuMULSP1EV1z0kfJqgh2PwZr1x6fjtLOaGLObF7U/edit#heading=h.suxexcjthpk"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/query.png"
-                                alt="Institucional">
-                        </a>
-                        <p class="h4">Regras de Acesso</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1Pq_Ca0azlLYXQFYQPRq1YngUXdrPdX3brwi1m5xtvik/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/question.png"
-                                alt="Institucional">
-                        </a>
-                        <p class="h4">Problemas Comuns</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1Bf1BvtsPSSWLwjv7S3xGBglifYsHPAjWo_SeHNTObQI/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/simulado.png"
-                                alt="Institucional">
-                        </a>
-                        <p class="h4">Simulados</p>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-3 col-md-2 img-hover">
-                        <a href="https://docs.google.com/document/d/1yzfXmRALBj-UJOvIra53lWxB4uorOCjySq0F-BOHJoc/edit"
-                            target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive img-center" src="img/minutorevalida.png"
-                                alt="Institucional">
-                        </a>
-                        <p class="h4">Minuto Revalida</p>
-                    </div>
-                </div>
+          
+<!--     
+                <script>
+                var xValues = ["Santo Paulo", "Visconde De Nicolau", "Maria da Graça", "Santa Fé", "NovaClinica"];
+                var yValues = [0, 1, 0, 2, 0];
+                var barColors = [
+                  "#b91d47",
+                  "#00aba9",
+                  "#2b5797",
+                  "#e8c3b9",
+                  "#1e7145"
+                ];
+                
+                new Chart("myChart", {
+                  type: "pie",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      backgroundColor: barColors,
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: "Consultas Agendadas em 2021"
+                    }
+                  }
+                });
+                </script>
+                      -->
+              
             </div>
+            
+         
             <!-- /.row -->
         </div>
         <!-- /#treinamentos -->
-    </div>
-    <!-- /#app -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.12.4.min.js"></script>
