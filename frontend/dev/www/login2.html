@@ -1,54 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../dist/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../scss/login.css">
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../dist/css/main.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../scss/login.css" rel="stylesheet" type="text/css" media="all" />
+
 </head>
+
 <body>
+	<div class="container">
 
-<div class="container">
-    <div id="login" class="login">
-      <div class="login-icon-field">
-        <div class="img">
-          <img class="pqpnaoaguentomais" src="../img/icon.png" alt="">
-        </div>
-      </div>
-      <div class="login-form">
-        <form class="centraliza" id="formLogin">
+		<container class="container-login">
+			<div class="info-boas-vindas">
+				<div class="info-menu-esquerdo">
+					<h1>Bem vindo a MEDQUERY</h1>
+					<p>Com o MEDQUERY é possível agendar consultas médicas rapidamente em sua região,
+						com o sistema de pré-prescrição online o atendimento é dinamico, sem esperas
+						em fila e atendimento diretamente com o médico.
+					</p>
+				</div>
+			</div>
+			<div class="form-login">
+				<div class="logo-empresa">
 
-                <tr>  
-                    <td><input class="inputLogin" required class="username-row" type="text" name="name" id="username-row" placeholder="Login"></td>
-                </tr>
+				</div>
+				<form>
+					<div class="input-login">
+						<span><i class="txt txt-login"></i></span>
+						<input type="text" placeholder="Login" required="">
+					</div>
+					<div class="input-login">
+						<span><i class="txt txt-login"></i></span>
+						<input type="password" placeholder="Senha" required="">
+					</div>
+					<p onclick="cadastroLogin()">Ainda não tem conta? <a>Cadastre-se</a></p>
+					<button class="button button-login button-display-block" type="submit">Acessar conta</button>
+				</form>
+			</div>
+		</container>
 
-                    <td><input class="inputLogin" required class="password-row" type="password" name="password" id="password-row" placeholder="Senha"></td>
-                </div>
+	</div>
 
-                <button id="login-button" onclick="formLogin()">Entrar</button>
-  
-      <p onclick="cadastroLogin()">Ainda não tem conta? </p>
-    </form>
-    </div>
-</div>
+	<div class="modalCadastro">
+		<div class="download-window-fade">
+			<div class="download-window">
+				<header-download>
+					<div>
+						Cadastro Usuário
+					</div>
+					<div class="download-window__btn-close" onclick="fechaModalDownload()">
+						x
+					</div>
+				</header-download>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../dist/jquery-1.12.4.min.js"></script>
+				<main-download>
+					<div class="download-window__area--select">
+
+						<form class="formulario cadastro" id="formCadastroClinica"
+							onsubmit="consultaAPIController.cadastroClinica(event)">
+
+							<label class="labelCadastro">
+								<span>Login:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Senha:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Nome:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>CPF:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Estado:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Cidade:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Bairro:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Telefone:</span>
+								<input class="inputCadastro name=">
+							</label>
+							<label class="labelCadastro">
+								<span>Email:</span>
+								<input class="inputCadastro name=">
+							</label>
+
+							<button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Cadastrar</button>
+
+						</form>
+
+					</div>
+				</main-download>
+
+				<footer-download class="feedbackCadastro">
+
+				</footer-download>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.12.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="../../dist/bootstrap.min.js"></script>
-    <script src="../../dist/vue.js"></script>
-    <script src="../www/js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../www/js/grafico.js"></script>
+    <script src="js/grafico.js"></script>
     <script src="https://apis.google.com/js/auth.js"></script>
-    <script src="../www/js/consultaApi.js"></script>
-    <script src="../www/js/app/models/Apostila.js"></script>
-    <script src="../www/js/login.js"></script>
-    <script src="../www/js/app/models/ListaConsultaAPI.js"></script>
-    <script src="../www/js/app/controllers/ConsultaAPIController.js"></script>
-    <script src="../www/js/app/controllers/ConsultaAPIControllerFuncionario.js"></script>
-    <script src="../www/js/app/views/ConsultaAPIView.js"></script>
-
+    <script src="js/consultaApi.js"></script>
+    <script src="js/app/models/Apostila.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/app/models/ListaConsultaAPI.js"></script>
+    <script src="js/app/controllers/ConsultaAPIController.js"></script>
+    <script src="js/app/controllers/ConsultaAPIControllerFuncionario.js"></script>
+    <script src="js/app/views/ConsultaAPIView.js"></script>
 </body>
+
 </html>
