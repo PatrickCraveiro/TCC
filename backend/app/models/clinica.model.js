@@ -54,8 +54,8 @@ Clinica.getAll = result => {
 
 Clinica.updateById = (id, clinica, result) => {
   sql.query(
-    "UPDATE clinica SET email = ?, name = ?, active = ? WHERE id = ?",
-    [clinica.email, clinica.name, clinica.active, id],
+    "UPDATE clinica SET email = ?, nome = ?, cidade = ? WHERE id = ?",
+    [clinica.CNPJ, clinica.nome, clinica.cidade, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
