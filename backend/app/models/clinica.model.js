@@ -8,7 +8,7 @@ const Clinica = function(clinica) {
 };
 
 Clinica.create = (newClinica, result) => {
-  sql.query("INSERT INTO clinica SET ?", newClinica, (err, res) => {
+  sql.query("INSERT INTO clinica SET", newClinica, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
