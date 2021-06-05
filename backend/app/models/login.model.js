@@ -1,27 +1,27 @@
 const sql = require(".//db.js");
 
 // constructor
-const login = function(login) {
+const Login = function(login) {
   this.login = login.login;
   this.senha = login.senha;
   this.email = login.email;
   this.email = login.adm;
 };
 
-login.create = (newlogin, result) => {
-  sql.query("INSERT INTO login SET ?", newlogin, (err, res) => {
+Login.create = (newLogin, result) => {
+  sql.query("INSERT INTO login SET ?", newLogin, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created login: ", { id: res.insertId, ...newlogin });
-    result(null, { id: res.insertId, ...newlogin });
+    console.log("created login: ", { id: res.insertId, ...newLogin });
+    result(null, { id: res.insertId, ...newLogin });
   });
 };
 
-login.findById = (loginId, result) => {
+Login.findById = (loginId, result) => {
   sql.query(`SELECT * FROM login WHERE id = ${loginId}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -40,7 +40,7 @@ login.findById = (loginId, result) => {
   });
 };
 
-login.getAll = result => {
+Login.getAll = result => {
   sql.query("SELECT * FROM login", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -53,7 +53,7 @@ login.getAll = result => {
   });
 };
 
-login.updateById = (id, login, result) => {
+Login.updateById = (id, login, result) => {
   sql.query(
     "UPDATE login SET login = ?, senha = ?, email = ? WHERE id = ?",
     [login.login, login.senha, login.email, id],
@@ -76,7 +76,7 @@ login.updateById = (id, login, result) => {
   );
 };
 
-login.remove = (id, result) => {
+Login.remove = (id, result) => {
   sql.query("DELETE FROM login WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -95,7 +95,7 @@ login.remove = (id, result) => {
   });
 };
 
-login.removeAll = result => {
+Login.removeAll = result => {
   sql.query("DELETE FROM login", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -108,4 +108,4 @@ login.removeAll = result => {
   });
 };
 
-module.exports = login;
+module.exports = Login;
