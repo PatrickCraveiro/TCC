@@ -40,15 +40,15 @@ exports.create = (req, res) => {
 
 
   exports.findOne = (req, res) => {
-    Clinica.findById(req.params.clinicaId, (err, data) => {
+    Clinica.findById(req.params.clinicaCNPJ, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Clinica with id ${req.params.clinicaId}.`
+            message: `Not found Clinica with CNPJ ${req.params.clinicaCNPJ}.`
           });
         } else {
           res.status(500).send({
-            message: "Error retrieving Clinica with id " + req.params.clinicaId
+            message: "Error retrieving Clinica with CNPJ " + req.params.clinicaCNPJ
           });
         }
       } else res.send(data);
@@ -70,11 +70,11 @@ exports.create = (req, res) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Not found Clinica with id ${req.params.clinicaId}.`
+              message: `Not found Clinica with CNPJ ${req.params.clinicaCNPJ}.`
             });
           } else {
             res.status(500).send({
-              message: "Error updating Clinica with id " + req.params.clinicaId
+              message: "Error updating Clinica with CNPJ " + req.params.clinicaCNPJ
             });
           }
         } else res.send(data);
@@ -83,15 +83,15 @@ exports.create = (req, res) => {
   };
 
   exports.delete = (req, res) => {
-    Clinica.remove(req.params.clinicaId, (err, data) => {
+    Clinica.remove(req.params.clinicaCNPJ, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Clinica with id ${req.params.clinicaId}.`
+            message: `Not found Clinica with CNPJ ${req.params.clinicaCNPJ}.`
           });
         } else {
           res.status(500).send({
-            message: "Could not delete Clinica with id " + req.params.clinicaId
+            message: "Could not delete Clinica with CNPJ " + req.params.clinicaCNPJ
           });
         }
       } else res.send({ message: `Clinica was deleted successfully!` });

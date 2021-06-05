@@ -15,13 +15,13 @@ Clinica.create = (newClinica, result) => {
       return;
     }
 
-    console.log("created clinica: ", { id: res.insertId, ...newClinica });
-    result(null, { id: res.insertId, ...newClinica });
+    console.log("created clinica: ", { CNPJ: res.insertCNPJ, ...newClinica });
+    result(null, { CNPJ: res.insertCNPJ, ...newClinica });
   });
 };
 
-Clinica.findById = (clinicaId, result) => {
-  sql.query(`SELECT * FROM clinica WHERE id = ${clinicaId}`, (err, res) => {
+Clinica.findById = (clinicaCNPJ, result) => {
+  sql.query(`SELECT * FROM clinica WHERE id = ${clinicaCNPJ}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -52,10 +52,10 @@ Clinica.getAll = result => {
   });
 };
 
-Clinica.updateById = (id, clinica, result) => {
+Clinica.updateById = (CNPJ, clinica, result) => {
   sql.query(
-    "UPDATE clinica SET email = ?, nome = ?, cidade = ? WHERE id = ?",
-    [clinica.CNPJ, clinica.nome, clinica.cidade, id],
+    "UPDATE clinica SET CNPJ = ?, nome = ?, cidade = ? WHERE CNPJ = ?",
+    [clinica.CNPJ, clinica.nome, clinica.cidade, CNPJ],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -69,14 +69,14 @@ Clinica.updateById = (id, clinica, result) => {
         return;
       }
 
-      console.log("updated clinica: ", { id: id, ...clinica });
-      result(null, { id: id, ...clinica });
+      console.log("updated clinica: ", { CNPJ: CNPJ, ...clinica });
+      result(null, { CNPJ: CNPJ, ...clinica });
     }
   );
 };
 
-Clinica.remove = (id, result) => {
-  sql.query("DELETE FROM clinica WHERE id = ?", id, (err, res) => {
+Clinica.remove = (CNPJ, result) => {
+  sql.query("DELETE FROM clinica WHERE CNPJ = ?", CNPJ, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -89,7 +89,7 @@ Clinica.remove = (id, result) => {
       return;
     }
 
-    console.log("deleted clinica with id: ", id);
+    console.log("deleted clinica with CNPJ: ", CNPJ);
     result(null, res);
   });
 };
