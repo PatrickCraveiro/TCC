@@ -2,7 +2,7 @@ const sql = require(".//db.js");
 
 // constructor
 const Login = function(login) {
-  this.login = login.login;
+  this.LOGIN = login.LOGIN;
   this.senha = login.senha;
   this.email = login.email;
   this.email = login.adm;
@@ -16,13 +16,13 @@ Login.create = (newLogin, result) => {
       return;
     }
 
-    console.log("created login: ", { login: res.insertlogin, ...newLogin });
-    result(null, { login: res.insertlogin, ...newLogin });
+    console.log("created login: ", { LOGIN: res.insertLOGIN, ...newLogin });
+    result(null, { LOGIN: res.insertLOGIN, ...newLogin });
   });
 };
 
-Login.findById = (loginlogin, result) => {
-  sql.query(`SELECT * FROM login WHERE login = ${loginlogin}`, (err, res) => {
+Login.findById = (loginLOGIN, result) => {
+  sql.query(`SELECT * FROM login WHERE LOGIN = ${loginLOGIN}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -53,10 +53,10 @@ Login.getAll = result => {
   });
 };
 
-Login.updateById = (login, login, result) => {
+Login.updateById = (LOGIN, login, result) => {
   sql.query(
-    "UPDATE login SET login = ?, senha = ?, email = ?, adm = ? WHERE login = ?",
-    [login.login, login.senha, login.email, login.adm, login],
+    "UPDATE login SET LOGIN = ?, senha = ?, email = ?, adm = ? WHERE login = ?",
+    [login.LOGIN, login.senha, login.email, login.adm, LOGIN],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -70,14 +70,14 @@ Login.updateById = (login, login, result) => {
         return;
       }
 
-      console.log("updated login: ", { login: login, ...login });
-      result(null, { login: login, ...login });
+      console.log("updated login: ", { LOGIN: LOGIN, ...login });
+      result(null, { LOGIN: LOGIN, ...login });
     }
   );
 };
 
-Login.remove = (login, result) => {
-  sql.query("DELETE FROM login WHERE login = ?", login, (err, res) => {
+Login.remove = (LOGIN, result) => {
+  sql.query("DELETE FROM login WHERE LOGIN = ?", LOGIN, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -90,7 +90,7 @@ Login.remove = (login, result) => {
       return;
     }
 
-    console.log("deleted login with login: ", login);
+    console.log("deleted login with LOGIN: ", LOGIN);
     result(null, res);
   });
 };

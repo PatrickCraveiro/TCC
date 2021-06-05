@@ -10,7 +10,7 @@ exports.create = (req, res) => {
 
   // Create a login
   const login = new Login({
-    login: req.body.login,
+    LOGIN: req.body.LOGIN,
     senha: req.body.senha,
     email: req.body.email,
     adm: req.body.adm,
@@ -37,15 +37,15 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  Login.findById(req.params.loginlogin, (err, data) => {
+  Login.findById(req.params.loginLOGIN, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with login ${req.params.loginlogin}.`,
+          message: `Not found login with LOGIN ${req.params.loginLOGIN}.`,
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving login with login " + req.params.loginlogin,
+          message: "Error retrieving login with LOGIN " + req.params.loginLOGIN,
         });
       }
     } else res.send(data);
@@ -60,15 +60,15 @@ exports.update = (req, res) => {
     });
   }
 
-  Login.updateById(req.params.loginlogin, new Login(req.body), (err, data) => {
+  Login.updateById(req.params.loginLOGIN, new Login(req.body), (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with login ${req.params.loginlogin}.`,
+          message: `Not found login with LOGIN ${req.params.loginLOGIN}.`,
         });
       } else {
         res.status(500).send({
-          message: "Error updating login with login " + req.params.loginlogin,
+          message: "Error updating login with LOGIN " + req.params.loginLOGIN,
         });
       }
     } else res.send(data);
@@ -76,15 +76,15 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Login.remove(req.params.loginlogin, (err, data) => {
+  Login.remove(req.params.loginLOGIN, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with login ${req.params.loginlogin}.`,
+          message: `Not found login with LOGIN ${req.params.loginLOGIN}.`,
         });
       } else {
         res.status(500).send({
-          message: "Could not delete login with login " + req.params.loginlogin,
+          message: "Could not delete login with LOGIN " + req.params.loginLOGIN,
         });
       }
     } else res.send({ message: `login was deleted successfully!` });
