@@ -5,7 +5,7 @@ const Login = function(login) {
   this.LOGIN = login.LOGIN;
   this.senha = login.senha;
   this.email = login.email;
-  this.email = login.adm;
+  this.adm = login.adm;
 };
 
 Login.create = (newLogin, result) => {
