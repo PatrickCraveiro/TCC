@@ -279,44 +279,47 @@ function cadastroFuncionario() {
 function cadastroLogin() {
   let modalCadastro = document.createElement("div");
   modalCadastro.classList.add("modalCadastro");
-  modalCadastro.innerHTML = `<div class="download-window-fade"><div class="download-window">
+  modalCadastro.innerHTML = `<div class="download-window-fade">
+  <div class="download-window">
     <header-download>
-        <div>
-            Cadastro
-        </div>
-        <div class="download-window__btn-close" onclick="fechaModalDownload()">
-            x
-        </div>
+      <div>
+        Cadastro
+      </div>
+      <div class="download-window__btn-close" onclick="fechaModalDownload()">
+        x
+      </div>
     </header-download>
 
     <main-download>
-        <div class="download-window__area--select">
-        
-        <form class="formulario cadastro" id="formCadastroLogin2" onsubmit="consultaAPIController.cadastroLogin2(event)">
-  
-    <label class="labelCadastro">
-    <span>Login:</span>
-    <input class="inputCadastro name=">
-  </label>
-  <label class="labelCadastro">
-  <span>senha:</span>
-  <input class="inputCadastro name=">
-    </label>
-    <label class="labelCadastro">
-    <span>email da Clínica:</span>
-    <input class="inputCadastro name=">
-  </label>
+      <div class="download-window__area--select">
 
-<button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
-</form>
+        <form class="formulario cadastro" id="formCadastroLogin2"
+          onsubmit="consultaAPIController.cadastroLogin2(event)">
 
-        </div>
+          <label class="labelCadastro">
+            <span>Login:</span>
+            <input class="inputCadastro name=">
+          </label>
+          <label class="labelCadastro">
+            <span>senha:</span>
+            <input class="inputCadastro name=">
+          </label>
+          <label class="labelCadastro">
+            <span>email:</span>
+            <input class="inputCadastro name=">
+          </label>
+
+          <button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Consultar</button>
+        </form>
+
+      </div>
     </main-download>
 
     <footer-download class="feedbackCadastro">
 
     </footer-download>
-</div></div>`;
+  </div>
+</div>`;
   document.body.appendChild(modalCadastro);
 }
 
