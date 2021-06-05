@@ -16,13 +16,13 @@ Login.create = (newLogin, result) => {
       return;
     }
 
-    console.log("created login: ", { id: res.insertId, ...newLogin });
-    result(null, { id: res.insertId, ...newLogin });
+    console.log("created login: ", { login: res.insertlogin, ...newLogin });
+    result(null, { login: res.insertlogin, ...newLogin });
   });
 };
 
-Login.findById = (loginId, result) => {
-  sql.query(`SELECT * FROM login WHERE id = ${loginId}`, (err, res) => {
+Login.findById = (loginlogin, result) => {
+  sql.query(`SELECT * FROM login WHERE login = ${loginlogin}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -53,10 +53,10 @@ Login.getAll = result => {
   });
 };
 
-Login.updateById = (id, login, result) => {
+Login.updateById = (login, login, result) => {
   sql.query(
-    "UPDATE login SET login = ?, senha = ?, email = ? WHERE id = ?",
-    [login.login, login.senha, login.email, id],
+    "UPDATE login SET login = ?, senha = ?, email = ?, adm = ? WHERE login = ?",
+    [login.login, login.senha, login.email, login.adm, login],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -70,14 +70,14 @@ Login.updateById = (id, login, result) => {
         return;
       }
 
-      console.log("updated login: ", { id: id, ...login });
-      result(null, { id: id, ...login });
+      console.log("updated login: ", { login: login, ...login });
+      result(null, { login: login, ...login });
     }
   );
 };
 
-Login.remove = (id, result) => {
-  sql.query("DELETE FROM login WHERE id = ?", id, (err, res) => {
+Login.remove = (login, result) => {
+  sql.query("DELETE FROM login WHERE login = ?", login, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -85,12 +85,12 @@ Login.remove = (id, result) => {
     }
 
     if (res.affectedRows == 0) {
-      // not found login with the id
+      // not found login with the login
       result({ kind: "not_found" }, null);
       return;
     }
 
-    console.log("deleted login with id: ", id);
+    console.log("deleted login with login: ", login);
     result(null, res);
   });
 };

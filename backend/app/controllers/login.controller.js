@@ -37,15 +37,15 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  Login.findById(req.params.loginId, (err, data) => {
+  Login.findById(req.params.loginlogin, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with id ${req.params.loginId}.`,
+          message: `Not found login with login ${req.params.loginlogin}.`,
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving login with id " + req.params.loginId,
+          message: "Error retrieving login with login " + req.params.loginlogin,
         });
       }
     } else res.send(data);
@@ -60,15 +60,15 @@ exports.update = (req, res) => {
     });
   }
 
-  Login.updateById(req.params.loginId, new Login(req.body), (err, data) => {
+  Login.updateById(req.params.loginlogin, new Login(req.body), (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with id ${req.params.loginId}.`,
+          message: `Not found login with login ${req.params.loginlogin}.`,
         });
       } else {
         res.status(500).send({
-          message: "Error updating login with id " + req.params.loginId,
+          message: "Error updating login with login " + req.params.loginlogin,
         });
       }
     } else res.send(data);
@@ -76,15 +76,15 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Login.remove(req.params.loginId, (err, data) => {
+  Login.remove(req.params.loginlogin, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found login with id ${req.params.loginId}.`,
+          message: `Not found login with login ${req.params.loginlogin}.`,
         });
       } else {
         res.status(500).send({
-          message: "Could not delete login with id " + req.params.loginId,
+          message: "Could not delete login with login " + req.params.loginlogin,
         });
       }
     } else res.send({ message: `login was deleted successfully!` });

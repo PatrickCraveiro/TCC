@@ -8,13 +8,13 @@ module.exports = app => {
     app.get("/login", login.findAll);
   
     // Retrieve a single login with loginId
-    app.get("/login/:loginId", login.findOne);
+    app.get("/login/:loginlogin", login.findOne);
   
-    // Update a login with loginId
-    app.put("/login/:loginId", login.update);
+    // Update a login with loginlogin
+    app.put("/login/:loginlogin", login.update);
   
-    // Delete a login with loginId
-    app.delete("/login/:loginId", login.delete);
+    // Delete a login with loginlogin
+    app.delete("/login/:loginlogin", login.delete);
   
     // Create a new login
     app.delete("/login", login.deleteAll);
