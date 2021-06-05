@@ -2,9 +2,9 @@ const sql = require(".//db.js");
 
 // constructor
 const Clinica = function(clinica) {
-  this.CNPJ = clinica.CNPJ,
-  this.nome = clinica.nome,
-  this.cidade - clinica.cidade
+  this.CNPJ = clinica.CNPJ;
+  this.nome = clinica.nome;
+  this.cidade - clinica.cidade;
 };
 
 Clinica.create = (newClinica, result) => {

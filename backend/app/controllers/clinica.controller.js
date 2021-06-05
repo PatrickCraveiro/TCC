@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     const clinica = new Clinica({
       CNPJ: req.body.CNPJ,
       nome: req.body.nome,
-      cidade: req.body.cidade,
+      cidade: req.body.cidade
     });
   
     // Save Clinica in the database
