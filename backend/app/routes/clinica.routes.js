@@ -8,13 +8,13 @@ module.exports = app => {
     app.get("/clinica", clinica.findAll);
   
     // Retrieve a single Clinica with clinicaId
-    app.get("/clinica/:clinicaId", clinica.findOne);
+    app.get("/clinica/:clinicaCNPJ", clinica.findOne);
   
     // Update a Clinica with clinicaId
-    app.put("/clinica/:clinicaId", clinica.update);
+    app.put("/clinica/:clinicaCNPJ", clinica.update);
   
     // Delete a Clinica with clinicaId
-    app.delete("/clinica/:clinicaId", clinica.delete);
+    app.delete("/clinica/:clinicaCNPJ", clinica.delete);
   
     // Create a new Clinica
     app.delete("/clinica", clinica.deleteAll);

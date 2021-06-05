@@ -64,7 +64,7 @@ exports.create = (req, res) => {
     }
   
     Clinica.updateById(
-      req.params.clinicaId,
+      req.params.clinicaCNPJ,
       new Clinica(req.body),
       (err, data) => {
         if (err) {

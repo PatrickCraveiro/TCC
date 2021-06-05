@@ -21,7 +21,7 @@ Clinica.create = (newClinica, result) => {
 };
 
 Clinica.findById = (clinicaCNPJ, result) => {
-  sql.query(`SELECT * FROM clinica WHERE id = ${clinicaCNPJ}`, (err, res) => {
+  sql.query(`SELECT * FROM clinica WHERE CNPJ = ${clinicaCNPJ}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
