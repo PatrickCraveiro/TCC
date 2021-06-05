@@ -4,7 +4,7 @@ const sql = require(".//db.js");
 const Clinica = function(clinica) {
   this.CNPJ = clinica.CNPJ;
   this.nome = clinica.nome;
-  this.cidade - clinica.cidade;
+  this.cidade = clinica.cidade;
 };
 
 Clinica.create = (newClinica, result) => {
