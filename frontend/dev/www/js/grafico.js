@@ -276,6 +276,20 @@ function cadastroFuncionario() {
   document.querySelector(".button-cadastro").classList.add("verde");
 }
 
+function agendaConsulta(){
+  console.log('oi')
+  document.querySelector('#verificaConsulta').classList.replace('slide-in-bottom','slide-out-blurred-top')
+  document.querySelector('#agendaConsulta').classList.replace('slide-in-bottom','swirl-out-bck')
+
+  let modalazul = document.createElement('div')
+  modalazul.className ="swirl-in-fwd"
+
+  document.body.appendChild(modalazul)
+
+  let a = new ConsultaAPIController
+  a.cadastraConsulta()
+}
+
 function cadastroLogin() {
   let modalCadastro = document.createElement("div");
   modalCadastro.classList.add("modalCadastro");

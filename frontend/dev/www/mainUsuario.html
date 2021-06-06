@@ -7,43 +7,22 @@
 	<meta charset="utf-8">
 	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../../dist/css/main.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../scss/login.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../scss/login2.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
 <body>
-	<div class="container">
+	<div class="slide-in-bottom" id="agendaConsulta" onclick="agendaConsulta()">
+		<div class=" kenburns-top">
 
-		<container class="container-login">
-			<div class="info-boas-vindas">
-				<div class="info-menu-esquerdo">
-					<h1>Bem vindo a MEDQUERY</h1>
-					<p>Com o MEDQUERY é possível agendar consultas médicas rapidamente em sua região,
-						com o sistema de pré-prescrição online o atendimento é dinamico, sem esperas
-						em fila e atendimento diretamente com o médico.
-					</p>
-				</div>
-			</div>
-			<div class="form-login">
-				<div class="logo-empresa">
+		</div>
+		<p class="tracking-in-contract-bck">Agendar consulta</p>
+	</div>
+	<div class="slide-in-bottom" id="verificaConsulta" onclick="verificaConsulta()">
+		<div class=" kenburns-top">
 
-				</div>
-				<form class="formulario cadastro" id="formCadastroClinica" onsubmit="consultaAPIController.cadastroClinica(event)"> 
-					<div class="input-login">
-						<span><i class="txt txt-login"></i></span>
-						<input type="text" placeholder="Login">
-					</div>
-					<div class="input-login">
-						<span><i class="txt txt-login"></i></span>
-						<input type="password" placeholder="Senha">
-					</div>
-					<p onclick="cadastroLogin()">Ainda não tem conta? <a>Cadastre-se</a></p>
-					<button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Cadastrar</button>
-					<button class="button button-login button-display-block" id="algumacoisa" >Acessar conta</button>
-				</form>
-			</div>
-		</container>
-
+		</div>
+		<p class="tracking-in-contract-bck">Consultar</p>
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

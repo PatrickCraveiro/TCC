@@ -111,7 +111,7 @@ class ConsultaAPIController {
             });
           let feedbackCadastro = document.querySelector(".feedbackCadastro");
           feedbackCadastro.innerHTML =
-            "<p> Clínica cadastrada com sucesso. </p>";
+          `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
         },
       },
     ]);
@@ -196,7 +196,7 @@ class ConsultaAPIController {
             });
           let feedbackCadastro = document.querySelector(".feedbackCadastro");
           feedbackCadastro.innerHTML =
-            "<p> Clínica cadastrada com sucesso. </p>";
+            `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
         },
       },
     ]);
@@ -279,6 +279,16 @@ class ConsultaAPIController {
         },
       },
     ]);
+  }
+
+  realizaLogin(event){
+    event.preventDefault();
+    console.log('oias')
+  }
+
+  cadastraConsulta(){
+
+    console.log('cadastraConsulta')
   }
 
   consultaApostilasPermitidas(event) {
