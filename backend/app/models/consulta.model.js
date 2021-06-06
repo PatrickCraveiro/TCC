@@ -65,7 +65,7 @@ this.dataAtendimento = consulta.dataAtendimento;
 this.horarioAtendimento = consulta.horarioAtendimento;
 Consulta.updateById = (ID, consulta, result) => {
   sql.query(
-    "UPDATE consulta SET ID = ?, SET loginPaciente = ?, SET nomeClinica = ?, SET dataAtendimento = ?, horarioAtendimento = ? WHERE ID = ?",
+    "UPDATE consulta SET ID = ?, SET loginPaciente = ?, SET consulta.clinicaCNPJ = ?, SET nomeClinica = ?, SET dataAtendimento = ?, horarioAtendimento = ? WHERE ID = ?",
     [consulta.ID, consulta.loginPaciente, consulta.clinicaCNPJ, consulta.nomeClinica, consulta.dataAtendimento, consulta.horarioAtendimento, ID],
     (err, res) => {
       if (err) {
