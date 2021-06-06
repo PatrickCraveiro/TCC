@@ -41,16 +41,16 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  Consulta.findById(req.params.consultaCNPJ, (err, data) => {
+  Consulta.findById(req.params.consultaID, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Consulta with CNPJ ${req.params.consultaCNPJ}.`,
+          message: `Not found Consulta with ID ${req.params.consultaID}.`,
         });
       } else {
         res.status(500).send({
           message:
-            "Error retrieving Consulta with CNPJ " + req.params.consultaCNPJ,
+            "Error retrieving Consulta with ID " + req.params.consultaID,
         });
       }
     } else res.send(data);
@@ -66,18 +66,18 @@ exports.update = (req, res) => {
   }
 
   Consulta.updateById(
-    req.params.consultaCNPJ,
+    req.params.consultaID,
     new Consulta(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Consulta with CNPJ ${req.params.consultaCNPJ}.`,
+            message: `Not found Consulta with ID ${req.params.consultaID}.`,
           });
         } else {
           res.status(500).send({
             message:
-              "Error updating Consulta with CNPJ " + req.params.consultaCNPJ,
+              "Error updating Consulta with ID " + req.params.consultaID,
           });
         }
       } else res.send(data);
@@ -86,16 +86,16 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Consulta.remove(req.params.consultaCNPJ, (err, data) => {
+  Consulta.remove(req.params.consultaID, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Consulta with CNPJ ${req.params.consultaCNPJ}.`,
+          message: `Not found Consulta with ID ${req.params.consultaID}.`,
         });
       } else {
         res.status(500).send({
           message:
-            "Could not delete Consulta with CNPJ " + req.params.consultaCNPJ,
+            "Could not delete Consulta with ID " + req.params.consultaID,
         });
       }
     } else res.send({ message: `Consulta was deleted successfully!` });
