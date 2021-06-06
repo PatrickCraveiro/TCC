@@ -57,12 +57,6 @@ Consulta.getAll = (result) => {
     result(null, res);
   });
 };
-this.ID = consulta.ID;
-this.loginPaciente = consulta.loginPaciente;
-this.clinicaCNPJ = consulta.clinicaCNPJ;
-this.nomeClinica = consulta.nomeClinica;
-this.dataAtendimento = consulta.dataAtendimento;
-this.horarioAtendimento = consulta.horarioAtendimento;
 Consulta.updateById = (ID, consulta, result) => {
   sql.query(
     "UPDATE consulta SET ID = ?, SET loginPaciente = ?, SET consulta.clinicaCNPJ = ?, SET nomeClinica = ?, SET dataAtendimento = ?, horarioAtendimento = ? WHERE ID = ?",
