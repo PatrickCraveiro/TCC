@@ -110,8 +110,7 @@ class ConsultaAPIController {
               return false;
             });
           let feedbackCadastro = document.querySelector(".feedbackCadastro");
-          feedbackCadastro.innerHTML =
-          `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
+          feedbackCadastro.innerHTML = `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
         },
       },
     ]);
@@ -140,7 +139,9 @@ class ConsultaAPIController {
               return false;
             });
 
-          let filtro = document.querySelector("#funcionarioConsultaSelect").value;
+          let filtro = document.querySelector(
+            "#funcionarioConsultaSelect"
+          ).value;
           const filtroTxt = document.querySelector(
             "#funcionarioConsultaText"
           ).value;
@@ -172,7 +173,7 @@ class ConsultaAPIController {
     form.idClinica = Number(formPreenchido[2].value);
     form.email = formPreenchido[1].value;
     form.nome = formPreenchido[0].value;
-    form.cargo = formCargo.value
+    form.cargo = formCargo.value;
 
     return LoadingPage.for([
       {
@@ -195,8 +196,7 @@ class ConsultaAPIController {
               return false;
             });
           let feedbackCadastro = document.querySelector(".feedbackCadastro");
-          feedbackCadastro.innerHTML =
-            `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
+          feedbackCadastro.innerHTML = `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
         },
       },
     ]);
@@ -207,57 +207,15 @@ class ConsultaAPIController {
 
     let vm = this;
 
-    console.log('oi2222222')
-
-    // console.log('isso')
-
-    
-    // let form = {};
-    // let formPreenchido = document.querySelectorAll(
-    //   "formCadastroLogin >*> input"
-    // );
-
-    // form.login = 0;
-    // form.senha = Number(formPreenchido[2].value);
-    // form.email = formPreenchido[1].value;
-    // form.adm = false;
-
-    // console.log(form)
-
-    // return LoadingPage.for([
-    //   {
-    //     description: "Pesquisando Clínicas",
-    //     promise: async () => {
-    //       const response = await fetch("http://localhost:3050/login", {
-    //         method: "POST",
-    //         mode: "cors",
-    //         cache: "no-cache",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(form),
-    //       })
-    //         .then((response) => {
-    //           return response.json();
-    //         })
-    //         .catch((rejected) => {
-    //           console.error("Erro na requisição", rejected);
-    //           return false;
-    //         });
-    //       let feedbackCadastro = document.querySelector(".feedbackCadastro");
-    //       feedbackCadastro.innerHTML =
-    //         "<p> cadastrado com sucesso </p>";
-    //     },
-    //   },
-    // ]);
+    console.log("oi2222222");
   }
 
-  async formLogin(){
+  async formLogin() {
     let formLogin = document.querySelector("#formLogin");
-    console.log(formLogin[0].value)
+    console.log(formLogin[0].value);
 
     let formPreenchido = {};
-    
+
     formPreenchido.login = formLogin[0].value;
     formPreenchido.senha = formLogin[1].value;
 
@@ -266,7 +224,7 @@ class ConsultaAPIController {
         description: "Fazendo login",
         promise: async () => {
           const response = await fetch("http://localhost:3050/logins", {
-            method: "GET"
+            method: "GET",
           })
             .then((response) => {
               return response.json();
@@ -275,20 +233,35 @@ class ConsultaAPIController {
               console.error("Erro na requisição", rejected);
               return false;
             });
-          console.log(response)
+          console.log(response);
         },
       },
     ]);
   }
 
-  realizaLogin(event){
+  realizaLogin(event) {
     event.preventDefault();
-    console.log('oias')
+    console.log("oias");
   }
 
-  cadastraConsulta(){
+  async cadastraConsulta() {
+    let vm = this;
+    let cadastraConsulta = new CadastraConsulta(
+      document.querySelector(".swirl-in-fwd")
+    );
+    const response = await fetch("http://18.231.113.43:3050/clinica", {
+      method: "GET",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .catch((rejected) => {
+        console.error("Erro na requisição", rejected);
+        return false;
+      });
 
-    console.log('cadastraConsulta')
+    cadastraConsulta.update(response);
+    console.log(response);
   }
 
   consultaApostilasPermitidas(event) {

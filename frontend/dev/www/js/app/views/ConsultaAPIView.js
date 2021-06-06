@@ -139,6 +139,27 @@ class ConsultaFuncionario {
   }
 }
 
+class CadastraConsulta {
+  constructor(elemento) {
+    this._elemento = elemento;
+  }
+
+  update(model) {
+    this._elemento.innerHTML = `
+        <div class="row">
+        ${model.map((n) => {
+          {
+            return `
+            <div class="slide-in-right">
+            <p>${n.CNPJ}</p>
+            <p>${n.nomel}</p>
+            <p>${n.cidade}</p>
+            </div>`;
+          }
+        })}`;
+  }
+}
+
 class ConsultaAPIView {
   constructor(elemento) {
     this._elemento = elemento;
