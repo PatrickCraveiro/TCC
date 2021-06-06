@@ -8,13 +8,13 @@ module.exports = app => {
     app.get("/consulta", consulta.findAll);
   
     // Retrieve a single Consulta with consultaId
-    app.get("/consulta/:consultaCNPJ", consulta.findOne);
+    app.get("/consulta/:consultaID", consulta.findOne);
   
     // Update a Consulta with consultaId
-    app.put("/consulta/:consultaCNPJ", consulta.update);
+    app.put("/consulta/:consultaID", consulta.update);
   
     // Delete a Consulta with consultaId
-    app.delete("/consulta/:consultaCNPJ", consulta.delete);
+    app.delete("/consulta/:consultaID", consulta.delete);
   
     // Create a new Consulta
     app.delete("/consulta", consulta.deleteAll);
