@@ -146,15 +146,15 @@ class CadastraConsulta {
 
   update(model) {
     this._elemento.innerHTML = `
-        <div class="row">
+        <div class="row consultaContainer">
         ${model.map((n) => {
           {
             return `
-            <div class="slide-in-right">
-            <p>${n.CNPJ}</p>
-            <p>${n.nomel}</p>
-            <p>${n.cidade}</p>
-            </div>`;
+            <div onclick="this.setAttribute('clinicaEscolhida',''), a8()" class="slide-in-right">
+            <p id="cnpjCosulta">${n.CNPJ}</p>
+            <p id="nomeCosulta">${n.nomel}</p>
+            <p id="cidade">${n.cidade}</p>
+            </div>`
           }
         })}`;
   }
