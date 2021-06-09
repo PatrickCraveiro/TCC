@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     nomeFuncionario: req.body.nomeFuncionario,
     cargoFuncionario: req.body.cargoFuncionario,
     clinicaCNPJ: req.body.clinicaCNPJ,
-    nomeFuncionario: req.body.nomeFuncionario,
+    nomeClinica: req.body.nomeClinica,
     dataContracao: req.body.dataContracao,
   });
 

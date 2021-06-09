@@ -7,7 +7,7 @@ const Funcionario = function (funcionario) {
   this.nomeFuncionario = funcionario.nomeFuncionario;
   this.cargoFuncionario = funcionario.cargoFuncionario;
   this.clinicaCNPJ = funcionario.clinicaCNPJ;
-  this.nomeFuncionario = funcionario.nomeFuncionario;
+  this.nomeClinica = funcionario.nomeClinica;
   this.dataContracao = funcionario.dataContracao;
 };
 
@@ -64,14 +64,14 @@ Funcionario.getAll = (result) => {
 
 Funcionario.updateById = (ID, funcionario, result) => {
   sql.query(
-    "UPDATE funcionario SET ID = ?, cpfFuncionario = ?, nomeFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, nomeFuncionario = ?, dataContracao = ? WHERE ID = ?",
+    "UPDATE funcionario SET ID = ?, cpfFuncionario = ?, nomeFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, nomeClinica = ?, dataContracao = ? WHERE ID = ?",
     [
       funcionario.ID,
       funcionario.cpfFuncionario,
       funcionario.nomeFuncionario,
       funcionario.cargoFuncionario,
       funcionario.clinicaCNPJ,
-      funcionario.nomeFuncionario,
+      funcionario.nomeClinica,
       funcionario.dataContracao,
       ID,
     ],
