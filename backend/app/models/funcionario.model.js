@@ -1,7 +1,7 @@
 const sql = require(".//db.js");
 
 // constructor
-const funcionario = function(funcionario) {
+const Funcionario = function(funcionario) {
   this.ID = funcionario.ID;
   this.nomeFuncionario = funcionario.nomeFuncionario;
   this.emailFuncionario = funcionario.emailFuncionario;
@@ -12,7 +12,7 @@ const funcionario = function(funcionario) {
   this.dataContracao = funcionario.dataContracao;
 };
 
-funcionario.create = (newfuncionario, result) => {
+Funcionario.create = (newfuncionario, result) => {
   sql.query("INSERT INTO funcionario SET ?", newfuncionario, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -25,7 +25,7 @@ funcionario.create = (newfuncionario, result) => {
   });
 };
 
-funcionario.findById = (funcionarioId, result) => {
+Funcionario.findById = (funcionarioId, result) => {
   sql.query(`SELECT * FROM funcionario WHERE ID = ${funcionarioId}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -44,7 +44,7 @@ funcionario.findById = (funcionarioId, result) => {
   });
 };
 
-funcionario.getAll = result => {
+Funcionario.getAll = result => {
   sql.query("SELECT * FROM funcionario", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -56,7 +56,7 @@ funcionario.getAll = result => {
     result(null, res);
   });
 };
-funcionario.updateById = (ID, funcionario, result) => {
+Funcionario.updateById = (ID, funcionario, result) => {
   sql.query(
     "UPDATE funcionario SET ID = ?, nomeFuncionario = ?, emailFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, nomeClinica = ?, idClinica = ? dataContraca = ? WHERE ID = ?",
     [funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.clinicaCNPJ, funcionario.nomeClinica, funcionario.idClinica, funcionario.dataContracao, ID],
@@ -79,7 +79,7 @@ funcionario.updateById = (ID, funcionario, result) => {
   );
 };
 
-funcionario.remove = (ID, result) => {
+Funcionario.remove = (ID, result) => {
   sql.query("DELETE FROM funcionario WHERE ID = ?", ID, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -98,7 +98,7 @@ funcionario.remove = (ID, result) => {
   });
 };
 
-funcionario.removeAll = result => {
+Funcionario.removeAll = result => {
   sql.query("DELETE FROM funcionario", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -111,4 +111,4 @@ funcionario.removeAll = result => {
   });
 };
 
-module.exports = funcionario;
+module.exports = Funcionario;

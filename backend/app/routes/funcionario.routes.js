@@ -1,5 +1,5 @@
 module.exports = app => {
-    const funcionario = require("..//controllers//funcionario.controller.js");
+    const funcionario = require("../controllers/funcionario.controller.js");
   
     // Create a new Clinica
     app.post("/funcionario", funcionario.create);

@@ -1,4 +1,4 @@
-const funcionario = require("../models/funcionario.model.js");
+const Funcionario = require("../models/funcionario.model.js");
 
 exports.create = (req, res) => {
   // Validate request
@@ -9,7 +9,7 @@ exports.create = (req, res) => {
   }
 
   // Create a Clinica
-  const funcionario = new funcionario({
+  const funcionario = new Funcionario({
     ID: req.body.ID,
     cpfFuncionario: req.body.cpfFuncionario,
     nomeFuncionario: req.body.nomeFuncionario,
@@ -21,7 +21,7 @@ exports.create = (req, res) => {
   });
 
   // Save Clinica in the database
-  funcionario.create(funcionario, (err, data) => {
+  Funcionario.create(funcionario, (err, data) => {
     if (err)
       res.status(500).send({
         message:
@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  funcionario.getAll((err, data) => {
+  Funcionario.getAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
@@ -44,15 +44,15 @@ exports.findAll = (req, res) => {
 
 
 exports.findOne = (req, res) => {
-  funcionario.findById(req.params.funcionarioId, (err, data) => {
+  Funcionario.findByID(req.params.funcionarioID, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Clinica with id ${req.params.funcionarioId}.`
+          message: `Not found Clinica with id ${req.params.funcionarioID}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Clinica with id " + req.params.funcionarioId
+          message: "Error retrieving Clinica with id " + req.params.funcionarioID
         });
       }
     } else res.send(data);
@@ -67,18 +67,18 @@ exports.update = (req, res) => {
     });
   }
 
-  funcionario.updateById(
-    req.params.funcionarioId,
+  Funcionario.updateByID(
+    req.params.funcionarioID,
     new funcionario(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Clinica with id ${req.params.funcionarioId}.`
+            message: `Not found Clinica with id ${req.params.funcionarioID}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Clinica with id " + req.params.funcionarioId
+            message: "Error updating Clinica with id " + req.params.funcionarioID
           });
         }
       } else res.send(data);
@@ -87,15 +87,15 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  funcionario.remove(req.params.funcionarioId, (err, data) => {
+  Funcionario.remove(req.params.funcionarioID, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Clinica with id ${req.params.funcionarioId}.`
+          message: `Not found Clinica with id ${req.params.funcionarioID}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Clinica with id " + req.params.funcionarioId
+          message: "Could not delete Clinica with id " + req.params.funcionarioID
         });
       }
     } else res.send({ message: `Clinica was deleted successfully!` });
@@ -103,7 +103,7 @@ exports.delete = (req, res) => {
 };
 
 exports.deleteAll = (req, res) => {
-  funcionario.removeAll((err, data) => {
+  Funcionario.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
