@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require("./app/routes/clinica.routes.js")(app);
 require("./app/routes/login.routes.js")(app);
 require("./app/routes/consulta.routes.js")(app);
-require("./app/routes/funcionario.routes.js")(app);
+// require("./app/routes/funcionario.routes.js")(app);
 
 // set port, listen for requests
 app.listen(3050, () => {
