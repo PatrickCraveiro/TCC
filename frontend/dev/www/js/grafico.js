@@ -234,6 +234,10 @@ function cadastroFuncionario() {
     <input class="inputCadastro name=">
   </label>
   <label class="labelCadastro">
+  <span>CPF:</span>
+  <input class="inputCadastro name=">
+</label>
+  <label class="labelCadastro">
   <span>Email:</span>
   <input class="inputCadastro name=">
     </label>
@@ -242,15 +246,25 @@ function cadastroFuncionario() {
     <input class="inputCadastro name=">
   </label>
   <label class="labelCadastro">
+  <span>Nome Clinica:</span>
+  <input class="inputCadastro name=">
+</label>
+<label class="labelCadastro">
+<span>data da admissão:</span>
+<input class="inputCadastro name=">
+</label>
+  <label class="labelCadastro">
   <span>Cargo:</span>
   <select name="select">
   <option>Enfermeiro</option>
-  <option> selected>Médico</option>
+  <option>Desenvolvedor</option>
+  <option selected> Médico</option>
   <option>ADM</option>
   <option>Auxiliar de serviços gerais</option>
   <option>Recepcionista</option>
 </select>
 </label>
+
 
 <button type="submit" class="cadastro btn-primary btn-sm btn-graficos">Cadastrar</button>
   
