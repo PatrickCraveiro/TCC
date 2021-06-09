@@ -59,7 +59,7 @@ Funcionario.getAll = result => {
 Funcionario.updateById = (ID, funcionario, result) => {
   sql.query(
     "UPDATE funcionario SET ID = ?, cpfFuncionario = ?, nomeFuncionario = ?, emailFuncionario = ?, cargoFuncionario = ?, nomeClinica = ?, dataContracao = ? WHERE ID = ?",
-    [funcionario.cpfFuncionario, funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.nomeClinica, funcionario.dataContracao, ID],
+    [funcionario.ID, funcionario.cpfFuncionario, funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.nomeClinica, funcionario.dataContracao, ID],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
