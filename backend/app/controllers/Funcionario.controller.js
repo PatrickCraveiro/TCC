@@ -1,4 +1,4 @@
-const Funcionario = require("../models/funcionario.model.js");
+const Funcionario = require("..//models//funcionario.model.js");
 
 exports.create = (req, res) => {
   // Validate request
