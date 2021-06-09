@@ -10,10 +10,14 @@ exports.create = (req, res) => {
 
   // Create a Clinica
   const funcionario = new funcionario({
-    id: req.body.id,
-    email: req.body.email,
-    nome: req.body.nome,
-    cargo: req.body.cargo
+    ID: req.body.ID,
+    cpfFuncionario: req.body.cpfFuncionario,
+    nomeFuncionario: req.body.nomeFuncionario,
+    emailFuncionario: req.body.emailFuncionario,
+    cargoFuncionario: req.body.cargoFuncionario,
+    clinicaCNPJ: req.body.clinicaCNPJ,
+    nomeClinica: req.body.nomeClinica,
+    dataContracao: req.body.dataContracao
   });
 
   // Save Clinica in the database

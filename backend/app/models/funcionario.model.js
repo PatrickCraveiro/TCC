@@ -2,10 +2,14 @@ const sql = require(".//db.js");
 
 // constructor
 const funcionario = function(funcionario) {
-  this.nome = funcionario.nome;
-  this.email = funcionario.email;
+  this.ID = funcionario.ID;
+  this.nomeFuncionario = funcionario.nomeFuncionario;
+  this.emailFuncionario = funcionario.emailFuncionario;
+  this.cargoFuncionario = funcionario.cargoFuncionario;
+  this.clinicaCNPJ = funcionario.clinicaCNPJ;
+  this.nomeClinica = funcionario.nomeClinica;
   this.idClinica = funcionario.idClinica;
-  this.cargo = funcionario.cargo;
+  this.dataContracao = funcionario.dataContracao;
 };
 
 funcionario.create = (newfuncionario, result) => {
@@ -16,13 +20,13 @@ funcionario.create = (newfuncionario, result) => {
       return;
     }
 
-    console.log("created funcionario: ", { id: res.insertId, ...newfuncionario });
-    result(null, { id: res.insertId, ...newfuncionario });
+    console.log("created funcionario: ", { ID: res.insertId, ...newfuncionario });
+    result(null, { ID: res.insertId, ...newfuncionario });
   });
 };
 
 funcionario.findById = (funcionarioId, result) => {
-  sql.query(`SELECT * FROM funcionario WHERE id = ${funcionarioId}`, (err, res) => {
+  sql.query(`SELECT * FROM funcionario WHERE ID = ${funcionarioId}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -52,11 +56,10 @@ funcionario.getAll = result => {
     result(null, res);
   });
 };
-
-funcionario.updateById = (id, funcionario, result) => {
+funcionario.updateById = (ID, funcionario, result) => {
   sql.query(
-    "UPDATE funcionario SET email = ?, name = ?, active = ? WHERE id = ?",
-    [funcionario.email, funcionario.name, funcionario.active, id],
+    "UPDATE funcionario SET ID = ?, nomeFuncionario = ?, emailFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, nomeClinica = ?, idClinica = ? dataContraca = ? WHERE ID = ?",
+    [funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.clinicaCNPJ, funcionario.nomeClinica, funcionario.idClinica, funcionario.dataContracao, ID],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -70,14 +73,14 @@ funcionario.updateById = (id, funcionario, result) => {
         return;
       }
 
-      console.log("updated funcionario: ", { id: id, ...funcionario });
-      result(null, { id: id, ...funcionario });
+      console.log("updated funcionario: ", { ID: ID, ...funcionario });
+      result(null, { ID: ID, ...funcionario });
     }
   );
 };
 
-funcionario.remove = (id, result) => {
-  sql.query("DELETE FROM funcionario WHERE id = ?", id, (err, res) => {
+funcionario.remove = (ID, result) => {
+  sql.query("DELETE FROM funcionario WHERE ID = ?", ID, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -90,7 +93,7 @@ funcionario.remove = (id, result) => {
       return;
     }
 
-    console.log("deleted funcionario with id: ", id);
+    console.log("deleted funcionario with ID: ", ID);
     result(null, res);
   });
 };

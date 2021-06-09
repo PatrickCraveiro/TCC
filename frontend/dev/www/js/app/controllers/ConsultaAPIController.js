@@ -89,6 +89,8 @@ class ConsultaAPIController {
     form.nome = formPreenchido[0].value;
     form.cidade = formPreenchido[2].value;
 
+    console.log(form)
+
     return LoadingPage.for([
       {
         description: "Cadastrando Clínica",

@@ -7,14 +7,14 @@ module.exports = app => {
     // Retrieve all Clinica
     app.get("/funcionario", funcionario.findAll);
   
-    // Retrieve a single Clinica with funcionarioId
-    app.get("/funcionario/:funcionarioId", funcionario.findOne);
+    // Retrieve a single Clinica with funcionarioID
+    app.get("/funcionario/:funcionarioID", funcionario.findOne);
   
-    // Update a Clinica with funcionarioId
-    app.put("/funcionario/:funcionarioId", funcionario.update);
+    // Update a Clinica with funcionarioID
+    app.put("/funcionario/:funcionarioID", funcionario.update);
   
-    // Delete a Clinica with funcionarioId
-    app.delete("/funcionario/:funcionarioId", funcionario.delete);
+    // Delete a Clinica with funcionarioID
+    app.delete("/funcionario/:funcionarioID", funcionario.delete);
   
     // Create a new Clinica
     app.delete("/funcionario", funcionario.deleteAll);
