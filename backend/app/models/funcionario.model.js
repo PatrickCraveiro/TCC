@@ -12,21 +12,21 @@ const Funcionario = function(funcionario) {
   this.dataContracao = funcionario.dataContracao;
 };
 
-Funcionario.create = (newfuncionario, result) => {
-  sql.query("INSERT INTO funcionario SET ?", newfuncionario, (err, res) => {
+Funcionario.create = (newFuncionario, result) => {
+  sql.query("INSERT INTO funcionario SET ?", newFuncionario, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created funcionario: ", { ID: res.insertId, ...newfuncionario });
-    result(null, { ID: res.insertId, ...newfuncionario });
+    console.log("created funcionario: ", { ID: res.insertID, ...newFuncionario });
+    result(null, { ID: res.insertID, ...newFuncionario });
   });
 };
 
-Funcionario.findById = (funcionarioId, result) => {
-  sql.query(`SELECT * FROM funcionario WHERE ID = ${funcionarioId}`, (err, res) => {
+Funcionario.findById = (funcionarioID, result) => {
+  sql.query(`SELECT * FROM funcionario WHERE ID = ${funcionarioID}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
