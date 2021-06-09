@@ -3,12 +3,12 @@ const sql = require(".//db.js");
 // constructor
 const Funcionario = function(funcionario) {
   this.ID = funcionario.ID;
+  this.cpfFuncionario = funcionario.cpfFuncionario;
   this.nomeFuncionario = funcionario.nomeFuncionario;
   this.emailFuncionario = funcionario.emailFuncionario;
   this.cargoFuncionario = funcionario.cargoFuncionario;
   this.clinicaCNPJ = funcionario.clinicaCNPJ;
   this.nomeClinica = funcionario.nomeClinica;
-  this.idClinica = funcionario.idClinica;
   this.dataContracao = funcionario.dataContracao;
 };
 
@@ -58,8 +58,8 @@ Funcionario.getAll = result => {
 };
 Funcionario.updateById = (ID, funcionario, result) => {
   sql.query(
-    "UPDATE funcionario SET ID = ?, nomeFuncionario = ?, emailFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, nomeClinica = ?, dataContraca = ? WHERE ID = ?",
-    [funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.clinicaCNPJ, funcionario.nomeClinica, funcionario.dataContracao, ID],
+    "UPDATE funcionario SET ID = ?, cpfFuncionario = ?, nomeFuncionario = ?, emailFuncionario = ?, cargoFuncionario = ?, clinicaCNPJ = ?, dataContraca = ? WHERE ID = ?",
+    [funcionario.cpfFuncionario, funcionario.nomeFuncionario, funcionario.emailFuncionario, funcionario.cargoFuncionario, funcionario.nomeClinica, funcionario.dataContracao, ID],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
