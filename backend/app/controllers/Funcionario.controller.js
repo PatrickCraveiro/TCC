@@ -48,11 +48,11 @@ exports.findOne = (req, res) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Clinica with id ${req.params.funcionarioID}.`
+          message: `Not found Funcionario with id ${req.params.funcionarioID}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Clinica with id " + req.params.funcionarioID
+          message: "Error retrieving Funcionario with id " + req.params.funcionarioID
         });
       }
     } else res.send(data);
@@ -69,16 +69,16 @@ exports.update = (req, res) => {
 
   Funcionario.updateByID(
     req.params.funcionarioID,
-    new funcionario(req.body),
+    new Funcionario(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Clinica with id ${req.params.funcionarioID}.`
+            message: `Not found Funcionario with id ${req.params.funcionarioID}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Clinica with id " + req.params.funcionarioID
+            message: "Error updating Funcionario with id " + req.params.funcionarioID
           });
         }
       } else res.send(data);
