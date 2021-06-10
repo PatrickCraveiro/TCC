@@ -9,11 +9,14 @@ class CadastraConsulta {
           ${model.map((n) => {
             {
               return `
+
+    <div class="paiT">
+    <div class="iconHospital"></div>
               <div onclick="this.setAttribute('clinicaEscolhida',''), a8()" class="slide-in-right">
               <p id="cnpjCosulta">${n.CNPJ}</p>
               <p id="nomeCosulta">${n.nomel}</p>
               <p id="cidade">${n.cidade}</p>
-              </div>`;
+              </div></div>`;
             }
           })}`;
   }

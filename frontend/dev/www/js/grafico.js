@@ -281,7 +281,6 @@ function cadastroFuncionario() {
 }
 
 function agendaConsulta() {
-  console.log("oi");
   document
     .querySelector("#verificaConsulta")
     .classList.replace("slide-in-bottom", "slide-out-blurred-top");

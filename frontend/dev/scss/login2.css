@@ -272,6 +272,7 @@ p {
 }
 
 .swirl-in-fwd {
+	margin-top: 5%;
 	width: 60%;
 	height: 600px;
 	overflow: scroll;
@@ -370,4 +371,18 @@ p {
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
+}
+
+.paiT {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.iconHospital {
+    height: 55px;
+    width: 55px;
+    background: url(../img/hospital-svgrepo-com.svg);
+    margin-top: 7px;
 }
