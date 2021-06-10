@@ -89,7 +89,7 @@ class ConsultaAPIController {
     form.nome = formPreenchido[0].value;
     form.cidade = formPreenchido[2].value;
 
-    console.log(form)
+    console.log(form);
 
     return LoadingPage.for([
       {
@@ -130,9 +130,12 @@ class ConsultaAPIController {
       {
         description: "Pesquisando Funcionários",
         promise: async () => {
-          const response = await fetch("http://localhost:3050/funcionario", {
-            method: "GET",
-          })
+          const response = await fetch(
+            "http://18.231.113.43:3050/funcionario",
+            {
+              method: "GET",
+            }
+          )
             .then((response) => {
               return response.json();
             })
@@ -171,25 +174,30 @@ class ConsultaAPIController {
       "#formCadastroFuncionario >*> select"
     );
 
-    form.idFuncionario = 0;
-    form.idClinica = Number(formPreenchido[2].value);
-    form.email = formPreenchido[1].value;
-    form.nome = formPreenchido[0].value;
-    form.cargo = formCargo.value;
+    form.cpfFuncionario = formPreenchido[1].value;
+    form.nomeFuncionario = formPreenchido[0].value;
+    form.emailFuncionario = formPreenchido[2].value;
+    form.cargoFuncionario = formCargo.value;
+    form.clinicaCNPJ = Number(formPreenchido[3].value);
+    form.nomeClinica = formPreenchido[4].value;
+    form.dataContracao = formPreenchido[5].value;
 
     return LoadingPage.for([
       {
         description: "Pesquisando Clínicas",
         promise: async () => {
-          const response = await fetch("http://localhost:3050/funcionario", {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-          })
+          const response = await fetch(
+            "http://18.231.113.43:3050/funcionario",
+            {
+              method: "POST",
+              mode: "cors",
+              cache: "no-cache",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(form),
+            }
+          )
             .then((response) => {
               return response.json();
             })
@@ -209,7 +217,9 @@ class ConsultaAPIController {
 
     let vm = this;
 
-    console.log("oi2222222");
+    document.querySelector('.mainPageAdm').removeAttribute('style')
+    document.querySelector('.mainPageLogin').style.display = "none";
+
   }
 
   async formLogin() {

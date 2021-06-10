@@ -1,155 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="google-signin-scope" content="https://spreadsheets.google.com/feeds">
-    <meta name="google-signin-client_id"
-        content="898358535937-ufcu5f43nn8k25t1hi0r1ilirjon6r9q.apps.googleusercontent.com">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
     <link rel="icon" href="img/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TCC - MEDQUERY</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.min.css" rel="stylesheet" />
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
     <!-- <canvas id="myChart" style="width:100%; z-index: 99999999;"></canvas> -->
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container" id="app">
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" v-on:click="abaAtiva='relatorios'" href="javascript:;"
-                        onclick="location.reload()">MEDQUERY</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li v-bind:class="{active:abaAtiva=='relatorios'}" v-on:click="abaAtiva='relatorios'"
-                            onclick="location.reload()">
-                            <a href="javascript:;">ADMIN</a>
-                        </li>
-                        <li v-bind:class="{active:abaAtiva=='consultas'}" v-on:click="abaAtiva='consultas'">
-                            <a href="javascript:;">Consultas</a>
-                        </li>
-                        <li v-bind:class="{active:abaAtiva=='treinamento'}" v-on:click="abaAtiva='treinamento'">
-                            <a href="javascript:;">Relátorio</a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="mt-1"><img id="fotoPerfil" class="img-circle oculto" width="45px"></li>
-                        <li><span id="nome-usuario" class="texto-comum oculto"></span></li>
-                        <div id="botao-Google">
-                            <li class="mt-2">
-                                <div class="g-signin2" data-onsuccess="onSignIn" data-lang="pt-BR" id="botaoLogin">
-                                </div>
-                            </li>
-                        </div>
-                        <div id="botao-logout" style="display: none;">
-                            <li>
-                                <a href="#" onclick="deslogar();"><b class="texto-comum">Sair</b></a>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </nav>
-
-        <!-- #relatórios -->
-        <div class="container" v-if="abaAtiva=='relatorios'" id="relatorios">
-            <div class="row text-center">
-                <h1>Gerenciar Clinicas</h1>
-                <br>
-                <form class="form-inline" onsubmit="consultaAPIController.pesquisaClinica(event)">
-                    <!-- onchange="makeApiCall()" -->
-                    <select id="clinicaConsultaSelect" class="form-control">
-                        <option selected="selected">Todas</option>
-                        <option>CNPJ</option>
-                        <option>nome</option>
-                        <option>cidade</option>
-                    </select>
-                    <input type="text" id="clinicaConsultaText" class="form-control">
-                    <button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
-                </form>
-                <br>
-            </div>
-            <p class="button-cadastro" onclick="cadastro()">
-                Cadastrar nova Clínica
-            </p>
-
-            <div class="container pesquisaClinicaBtn">
-
-            </div>
-
-            <div class="row text-center">
-                <h1>Gerenciar Funcionários</h1>
-                <br>
-                <form class="form-inline" onsubmit="consultaAPIController.pesquisaFuncionario(event)">
-                    <!-- onchange="makeApiCall()" -->
-                    <select id="funcionarioConsultaSelect" class="form-control">
-                        <option selected="selected">Todos</option>
-                        <option>name</option>
-                        <option>email</option>
-                        <option value="Área Restrita">CIDADE</option>
-                    </select>
-                    <input type="text" id="funcionarioConsultaText" class="form-control">
-                    <button type="submit" class="admin btn-primary btn-sm btn-graficos">Consultar</button>
-                </form>
-                <br>
-            </div>
-            <p class="button-cadastro" onclick="cadastroFuncionario()">
-                Cadastrar nova Clínica
-            </p>
-            <div class="container pesquisaFuncionarioBtn">
-
-            </div>
-
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-expanded="false"
+              aria-controls="navbar"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a
+              class="navbar-brand"
+              v-on:click="abaAtiva='relatorios'"
+              href="javascript:;"
+              >MEDQUERY</a
+            >
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li
+                v-bind:class="{active:abaAtiva=='relatorios'}"
+                v-on:click="abaAtiva='relatorios'"
+              >
+                <a href="javascript:;">ADMIN</a>
+              </li>
+              <li
+                v-bind:class="{active:abaAtiva=='consultas'}"
+                v-on:click="abaAtiva='consultas'"
+              >
+                <a href="javascript:;">Consultas</a>
+              </li>
+              <li
+                v-bind:class="{active:abaAtiva=='treinamento'}"
+                v-on:click="abaAtiva='treinamento'"
+              >
+                <a href="javascript:;">Relátorio</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="mt-1">
+                <img id="fotoPerfil" class="img-circle oculto" width="45px" />
+              </li>
+              <li>
+                <span id="nome-usuario" class="texto-comum oculto"></span>
+              </li>
+              <div id="botao-Google">
+                <li class="mt-2">
+                  <div
+                    class="g-signin2"
+                    data-onsuccess="onSignIn"
+                    data-lang="pt-BR"
+                    id="botaoLogin"
+                  ></div>
+                </li>
+              </div>
+              <div id="botao-logout" style="display: none">
+                <li>
+                  <a href="#" onclick="deslogar();"
+                    ><b class="texto-comum">Sair</b></a
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
         </div>
+      </nav>
 
-        <div class="container" v-if="abaAtiva=='consultas'" id="consultas">
-            <div class="row">
-                <div class="col-md-offset-1">
-                    <p class="h3">
-                        Consultas -
-                        <small class="text-muted">API</small>
-                    </p>
-                </div>
-                <br />
-
-                <div class="text-center">
-                    <form class="form" onsubmit="consultaAPIController.consultaApostilasPermitidas(event)">
-                        <div class="form-group col-sm-3 col-md-3">
-                            <label for="ApostilasPermitidas">Apostilas Permitidas</label>
-                            <input class="form-control input-sm" type="text" id="" placeholder="ID Aluno" />
-                            <button type="submit" class="btn btn-default btn-sm">Consultar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- /row -->
-
-            <div id="ConsultaAPIView">
-
-            </div>
-
-
-
+      <!-- #relatórios -->
+      <div class="container" v-if="abaAtiva=='relatorios'" id="relatorios">
+        <div class="row text-center">
+          <h1>Gerenciar Clinicas</h1>
+          <br />
+          <form
+            class="form-inline"
+            onsubmit="consultaAPIController.pesquisaClinica(event)"
+          >
+            <!-- onchange="makeApiCall()" -->
+            <select id="clinicaConsultaSelect" class="form-control">
+              <option selected="selected">Todas</option>
+              <option>CNPJ</option>
+              <option>nome</option>
+              <option>cidade</option>
+            </select>
+            <input type="text" id="clinicaConsultaText" class="form-control" />
+            <button type="submit" class="admin btn-primary btn-sm btn-graficos">
+              Consultar
+            </button>
+          </form>
+          <br />
         </div>
-        <!-- /#consultas -->
-        <div class="container" v-if="abaAtiva=='treinamento'" id="treinamento">
+        <p class="button-cadastro" onclick="cadastro()">
+          Cadastrar nova Clínica
+        </p>
 
-            <!--     
+        <div class="container pesquisaClinicaBtn"></div>
+
+        <div class="row text-center">
+          <h1>Gerenciar Funcionários</h1>
+          <br />
+          <form
+            class="form-inline"
+            onsubmit="consultaAPIController.pesquisaFuncionario(event)"
+          >
+            <!-- onchange="makeApiCall()" -->
+            <select id="funcionarioConsultaSelect" class="form-control">
+              <option selected="selected">Todos</option>
+              <option>clinica onde trabalha</option>
+              <option>nome colaborador</option>
+              <option>cargo</option>
+              <option>data admissão</option>
+            </select>
+            <input
+              type="text"
+              id="funcionarioConsultaText"
+              class="form-control"
+            />
+            <button type="submit" class="admin btn-primary btn-sm btn-graficos">
+              Consultar
+            </button>
+          </form>
+          <br />
+        </div>
+        <p class="button-cadastro" onclick="cadastroFuncionario()">
+          Cadastrar nova Clínica
+        </p>
+        <div class="container pesquisaFuncionarioBtn"></div>
+      </div>
+
+      <div class="container" v-if="abaAtiva=='consultas'" id="consultas">
+        <div class="row">
+          <div class="col-md-offset-1">
+            <p class="h3">
+              Consultas -
+              <small class="text-muted">API</small>
+            </p>
+          </div>
+          <br />
+
+          <div class="text-center">
+            <form
+              class="form"
+              onsubmit="consultaAPIController.consultaApostilasPermitidas(event)"
+            >
+              <div class="form-group col-sm-3 col-md-3">
+                <label for="ApostilasPermitidas">Apostilas Permitidas</label>
+                <input
+                  class="form-control input-sm"
+                  type="text"
+                  id=""
+                  placeholder="ID Aluno"
+                />
+                <button type="submit" class="btn btn-default btn-sm">
+                  Consultar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /row -->
+
+        <div id="ConsultaAPIView"></div>
+      </div>
+      <!-- /#consultas -->
+      <div class="container" v-if="abaAtiva=='treinamento'" id="treinamento">
+        <!--     
                 <script>
                 var xValues = ["Santo Paulo", "Visconde De Nicolau", "Maria da Graça", "Santa Fé", "NovaClinica"];
                 var yValues = [0, 1, 0, 2, 0];
@@ -179,11 +214,9 @@
                 });
                 </script>
                       -->
+      </div>
 
-        </div>
-
-
-        <!-- /.row -->
+      <!-- /.row -->
     </div>
 
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -205,8 +238,7 @@
     <script src="js/app/models/Login.Model.js"></script>
 
     <script>
-        let consultaAPIController = new ConsultaAPIController();
+      let consultaAPIController = new ConsultaAPIController();
     </script>
-</body>
-
+  </body>
 </html>

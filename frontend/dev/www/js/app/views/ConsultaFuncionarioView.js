@@ -13,52 +13,52 @@ class ConsultaFuncionario {
               <table><tbody>
                   <tr class="tabela-coluna">
                       <th>CLINICA</th> 
-                      <th>EMAIL</th> 
                       <th>NOME</th>
                       <th>CARGO</th>
+                      <th>DATA CONTRATAÇÃO</th>
                   </tr> 
                   ${model.map((n) => {
                     if (filtro) {
-                      switch (filtro) {
-                        case "clinica":
-                          if (n.nome.match(`${filtroTxt}`)) {
+                      switch (filtro) { 
+                        case "clinica onde trabalha":
+                          if (n.nomeClinica.match(`${filtroTxt}`)) {
                             return ` <tr class="tabela-coluna">
-                           <td>${n.idClinica}</td>
-                           <td>${n.email}</td>
-                           <td>${n.nome}</td>
-                           <td>${n.cargo}</td>
+                           <td>${n.nomeClinica}</td>
+                           <td>${n.nomeFuncionario}</td>
+                           <td>${n.cargoFuncionario}</td>
+                           <td>${n.dataContracao}</td>
                        </tr>`;
                           }
                           break;
 
-                        case "email":
-                          if (n.email.match(`${filtroTxt}`)) {
+                        case "nome colaborador":
+                          if (n.nomeFuncionario.match(`${filtroTxt}`)) {
                             return ` <tr class="tabela-coluna">
-                            <td>${n.idClinica}</td>
-                           <td>${n.email}</td>
-                           <td>${n.nome}</td>
-                           <td>${n.cargo}</td>
+                            <td>${n.nomeClinica}</td>
+                            <td>${n.nomeFuncionario}</td>
+                            <td>${n.cargoFuncionario}</td>
+                            <td>${n.dataContracao}</td>
                         </tr>`;
                           }
                           break;
-                        case "nome":
-                          if (n.email.match(`${filtroTxt}`)) {
+                        case "cargo":
+                          if (n.cargoFuncionario.match(`${filtroTxt}`)) {
                             return ` <tr class="tabela-coluna">
-                            <td>${n.idClinica}</td>
-                           <td>${n.email}</td>
-                           <td>${n.nome}</td>
-                           <td>${n.cargo}</td>
+                            <td>${n.nomeClinica}</td>
+                            <td>${n.nomeFuncionario}</td>
+                            <td>${n.cargoFuncionario}</td>
+                            <td>${n.dataContracao}</td>
                         </tr>`;
                           }
                           break;
 
-                        case "cargo":
-                          if (n.email.match(`${filtroTxt}`)) {
+                        case "data admissão":
+                          if (n.dataContracao.match(`${filtroTxt}`)) {
                             return ` <tr class="tabela-coluna">
-                              <td>${n.idClinica}</td>
-                           <td>${n.email}</td>
-                           <td>${n.nome}</td>
-                           <td>${n.cargo}</td>
+                            <td>${n.nomeClinica}</td>
+                            <td>${n.nomeFuncionario}</td>
+                            <td>${n.cargoFuncionario}</td>
+                            <td>${n.dataContracao}</td>
                           </tr>`;
                           }
                           break;
@@ -69,10 +69,10 @@ class ConsultaFuncionario {
                     } else {
                       return `
                       <tr class="tabela-coluna">
-                      <td>${n.idClinica}</td>
-                      <td>${n.email}</td>
-                      <td>${n.nome}</td>
-                      <td>${n.cargo}</td>
+                      <td>${n.nomeClinica}</td>
+                      <td>${n.nomeFuncionario}</td>
+                      <td>${n.cargoFuncionario}</td>
+                      <td>${n.dataContracao}</td>
                       </tr>`;
                     }
                   })}

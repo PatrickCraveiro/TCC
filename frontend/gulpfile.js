@@ -24,7 +24,16 @@ var dests = {
     js: './dist/js/',
     root: './dist/'
 }
-gulp.task('default', ['sass-main', 'bootstrap', 'devenv', 'browser-sync', 'watch', 'build-img']);
+gulp.task('default', ['sass-login', 'sass-main', 'bootstrap', 'devenv', 'browser-sync', 'watch', 'build-img']);
+
+gulp.task('sass-login', function(done) {
+    gulp.src('./dev/scss/login.scss')
+        .pipe(sass()).on('error', sass.logError)
+        .pipe(gulp.dest('./dist/css/'))
+        .pipe(minifyCss({ keepSpecialComments: 0 }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest(dests.css)).on('end', done);
+});
 
 gulp.task('sass-main', function(done) {
     gulp.src('./dev/scss/main.scss')

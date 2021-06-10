@@ -148,7 +148,6 @@ class LoadingPageItem extends HTMLElement {
 }
 customElements.define("loading-page-item", LoadingPageItem);
 
-
 function fechaModalDownload() {
   modalCadastro = document.querySelector(".modalCadastro");
   modalCadastro.classList.add("fade-out");
@@ -281,18 +280,22 @@ function cadastroFuncionario() {
   document.querySelector(".button-cadastro").classList.add("verde");
 }
 
-function agendaConsulta(){
-  console.log('oi')
-  document.querySelector('#verificaConsulta').classList.replace('slide-in-bottom','slide-out-blurred-top')
-  document.querySelector('#agendaConsulta').classList.replace('slide-in-bottom','swirl-out-bck')
+function agendaConsulta() {
+  console.log("oi");
+  document
+    .querySelector("#verificaConsulta")
+    .classList.replace("slide-in-bottom", "slide-out-blurred-top");
+  document
+    .querySelector("#agendaConsulta")
+    .classList.replace("slide-in-bottom", "swirl-out-bck");
 
-  let modalazul = document.createElement('div')
-  modalazul.className ="swirl-in-fwd"
+  let modalazul = document.createElement("div");
+  modalazul.className = "swirl-in-fwd";
 
-  document.body.appendChild(modalazul)
+  document.body.appendChild(modalazul);
 
-  let a = new ConsultaAPIController
-  a.cadastraConsulta()
+  let a = new ConsultaAPIController();
+  a.cadastraConsulta();
 }
 
 function cadastroLogin() {
@@ -344,7 +347,7 @@ function cadastroLogin() {
 
 function formLogin() {
   var sdk = new ConsultaAPIController();
-  sdk.formLogin(); 
+  sdk.formLogin();
 }
 
 function formatarDataAtual(dias) {
