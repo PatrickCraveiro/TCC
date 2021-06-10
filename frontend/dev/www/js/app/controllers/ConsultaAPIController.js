@@ -217,9 +217,8 @@ class ConsultaAPIController {
 
     let vm = this;
 
-    document.querySelector('.mainPageAdm').removeAttribute('style')
-    document.querySelector('.mainPageLogin').style.display = "none";
-
+    document.querySelector(".mainPageAdm").removeAttribute("style");
+    document.querySelector(".mainPageLogin").style.display = "none";
   }
 
   async formLogin() {
@@ -253,7 +252,65 @@ class ConsultaAPIController {
 
   realizaLogin(event) {
     event.preventDefault();
-    console.log("oias");
+
+    let inputsLogin = document.querySelector("#realizaLogin");
+
+    let formLogin = [];
+
+    inputsLogin.querySelectorAll("input").forEach((input) => {
+      formLogin.push(input.value);
+    });
+
+    console.log(formLogin);
+
+    let vm = this;
+
+    return LoadingPage.for([
+      {
+        description: "Realizando Login",
+        promise: async () => {
+          const response = await fetch("http://18.231.113.43:3050/login", {
+            method: "GET",
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+          let acesso = false;
+          let adm = false;
+          response.forEach((el) => {
+            if (el.LOGIN === formLogin[0] && el.senha === formLogin[1]) {
+              if (el.adm === 1) {
+                acesso = (el.LOGIN);
+                adm = true;
+              } else {
+                acesso = (el.LOGIN);
+              }
+            }
+          });
+
+          if (acesso) {
+            if(adm){
+              isAdm()
+            }
+           let divLogin = document.createElement('div')
+           divLogin.classList.add('divLoginSalvo')
+           divLogin.style.display = 'none'
+           divLogin.textContent = acesso
+           document.querySelector('html').append(divLogin)
+
+           console.log(divLogin)
+            console.log("acessou");
+          } else {
+            alert("login ou user errado");
+            return false;
+          }
+        },
+      },
+    ]);
   }
 
   async cadastraConsulta() {

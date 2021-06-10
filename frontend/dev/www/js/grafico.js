@@ -369,3 +369,44 @@ function formatarData(data) {
   var year = myDate.getFullYear();
   return year + "-" + month + "-" + day;
 }
+
+function isAdm(login) {
+  let modalUser = document.createElement("div");
+
+  modalUser.innerHTML = `<div class="download-window-fade">
+  <div class="escolhaADM">
+   
+   <div onclick="opcaoAdm1()" class="btn1">
+    
+    <div class="btn1-icon"></div><p>Área do cliente </p>
+    
+    </div>
+<div onclick="opcaoAdm2()" class="btn2"><div class="btn2-icon"></div>
+<p>Área administrativa </p>
+    
+    </div>
+    
+  </div>
+</div>`;
+
+  document.body.append(modalUser);
+}
+
+function salvaLogin(login){
+  var loginSalvo = login
+  return loginSalvo
+}
+
+function opcaoAdm1(){
+console.log('n a')
+}
+
+function opcaoAdm2(){
+  document.querySelector(".mainPageAdm").removeAttribute("style");
+  document.querySelector(".mainPageLogin").style.display = "none";
+  document.querySelector(".download-window-fade").parentElement.outerHTML = '';
+  }
+
+function isUser() {
+  console.log("comum");
+}
