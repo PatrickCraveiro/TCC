@@ -327,11 +327,14 @@ p {
 
 .slide-in-right {
 	background: white;
-	cursor: pointer;
-	margin: 2%;
-	width: 60%;
-	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.5s both;
-	animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.5s both;
+    display: flex;
+    border-radius: 7px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    margin: 2%;
+    width: 60%;
+    -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.5s both;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.5s both;
 }
 
 .slide-in-right:hover {
@@ -386,3 +389,55 @@ flex-wrap: wrap;
     background: url(../img/hospital-svgrepo-com.svg);
     margin-top: 7px;
 }
+
+p.infoClinica {
+    width: auto;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #337ab7;
+    margin-right: 2%;
+}
+
+p.respostaClinica {
+    width: 70%;
+    font-size: 1.3em;
+}
+
+.inputEscolhas {
+	position: absolute;
+    right: 20%;
+    top: 33%;
+    color: white;
+    font-weight: bold;
+}
+
+
+.swirl-in-fwd .button-login {
+	color: #fff;
+    top: 80%;
+    position: absolute;
+    right: 13%;
+    border-color: #2e6da4;
+    background-color: #337ab7;
+    border-radius: 5px;
+    margin-top: 15px;
+    outline: none;
+    padding: 15px 12px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  
+  .button-login:hover {
+	border-color: #204d74;
+	background-color: #286090;
+  }

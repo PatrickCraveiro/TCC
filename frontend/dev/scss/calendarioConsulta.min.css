@@ -1,0 +1,478 @@
+body{
+    font-family: 'Fira Sans', sans-serif;
+}
+@font-face {
+    font-family: calendarioConsulta-icon;
+    src: url(../fonts/calendarioConsulta.eot?gpa4vl);
+    src: url(../fonts/calendarioConsulta.eot?gpa4vl#iefix) format('embedded-opentype'), url(../fonts/calendarioConsulta.ttf?gpa4vl) format('truetype'), url(../fonts/calendarioConsulta.woff?gpa4vl) format('woff'), url(../fonts/calendarioConsulta.svg?gpa4vl#calendarioConsulta) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+.calendarioConsulta .icon-arrow-left,
+.calendarioConsulta .icon-arrow-right {
+    font-family: calendarioConsulta-icon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1
+}
+
+.calendarioConsulta .icon-arrow-left:before {
+    content: '\e90b'
+}
+
+.calendarioConsulta .icon-arrow-right:before {
+    background:blue;
+}
+
+.calendarioConsulta-wrapper {
+    display: none;
+    position: fixed;
+    width: 80%;
+    max-width: 360px;
+    top: 50%;
+    left: 50%;
+    border-radius: 2px;
+    z-index: 50001;
+    overflow: hidden;
+    box-shadow: 0 4px 16px #000;
+    transform: translate3d(0, 160px, 0);
+    opacity: 0;
+    transition: opacity .3s ease, transform .5s ease-out
+}
+
+.calendarioConsulta-wrapper.calendarioConsulta-wrapper-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta {
+    max-width: auto;
+    width: 100%;
+    border: none
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta .calendarioConsulta-button-group {
+    border-top: 1px solid #e2e2e2;
+    overflow: hidden
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta .calendarioConsulta-button-group .calendarioConsulta-button {
+    width: 50%;
+    display: block;
+    float: left;
+    height: 3.2em;
+    text-align: center;
+    line-height: 3.2em;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    box-sizing: border-box
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta .calendarioConsulta-button-group .calendarioConsulta-button:hover {
+    background-color: #efefef
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta .calendarioConsulta-button-group .calendarioConsulta-button-apply {
+    color: #fff;
+    background-color: #2fabb7
+}
+
+.calendarioConsulta-wrapper .calendarioConsulta .calendarioConsulta-button-group .calendarioConsulta-button-apply:hover {
+    background-color: #49c4d0
+}
+
+.calendarioConsulta-wrapper-overlay {
+    background-color: #000;
+    opacity: 0;
+    transition: opacity .3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50000
+}
+
+.calendarioConsulta-wrapper-overlay.calendarioConsulta-wrapper-overlay-active {
+    opacity: .7
+}
+
+.calendarioConsulta {
+    width: 80%;
+    max-width: 360px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    font-size: 100%;
+    margin: 0 auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25)
+}
+
+.calendarioConsulta .calendarioConsulta-top {
+    padding: 2.6em 0;
+    background-color: #fafafa;
+    border-bottom: 1px solid #e2e2e2;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .125);
+    position: relative;
+    overflow: hidden
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.8em 0;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-month,
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-year {
+    display: block;
+    text-align: center
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-year {
+    font-size: 115%;
+    color: #777;
+    font-weight: 600;
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-month {
+    margin-bottom: .4em;
+    font-size: 130%;
+    font-weight: 600;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    position: relative;
+    z-index: 5;
+    text-decoration: none
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-value {
+    display: inline-block;
+    color: #777;
+    font-size: 115%;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-top: -10px
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-icon {
+    color: #555;
+    font-size: 160%
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav.calendarioConsulta-top-prev {
+    float: left;
+    margin-left: 1.6em
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav.calendarioConsulta-top-prev .calendarioConsulta-top-value {
+    margin-left: .2em
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav.calendarioConsulta-top-next {
+    float: right;
+    margin-right: 1.6em
+}
+
+.calendarioConsulta .calendarioConsulta-top .calendarioConsulta-top-nav.calendarioConsulta-top-next .calendarioConsulta-top-value {
+    margin-right: .2em
+}
+
+.calendarioConsulta .calendarioConsulta-header {
+    padding: 0 1.2em;
+    margin-top: 1.2em;
+    font-weight: 600;
+    overflow: hidden
+}
+
+.calendarioConsulta .calendarioConsulta-header .calendarioConsulta-week {
+    float: left;
+    width: 14.28%;
+    height: 2.8em;
+    text-align: center;
+    line-height: 2.8em;
+    box-sizing: border-box;
+    color:#008eff;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.calendarioConsulta .calendarioConsulta-header .calendarioConsulta-week:last-child {
+    width: 14.32%
+}
+
+.calendarioConsulta .calendarioConsulta-body {
+    padding: 1.2em
+}
+
+.calendarioConsulta .calendarioConsulta-body .calendarioConsulta-row {
+    overflow: hidden
+}
+
+.calendarioConsulta .calendarioConsulta-unit {
+    float: left;
+    display: block;
+    height: 3.8em;
+    width: 14.28%;
+    text-align: center;
+    line-height: 2.8em;
+    box-sizing: border-box
+}
+
+.calendarioConsulta .calendarioConsulta-unit:last-child {
+    width: 14.32%
+}
+
+.calendarioConsulta .calendarioConsulta-unit .calendarioConsulta-button-schedule-container {
+    line-height: .5em
+}
+
+.calendarioConsulta .calendarioConsulta-unit .calendarioConsulta-button-schedule-container .calendarioConsulta-button-schedule-pin {
+    display: inline-block;
+    background-color: #777;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    margin-right: .2em
+}
+
+.calendarioConsulta .calendarioConsulta-unit .calendarioConsulta-button-schedule-container .calendarioConsulta-button-schedule-pin:last-child {
+    margin-right: 0
+}
+.calendarioConsulta .calendarioConsulta-unit a {
+    display: inline-block;
+    width: 2.4em;
+    height: 2.4em;
+    color: #777;
+    line-height: 2.4em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s ease, color .3s ease;
+    background: #eee;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+}
+
+.calendarioConsulta .calendarioConsulta-unit a:active {
+    background-color: #d8d8d8
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-disabled a {
+    opacity: .5;
+    background-color: #efefef
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-active a {
+    background-color: #2196F3;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .5)
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-active.calendarioConsulta-semana-sab a,
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-active.calendarioConsulta-semana-dom a {
+    color: #fff
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-range a {
+    background-color: #efefef;
+    border-radius: 0;
+    width: 100%
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-disabled a {
+    color: #b2b9bb;
+    background-color: #e1e1e1
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-range-first a {
+    border-top-left-radius: 1.2em;
+    border-bottom-left-radius: 1.2em
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-range-last a {
+    border-top-right-radius: 1.2em;
+    border-bottom-right-radius: 1.2em
+}
+
+.calendarioConsulta .calendarioConsulta-unit.calendarioConsulta-semana-dom a {
+    color: #fa4832
+}
+
+.calendarioConsulta.calendarioConsulta-default .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-toggle-active a {
+    color: #ccc !important
+}
+
+.calendarioConsulta.calendarioConsulta-default.calendarioConsulta-reverse .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-toggle-inactive a {
+    color: #ccc !important
+}
+
+.calendarioConsulta.calendarioConsulta-dark {
+    border-color: #323537;
+    background-color: #4b4f51;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .5)
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-top {
+    background-color: #3f4244;
+    border-bottom-color: #323537;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .175)
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-top .calendarioConsulta-top-month {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-top .calendarioConsulta-top-year {
+    color: #bdc2c5
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-value {
+    color: #a2a9ab
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-icon {
+    color: #a2a9ab
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-header .calendarioConsulta-week {
+    color: #bdc2c5
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-header.calendarioConsulta-semana-sab,
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-header.calendarioConsulta-semana-dom {
+    color: #ff6060
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit a {
+    color: #51cfd2
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-semana-sab a,
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-semana-dom a {
+    color: #ff6060
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-disabled a {
+    color: #868e8f;
+    background-color: #5d6365
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-active a {
+    color: #fff;
+    background-color: #31bbbf;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .75)
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-toggle a {
+    color: #8b8f94
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-range a {
+    background-color: #5a5d62
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-disabled a {
+    color: #727a7c;
+    background-color: #4f5558
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-button-group {
+    border-top: 1px solid #323537;
+    overflow: hidden
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-button-group .calendarioConsulta-button {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-button-group .calendarioConsulta-button:hover {
+    background-color: #5a5d62
+}
+
+.calendarioConsulta.calendarioConsulta-dark .calendarioConsulta-button-group .calendarioConsulta-button-apply {
+    color: #fff;
+    background-color: #31bbbf
+}
+
+.calendarioConsulta.calendarioConsulta-blue {
+    background-color: #fafafa
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-top {
+    background-color: #009fe3;
+    border-bottom-color: #e1e1e1
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-top .calendarioConsulta-top-month {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-top .calendarioConsulta-top-year {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-value {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-top .calendarioConsulta-top-nav .calendarioConsulta-top-icon {
+    color: #fff
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-header .calendarioConsulta-week {
+    color: #5c6270
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-header .calendarioConsulta-week.calendarioConsulta-semana-sab,
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-header .calendarioConsulta-week.calendarioConsulta-semana-dom {
+    color: #fa4832
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit a {
+    color: #5c6270
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-semana-sab a,
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-semana-dom a {
+    color: #fa4832
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-disabled a {
+    background-color: #efefef
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-active a {
+    color: #fff;
+    background-color: #009fe3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .75)
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-toggle a {
+    color: #ccc
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-range a {
+    background-color: #efefef
+}
+
+.calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-disabled a {
+    background-color: #efefef
+}

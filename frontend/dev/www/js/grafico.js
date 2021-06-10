@@ -349,6 +349,105 @@ function formLogin() {
   sdk.formLogin();
 }
 
+function marcaDataConsulta() {
+  document
+    .querySelectorAll(
+      ".calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit"
+    )
+    .forEach((el) => {
+      el.addEventListener("click", function () {
+        console.log(this);
+        if (window.confirm("deseja realizar prescrição?")) {
+          let swirl = document.querySelector(".swirl-in-fwd");
+          swirl.outerHTML = `<div class="swirl-in-fwd">
+          <div class="choice1 optionsEspecialidades">
+            <div class="CxEspecialidade"><p>Mal Estar</p></div>
+            <div class="CxEsp"> </div>
+          </div>
+          <div class="choice2 optionsEspecialidades">
+            <div class="CxEspecialidade"><p>Mal Estar</p></div>
+            <div class="CxEsp"> </div>
+          </div>
+          <div class="choice3 optionsEspecialidades">
+            <div class="CxEspecialidade"><p>Mal Estar</p></div>
+            <div class="CxEsp"> </div>
+          </div>
+        </div>`;
+
+          console.log("vai fazer");
+          choiceEspeclidade();
+        } else {
+          console.log("n vai");
+        }
+      });
+    });
+}
+
+function choiceEspeclidade() {
+  let inputEscolha1 = document.createElement("div");
+  document.querySelector(".swirl-in-fwd").append(inputEscolha1);
+  document.querySelector(".swirl-in-fwd").style.overflow= "initial"
+
+  let btnConfirma = document.createElement('button')
+btnConfirma.className = "button-login"
+btnConfirma.textContent = "Agendar consulta."
+
+document.querySelector(".swirl-in-fwd").append(btnConfirma)
+
+  inputEscolha1.style.display = "none";
+  inputEscolha1.classList.add('paiEscolhas')
+  inputEscolha1.innerHTML = `<div class="inputEscolhas">
+  <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
+  
+  </div>`;
+
+  let inputEscolha2 = document.createElement("div");
+  document.querySelector(".swirl-in-fwd").append(inputEscolha2);
+
+  inputEscolha2.style.display = "none";
+  inputEscolha2.classList.add('paiEscolhas')
+  inputEscolha2.innerHTML = `<div class="inputEscolhas">
+  <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
+  
+  </div>`;
+
+  let inputEscolha3 = document.createElement("div");
+  document.querySelector(".swirl-in-fwd").append(inputEscolha3);
+
+  inputEscolha3.style.display = "none";
+  inputEscolha3.classList.add('paiEscolhas')
+  inputEscolha3.innerHTML = `<div class="inputEscolhas">
+  <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
+  
+  </div>`;
+
+  document.querySelectorAll(".optionsEspecialidades").forEach((el) => {
+    el.addEventListener("click", function () {
+      if (this.classList.contains("choiceActive")) {
+        this.classList.remove("choiceActive");
+        inputEscolha2.style.display = "none";
+        inputEscolha3.style.display = "none";
+        inputEscolha1.style.display = "none";
+      } else {
+        this.classList.add("choiceActive");
+
+        if (this.classList.contains("choice1")) {
+          inputEscolha1.style.display = "block";
+        }
+
+        if (this.classList.contains("choice2")) {
+          inputEscolha2.style.display = "block";
+        }
+
+        if (this.classList.contains("choice3")) {
+          inputEscolha3.style.display = "block";
+        }
+
+      }
+    });
+  });
+}
+
 function formatarDataAtual(dias) {
   var myDate = new Date();
   var dayOfMonth = myDate.getDate();
@@ -391,20 +490,20 @@ function isAdm(login) {
   document.body.append(modalUser);
 }
 
-function salvaLogin(login){
-  var loginSalvo = login
-  return loginSalvo
+function salvaLogin(login) {
+  var loginSalvo = login;
+  return loginSalvo;
 }
 
-function opcaoAdm1(){
-console.log('n a')
+function opcaoAdm1() {
+  console.log("n a");
 }
 
-function opcaoAdm2(){
+function opcaoAdm2() {
   document.querySelector(".mainPageAdm").removeAttribute("style");
   document.querySelector(".mainPageLogin").style.display = "none";
-  document.querySelector(".download-window-fade").parentElement.outerHTML = '';
-  }
+  document.querySelector(".download-window-fade").parentElement.outerHTML = "";
+}
 
 function isUser() {
   console.log("comum");

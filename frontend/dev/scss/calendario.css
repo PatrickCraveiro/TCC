@@ -1,19 +1,14 @@
-ol,
-ul {
+ol, ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -127,21 +122,17 @@ h1 {
   padding-bottom: 40px;
 }
 
-.inline pre,
-.inline code {
+.inline pre, .inline code {
   display: inline !important;
 }
 
-.inline pre,
-.inline code {
+.inline pre, .inline code {
   padding: 0 !important;
   text-align: left;
   background-color: transparent !important;
 }
 
-.inline pre,
-.inline pre code,
-.inline pre code span {
+.inline pre, .inline pre code, .inline pre code span {
   font-size: inherit;
 }
 
@@ -174,10 +165,7 @@ h1 {
   font-weight: 400;
 }
 
-.label .fas,
-.label .fab,
-.button .fas,
-.button .fab {
+.label .fas, .label .fab, .button .fas, .button .fab {
   margin-right: .6em;
 }
 
@@ -238,7 +226,7 @@ h5 {
   margin-bottom: 0;
 }
 
-.pignose-calendar {
+.calendarioConsulta {
   font-family: 'Fira Sans', sans-serif;
   font-size: 14px !important;
 }
@@ -290,7 +278,7 @@ h5 {
 }
 
 @media screen and (max-width: 640px) {
-  .pignose-calendar {
+  .calendarioConsulta {
     font-size: 12px !important;
   }
 }
@@ -321,56 +309,60 @@ h5 {
   }
 }
 
-.choice1{
+.choiceActive {
   background-color: rgba(51, 122, 183, 0.2);
   border-color: #2e6da4;
-  width: 40%;
-    height: 33%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  background-image: url(../img/cerebro.png);
 }
 
-.choice2{
+.choice1 {
+  width: 40%;
+  height: 33%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(../img/cerebro.png);
+  cursor: pointer;
+}
+
+.choice2 {
   width: 40%;
   height: 33%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   background-image: url(../img/dor.png);
+  cursor: pointer;
 }
 
-.choice3{
+.choice3 {
   width: 40%;
   height: 33%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   background-image: url(../img/fratura.png);
+  cursor: pointer;
 }
-
-
 
 .CxEspecialidade {
   margin: -12px 0 0 203px;
-  font-size: 1em;
-  color: white;
-  position: absolute;
-  width: 130px;
-  background: orange;
-  height: 45px;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+    font-size: 1em;
+    color: white;
+    position: absolute;
+    width: 130px;
+    background: #337ab7;
+    height: 45px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .CxEsp {
-  margin: -12px 0px 0 188px;
+  margin: -12px 0px 0 191px;
   position: absolute;
   border-right: 0px solid transparent;
   border-left: 12px solid transparent;
-  border-bottom: 12px solid rgb(167, 111, 8);
+  border-bottom: 13px solid rgb(30,70,140);
   width: 3px;
 }
