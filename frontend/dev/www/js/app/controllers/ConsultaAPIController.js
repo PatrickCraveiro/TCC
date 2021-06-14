@@ -166,7 +166,7 @@ class ConsultaAPIController {
 
   async cadastroFuncionario(event) {
     event.preventDefault();
-    let form = {};
+    let form = new Funcionario;
     let formPreenchido = document.querySelectorAll(
       "#formCadastroFuncionario >*> input"
     );
