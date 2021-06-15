@@ -496,7 +496,11 @@ function salvaLogin(login) {
 }
 
 function opcaoAdm1() {
-  console.log("n a");
+  document.querySelectorAll(".mainPageUser").forEach(el => {
+    el.removeAttribute("style");
+  })
+  document.querySelector(".mainPageLogin").style.display = "none";
+  document.querySelector(".download-window-fade").parentElement.outerHTML = "";
 }
 
 function opcaoAdm2() {

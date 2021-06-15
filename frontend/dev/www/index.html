@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/mainPageUser.css" rel="stylesheet" type="text/css" media="all">
 	<link href="css/login.css" rel="stylesheet" type="text/css" media="all" /> -->
 	<link href="css/main.min.css" rel="stylesheet" />
 
@@ -39,7 +40,7 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="mt-1">
+						<!-- <li class="mt-1">
 							<img id="fotoPerfil" class="img-circle oculto" width="45px" />
 						</li>
 						<li>
@@ -50,12 +51,12 @@
 								<div class="g-signin2" data-onsuccess="onSignIn" data-lang="pt-BR" id="botaoLogin">
 								</div>
 							</li>
-						</div>
-						<div id="botao-logout" style="display: none">
+						</div> -->
+						<!-- <div id="botao-logout" style="display: none">
 							<li>
 								<a href="#" onclick="deslogar();"><b class="texto-comum">Sair</b></a>
 							</li>
-						</div>
+						</div> -->
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -209,6 +210,19 @@
 		</container>
 	</div>
 
+	<div class="slide-in-bottom mainPageUser" style="display:none;" id="agendaConsulta" onclick="agendaConsulta()">
+		<div class=" kenburns-top">
+
+		</div>
+		<p class="tracking-in-contract-bck">Agendar consulta</p>
+	</div>
+	<div class="slide-in-bottom mainPageUser" style="display:none;" id="verificaConsulta" onclick="verificaConsulta()">
+		<div class=" kenburns-top  kenburns-top2">
+
+		</div>
+		<p class="tracking-in-contract-bck">Consultar agentamento</p>
+	</div>
+
 	<script src="js/jquery-1.12.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/vue.js"></script>
@@ -216,13 +230,11 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="js/grafico.js"></script>
 	<script src="js/consultaApi.js"></script>
-	<script src="js/app/models/Apostila.js"></script>
 	<script src="js/app/models/ClinicaModel.js"></script>
 	<script src="js/app/models/ListaConsultaAPI.js"></script>
 	<script src="js/app/models/Login.Model.js"></script>
 	<script src="js/app/models/mainPageAdm.js"></script>
 	<script src="js/app/controllers/ConsultaAPIController.js"></script>
-	<script src="js/app/controllers/ConsultaAPIControllerFuncionario.js"></script>
 	<script src="js/app/views/CadastraConsultaView.js"></script>
 	<script src="js/app/views/ConsultaFuncionarioView.js"></script>
 	<script src="js/app/views/ConsultaClinicaView.js"></script>

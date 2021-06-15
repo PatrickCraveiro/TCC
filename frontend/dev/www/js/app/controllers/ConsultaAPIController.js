@@ -298,9 +298,8 @@ class ConsultaAPIController {
             }
            let divLogin = document.createElement('div')
            divLogin.classList.add('divLoginSalvo')
-           divLogin.style.display = 'none'
-           divLogin.textContent = acesso
-           document.querySelector('html').append(divLogin)
+           divLogin.textContent = `Bem vindo: ${acesso}`
+           document.querySelector('.navbar-right').append(divLogin)
 
            console.log(divLogin)
             console.log("acessou");
