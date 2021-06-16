@@ -372,7 +372,7 @@ function marcaDataConsulta() {
             </div>
         `;
         document.querySelector("#infoLoginUser").append(clinicaConsulta);
-        infoHorario()
+        infoHorario();
       });
     });
 }
@@ -380,7 +380,6 @@ function marcaDataConsulta() {
 function infoHorario() {
   document.querySelectorAll("#infoHorario").forEach((el) => {
     el.addEventListener("click", function () {
-
       document.querySelector("#infoLoginUser").append(el);
 
       let swirl = document.querySelector(".swirl-in-fwd");
@@ -542,7 +541,10 @@ function opcaoAdm1() {
     el.removeAttribute("style");
   });
   document.querySelector(".mainPageLogin").style.display = "none";
-  document.querySelector(".download-window-fade").parentElement.outerHTML = "";
+  if (document.querySelector(".download-window-fade")) {
+    document.querySelector(".download-window-fade").parentElement.outerHTML =
+      "";
+  }
 }
 
 function opcaoAdm2() {

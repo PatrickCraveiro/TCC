@@ -214,11 +214,45 @@ class ConsultaAPIController {
 
   cadastroLogin2(event) {
     event.preventDefault();
+    let infoLogin = document.querySelector("#formCadastroLogin2")
 
-    let vm = this;
+    let login = new Login(
+      infoLogin.children[0].children[1].value,
+      infoLogin.children[1].children[1].value,
+      infoLogin.children[2].children[1].value,
+      0
+    );
 
-    document.querySelector(".mainPageAdm").removeAttribute("style");
-    document.querySelector(".mainPageLogin").style.display = "none";
+    console.log(login);
+
+    return LoadingPage.for([
+      {
+        description: "Cadastrando login",
+        promise: async () => {
+          const response = await fetch(
+            "http://18.231.113.43:3050/login",
+            {
+              method: "POST",
+              mode: "cors",
+              cache: "no-cache",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(login),
+            }
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+          let feedbackCadastro = document.querySelector(".feedbackCadastro");
+          feedbackCadastro.innerHTML = `<p class="textfeedback"> Usuario cadastrdo com sucesso </p>`;
+        },
+      },
+    ]);
   }
 
   async formLogin() {
@@ -296,6 +330,9 @@ class ConsultaAPIController {
             if (adm) {
               isAdm();
             }
+            else{
+              opcaoAdm1();
+            }
             let infoLogin = document.createElement("div");
             infoLogin.textContent = acesso;
             document.querySelector("#infoLoginUser").append(infoLogin);
@@ -351,7 +388,7 @@ class ConsultaAPIController {
               console.error("Erro na requisição", rejected);
               return false;
             });
-            agendaConsulta.update(document.querySelector(".swirl-in-fwd"));
+          agendaConsulta.update(document.querySelector(".swirl-in-fwd"));
         },
       },
     ]);
