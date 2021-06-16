@@ -8,6 +8,7 @@ const Consulta = function (consulta) {
   this.nomeClinica = consulta.nomeClinica;
   this.dataAtendimento = consulta.dataAtendimento;
   this.horarioAtendimento = consulta.horarioAtendimento;
+  this.prescricao = consulta.prescricao;
 };
 
 Consulta.create = (newConsulta, result) => {
@@ -59,8 +60,8 @@ Consulta.getAll = (result) => {
 };
 Consulta.updateById = (ID, consulta, result) => {
   sql.query(
-    "UPDATE consulta SET ID = ?, SET loginPaciente = ?, SET consulta.clinicaCNPJ = ?, SET nomeClinica = ?, SET dataAtendimento = ?, horarioAtendimento = ? WHERE ID = ?",
-    [consulta.ID, consulta.loginPaciente, consulta.clinicaCNPJ, consulta.nomeClinica, consulta.dataAtendimento, consulta.horarioAtendimento, ID],
+    "UPDATE consulta SET ID = ?, SET loginPaciente = ?, SET consulta.clinicaCNPJ = ?, SET nomeClinica = ?, SET dataAtendimento = ?, horarioAtendimento = ? prescricao = ? WHERE ID = ?",
+    [consulta.ID, consulta.loginPaciente, consulta.clinicaCNPJ, consulta.nomeClinica, consulta.dataAtendimento, consulta.horarioAtendimento, onsulta.prescricao, ID],
     (err, res) => {
       if (err) {
         console.log("error: ", err);

@@ -16,6 +16,7 @@ exports.create = (req, res) => {
     nomeClinica: req.body.nomeClinica,
     dataAtendimento: req.body.dataAtendimento,
     horarioAtendimento: req.body.horarioAtendimento,
+    prescricao: req.body.prescricao,
   });
 
   // Save Consulta in the database
@@ -49,8 +50,7 @@ exports.findOne = (req, res) => {
         });
       } else {
         res.status(500).send({
-          message:
-            "Error retrieving Consulta with ID " + req.params.consultaID,
+          message: "Error retrieving Consulta with ID " + req.params.consultaID,
         });
       }
     } else res.send(data);
@@ -76,8 +76,7 @@ exports.update = (req, res) => {
           });
         } else {
           res.status(500).send({
-            message:
-              "Error updating Consulta with ID " + req.params.consultaID,
+            message: "Error updating Consulta with ID " + req.params.consultaID,
           });
         }
       } else res.send(data);
@@ -94,8 +93,7 @@ exports.delete = (req, res) => {
         });
       } else {
         res.status(500).send({
-          message:
-            "Could not delete Consulta with ID " + req.params.consultaID,
+          message: "Could not delete Consulta with ID " + req.params.consultaID,
         });
       }
     } else res.send({ message: `Consulta was deleted successfully!` });
