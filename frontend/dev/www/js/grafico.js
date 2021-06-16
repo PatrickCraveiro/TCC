@@ -359,9 +359,32 @@ function marcaDataConsulta() {
         let clinicaConsulta = document.createElement("div");
         clinicaConsulta.classList.add("clinicaConsultaSalvo");
         clinicaConsulta.textContent = this.firstElementChild.textContent;
+
+        this.innerHTML =
+          this.innerHTML +
+          `
+        <div class="horarios">
+        <div id="infoHorario" class="aaa">09:00</div>
+        <div id="infoHorario" class="aaa">10:00</div>
+        <div id="infoHorario" class="aaa">11:00</div>
+        <div id="infoHorario" class="aaa">13:00</div>
+        <div id="infoHorario" class="aaa">14:00</div>
+            </div>
+        `;
         document.querySelector("#infoLoginUser").append(clinicaConsulta);
-        let swirl = document.querySelector(".swirl-in-fwd");
-        swirl.outerHTML = `<div class="swirl-in-fwd">
+        infoHorario()
+      });
+    });
+}
+
+function infoHorario() {
+  document.querySelectorAll("#infoHorario").forEach((el) => {
+    el.addEventListener("click", function () {
+
+      document.querySelector("#infoLoginUser").append(el);
+
+      let swirl = document.querySelector(".swirl-in-fwd");
+      swirl.outerHTML = `<div class="swirl-in-fwd">
           <div class="choice1 optionsEspecialidades">
             <div class="CxEspecialidade"><p>Mal Estar</p></div>
             <div class="CxEsp"> </div>
@@ -376,10 +399,10 @@ function marcaDataConsulta() {
           </div>
         </div>`;
 
-        console.log("vai fazer");
-        choiceEspeclidade();
-      });
+      console.log("vai fazer");
+      choiceEspeclidade();
     });
+  });
 }
 
 function choiceEspeclidade() {
@@ -396,12 +419,15 @@ function choiceEspeclidade() {
   btnConfirma.addEventListener("click", function (event) {
     // mostra o contador de cliques dentro da div clicada
     let infoUsuario = document.querySelector("#infoLoginUser");
-    let infoPrescricao = document.createElement('div')
-
+    let infoPrescricao = document.createElement("div");
 
     document.querySelectorAll(".inputEscolhas input").forEach((el) => {
       if (el.checked) {
-     infoPrescricao.textContent =  infoPrescricao.textContent + ' ' + el.nextElementSibling.textContent + ','
+        infoPrescricao.textContent =
+          infoPrescricao.textContent +
+          " " +
+          el.nextElementSibling.textContent +
+          ",";
       }
     });
 

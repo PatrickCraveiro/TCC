@@ -297,8 +297,8 @@ class ConsultaAPIController {
               isAdm();
             }
             let infoLogin = document.createElement("div");
-            infoLogin.textContent = acesso
-            document.querySelector('#infoLoginUser').append(infoLogin)
+            infoLogin.textContent = acesso;
+            document.querySelector("#infoLoginUser").append(infoLogin);
             let divLogin = document.createElement("div");
             divLogin.classList.add("divLoginSalvo");
             divLogin.textContent = `Bem vindo: ${acesso}`;
@@ -316,38 +316,41 @@ class ConsultaAPIController {
   }
 
   cadastraConsultaReal() {
+    let consultaInfos = document.querySelector("#infoLoginUser").children;
 
-    console.log('aaaaaa')
+    let consulta = new Consulta(
+      consultaInfos[0].textContent,
+      consultaInfos[1].textContent,
+      consultaInfos[2].textContent,
+      consultaInfos[3].textContent,
+      consultaInfos[4].textContent,
+      consultaInfos[6].textContent
+    );
 
-    let consulta = new Consulta()
-
-    consulta.loginPaciente = document.querySelector('.divLoginSalvo').textContent
-
-    console.log(consulta)
-
-    // return LoadingPage.for([
-    //   {
-    //     description: "Cadastrando Consulta",
-    //     promise: async () => {
-    //       const response = await fetch("http://18.231.113.43:3050/consulta", {
-    //         method: "POST",
-    //         mode: "cors",
-    //         cache: "no-cache",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(form),
-    //       })
-    //         .then((response) => {
-    //           return response.json();
-    //         })
-    //         .catch((rejected) => {
-    //           console.error("Erro na requisição", rejected);
-    //           return false;
-    //         });
-    //     },
-    //   },
-    // ]);
+    return LoadingPage.for([
+      {
+        description: "Agendando consulta",
+        promise: async () => {
+          const response = await fetch("http://18.231.113.43:3050/consulta", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(consulta),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .catch((rejected) => {
+              console.error("Erro na requisição", rejected);
+              return false;
+            });
+          AgendaConsulta.update(document.querySelector(".swirl-in-fwd"));
+        },
+      },
+    ]);
   }
 
   async cadastraConsulta() {

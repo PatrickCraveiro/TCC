@@ -1765,3 +1765,16 @@ p.respostaClinica {
 .calendarioConsulta.calendarioConsulta-blue .calendarioConsulta-body .calendarioConsulta-row .calendarioConsulta-unit.calendarioConsulta-unit-range.calendarioConsulta-unit-disabled a {
     background-color: #efefef
 }
+
+.horarios {
+    position: absolute;
+    display: flex;
+    margin-top: -25px;
+    background: violet;
+}
+
+.aaa {
+    margin: 4px;
+    padding: 2px;
+    background: silver;
+}
