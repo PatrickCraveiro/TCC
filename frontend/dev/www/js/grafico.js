@@ -356,10 +356,12 @@ function marcaDataConsulta() {
     )
     .forEach((el) => {
       el.addEventListener("click", function () {
-        console.log(this);
-        if (window.confirm("deseja realizar prescrição?")) {
-          let swirl = document.querySelector(".swirl-in-fwd");
-          swirl.outerHTML = `<div class="swirl-in-fwd">
+        let clinicaConsulta = document.createElement("div");
+        clinicaConsulta.classList.add("clinicaConsultaSalvo");
+        clinicaConsulta.textContent = this.firstElementChild.textContent;
+        document.querySelector("#infoLoginUser").append(clinicaConsulta);
+        let swirl = document.querySelector(".swirl-in-fwd");
+        swirl.outerHTML = `<div class="swirl-in-fwd">
           <div class="choice1 optionsEspecialidades">
             <div class="CxEspecialidade"><p>Mal Estar</p></div>
             <div class="CxEsp"> </div>
@@ -374,11 +376,8 @@ function marcaDataConsulta() {
           </div>
         </div>`;
 
-          console.log("vai fazer");
-          choiceEspeclidade();
-        } else {
-          console.log("n vai");
-        }
+        console.log("vai fazer");
+        choiceEspeclidade();
       });
     });
 }
@@ -386,16 +385,34 @@ function marcaDataConsulta() {
 function choiceEspeclidade() {
   let inputEscolha1 = document.createElement("div");
   document.querySelector(".swirl-in-fwd").append(inputEscolha1);
-  document.querySelector(".swirl-in-fwd").style.overflow= "initial"
+  document.querySelector(".swirl-in-fwd").style.overflow = "initial";
 
-  let btnConfirma = document.createElement('button')
-btnConfirma.className = "button-login"
-btnConfirma.textContent = "Agendar consulta."
+  let btnConfirma = document.createElement("button");
+  btnConfirma.className = "button-login";
+  btnConfirma.textContent = "Agendar consulta.";
 
-document.querySelector(".swirl-in-fwd").append(btnConfirma)
+  document.querySelector(".swirl-in-fwd").append(btnConfirma);
+
+  btnConfirma.addEventListener("click", function (event) {
+    // mostra o contador de cliques dentro da div clicada
+    let infoUsuario = document.querySelector("#infoLoginUser");
+    let infoPrescricao = document.createElement('div')
+
+
+    document.querySelectorAll(".inputEscolhas input").forEach((el) => {
+      if (el.checked) {
+     infoPrescricao.textContent =  infoPrescricao.textContent + ' ' + el.nextElementSibling.textContent + ','
+      }
+    });
+
+    infoUsuario.append(infoPrescricao);
+
+    azus = new ConsultaAPIController();
+    azus.cadastraConsultaReal();
+  });
 
   inputEscolha1.style.display = "none";
-  inputEscolha1.classList.add('paiEscolhas')
+  inputEscolha1.classList.add("paiEscolhas");
   inputEscolha1.innerHTML = `<div class="inputEscolhas">
   <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
   
@@ -405,7 +422,7 @@ document.querySelector(".swirl-in-fwd").append(btnConfirma)
   document.querySelector(".swirl-in-fwd").append(inputEscolha2);
 
   inputEscolha2.style.display = "none";
-  inputEscolha2.classList.add('paiEscolhas')
+  inputEscolha2.classList.add("paiEscolhas");
   inputEscolha2.innerHTML = `<div class="inputEscolhas">
   <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
   
@@ -415,7 +432,7 @@ document.querySelector(".swirl-in-fwd").append(btnConfirma)
   document.querySelector(".swirl-in-fwd").append(inputEscolha3);
 
   inputEscolha3.style.display = "none";
-  inputEscolha3.classList.add('paiEscolhas')
+  inputEscolha3.classList.add("paiEscolhas");
   inputEscolha3.innerHTML = `<div class="inputEscolhas">
   <p> <input type="checkbox"> <span>Tontura</span> </p><p> <input type="checkbox"> <span>Náusea</span> </p><p> <input type="checkbox"> <span>Febril</span> </p><p> <input type="checkbox"> <span>Outro</span> </p><p> <input type="checkbox"> <span>Não informar</span> </p>
   
@@ -442,7 +459,6 @@ document.querySelector(".swirl-in-fwd").append(btnConfirma)
         if (this.classList.contains("choice3")) {
           inputEscolha3.style.display = "block";
         }
-
       }
     });
   });
@@ -496,9 +512,9 @@ function salvaLogin(login) {
 }
 
 function opcaoAdm1() {
-  document.querySelectorAll(".mainPageUser").forEach(el => {
+  document.querySelectorAll(".mainPageUser").forEach((el) => {
     el.removeAttribute("style");
-  })
+  });
   document.querySelector(".mainPageLogin").style.display = "none";
   document.querySelector(".download-window-fade").parentElement.outerHTML = "";
 }

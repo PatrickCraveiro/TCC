@@ -1,8 +1,10 @@
 var mensagemErro = "Digite um ID válido";
 
 function a8() {
-  let a7 = document.querySelector("[clinicaescolhida]");
-  console.log(a7);
+  let infoClinica = document.querySelector("[clinicaescolhida]");
+  infoUsuario = document.querySelector("#infoLoginUser");
+  infoUsuario.append(infoClinica.children[3]);
+  infoUsuario.append(infoClinica.children[1]);
 
   let modalConsulta = document.querySelector(".swirl-in-fwd");
   modalConsulta.innerHTML = `
@@ -105,5 +107,5 @@ function a8() {
 </div>
   `;
 
-  marcaDataConsulta()
+  marcaDataConsulta();
 }

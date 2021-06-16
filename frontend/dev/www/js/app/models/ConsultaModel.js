@@ -1,4 +1,4 @@
-class Login {
+class Consulta {
   constructor(
     ID,
     loginPaciente,
@@ -7,11 +7,11 @@ class Login {
     dataAtendimento,
     horarioAtendimento
   ) {
-    this._ID = ID;
-    this._loginPaciente = loginPaciente;
-    this._clinicaCNPJ = clinicaCNPJ;
-    this._nomeClinica = nomeClinica;
-    this._dataAtendimento = dataAtendimento;
-    this._horarioAtendimento = horarioAtendimento;
+    this.ID = ID;
+    this.loginPaciente = loginPaciente;
+    this.clinicaCNPJ = clinicaCNPJ;
+    this.nomeClinica = nomeClinica;
+    this.dataAtendimento = dataAtendimento;
+    this.horarioAtendimento = horarioAtendimento;
   }
 }

@@ -166,7 +166,7 @@ class ConsultaAPIController {
 
   async cadastroFuncionario(event) {
     event.preventDefault();
-    let form = new Funcionario;
+    let form = new Funcionario();
     let formPreenchido = document.querySelectorAll(
       "#formCadastroFuncionario >*> input"
     );
@@ -284,24 +284,27 @@ class ConsultaAPIController {
           response.forEach((el) => {
             if (el.LOGIN === formLogin[0] && el.senha === formLogin[1]) {
               if (el.adm === 1) {
-                acesso = (el.LOGIN);
+                acesso = el.LOGIN;
                 adm = true;
               } else {
-                acesso = (el.LOGIN);
+                acesso = el.LOGIN;
               }
             }
           });
 
           if (acesso) {
-            if(adm){
-              isAdm()
+            if (adm) {
+              isAdm();
             }
-           let divLogin = document.createElement('div')
-           divLogin.classList.add('divLoginSalvo')
-           divLogin.textContent = `Bem vindo: ${acesso}`
-           document.querySelector('.navbar-right').append(divLogin)
+            let infoLogin = document.createElement("div");
+            infoLogin.textContent = acesso
+            document.querySelector('#infoLoginUser').append(infoLogin)
+            let divLogin = document.createElement("div");
+            divLogin.classList.add("divLoginSalvo");
+            divLogin.textContent = `Bem vindo: ${acesso}`;
+            document.querySelector(".navbar-right").append(divLogin);
 
-           console.log(divLogin)
+            console.log(divLogin);
             console.log("acessou");
           } else {
             alert("login ou user errado");
@@ -310,6 +313,41 @@ class ConsultaAPIController {
         },
       },
     ]);
+  }
+
+  cadastraConsultaReal() {
+
+    console.log('aaaaaa')
+
+    let consulta = new Consulta()
+
+    consulta.loginPaciente = document.querySelector('.divLoginSalvo').textContent
+
+    console.log(consulta)
+
+    // return LoadingPage.for([
+    //   {
+    //     description: "Cadastrando Consulta",
+    //     promise: async () => {
+    //       const response = await fetch("http://18.231.113.43:3050/consulta", {
+    //         method: "POST",
+    //         mode: "cors",
+    //         cache: "no-cache",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(form),
+    //       })
+    //         .then((response) => {
+    //           return response.json();
+    //         })
+    //         .catch((rejected) => {
+    //           console.error("Erro na requisição", rejected);
+    //           return false;
+    //         });
+    //     },
+    //   },
+    // ]);
   }
 
   async cadastraConsulta() {
