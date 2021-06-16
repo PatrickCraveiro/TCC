@@ -66,7 +66,7 @@
 			<div class="row text-center">
 				<h1>Gerenciar Clinicas</h1>
 				<br />
-				<form class="form-inline" onsubmit="consultaAPIController.pesquisaClinica(event)">
+				<form class="form-inline" onsubmit="clinicaController.pesquisaClinica(event)">
 					<!-- onchange="makeApiCall()" -->
 					<select id="clinicaConsultaSelect" class="form-control">
 						<option selected="selected">Todas</option>
@@ -235,14 +235,17 @@
 	<script src="js/app/models/Login.Model.js"></script>
 	<script src="js/app/models/mainPageAdm.js"></script>
 	<script src="js/app/controllers/ConsultaAPIController.js"></script>
+	<script src="js/app/controllers/ClinicaController.js"></script>
 	<script src="js/app/views/CadastraConsultaView.js"></script>
 	<script src="js/app/views/ConsultaFuncionarioView.js"></script>
 	<script src="js/app/views/ConsultaClinicaView.js"></script>
+	<script src="js/app/views/FormClinica.view.js"></script>
 	<script src="js/app/views/AgendaConsulta.view.js"></script>
 
 
 	<script>
 		let consultaAPIController = new ConsultaAPIController();
+		let clinicaController = new ClinicaController();
 	</script>
 </body>
 

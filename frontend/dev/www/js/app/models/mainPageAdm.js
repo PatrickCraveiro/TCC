@@ -191,6 +191,7 @@ class MainPageAdm extends HTMLDivElement{
     
         <script>
             let consultaAPIController = new ConsultaAPIController();
+            let clinicaController = new ClinicaController();
         </script>`
     }
 }

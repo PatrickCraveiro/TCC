@@ -172,7 +172,7 @@ function cadastro() {
     <main-download>
         <div class="download-window__area--select">
 
-        <form class="formulario cadastro" id="formCadastroClinica" onsubmit="consultaAPIController.cadastroClinica(event)">
+        <form class="formulario cadastro" id="formCadastroClinica" onsubmit="clinicaController.cadastroClinica(event)">
   
     <label class="labelCadastro">
     <span>Nome:</span>

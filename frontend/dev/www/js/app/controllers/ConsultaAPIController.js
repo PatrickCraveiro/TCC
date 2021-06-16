@@ -36,88 +36,6 @@ class ConsultaAPIController {
     return ordenado;
   }
 
-  async pesquisaClinica(event) {
-    event.preventDefault();
-
-    let vm = this;
-    let consultaClinica = new ConsultaClinica(
-      document.querySelector(".pesquisaClinicaBtn")
-    );
-    consultaClinica.loading();
-
-    return LoadingPage.for([
-      {
-        description: "Pesquisando Clínicas",
-        promise: async () => {
-          const response = await fetch("http://18.231.113.43:3050/clinica", {
-            method: "GET",
-          })
-            .then((response) => {
-              return response.json();
-            })
-            .catch((rejected) => {
-              console.error("Erro na requisição", rejected);
-              return false;
-            });
-
-          let filtro = document.querySelector("#clinicaConsultaSelect").value;
-          const filtroTxt = document.querySelector(
-            "#clinicaConsultaText"
-          ).value;
-          filtro = eval("filtro");
-
-          console.log(response);
-
-          if (filtro != "Todas") {
-            consultaClinica.update(response, filtro, filtroTxt);
-          } else {
-            consultaClinica.update(response);
-          }
-        },
-      },
-    ]);
-  }
-
-  async cadastroClinica(event) {
-    event.preventDefault();
-    let form = {};
-    let formPreenchido = document.querySelectorAll(
-      "#formCadastroClinica >*> input"
-    );
-
-    form.CNPJ = formPreenchido[1].value;
-    form.nome = formPreenchido[0].value;
-    form.cidade = formPreenchido[2].value;
-
-    console.log(form);
-
-    return LoadingPage.for([
-      {
-        description: "Cadastrando Clínica",
-        promise: async () => {
-          const response = await fetch("http://18.231.113.43:3050/clinica", {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-          })
-            .then((response) => {
-              return response.json();
-            })
-            .catch((rejected) => {
-              console.error("Erro na requisição", rejected);
-              return false;
-            });
-          let feedbackCadastro = document.querySelector(".feedbackCadastro");
-          feedbackCadastro.innerHTML = `<p class="textfeedback"> Clínica cadastrada com sucesso. </p>`;
-        },
-      },
-    ]);
-  }
-
   async pesquisaFuncionario(event) {
     event.preventDefault();
 
@@ -214,7 +132,7 @@ class ConsultaAPIController {
 
   cadastroLogin2(event) {
     event.preventDefault();
-    let infoLogin = document.querySelector("#formCadastroLogin2")
+    let infoLogin = document.querySelector("#formCadastroLogin2");
 
     let login = new Login(
       infoLogin.children[0].children[1].value,
@@ -229,18 +147,15 @@ class ConsultaAPIController {
       {
         description: "Cadastrando login",
         promise: async () => {
-          const response = await fetch(
-            "http://18.231.113.43:3050/login",
-            {
-              method: "POST",
-              mode: "cors",
-              cache: "no-cache",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(login),
-            }
-          )
+          const response = await fetch("http://18.231.113.43:3050/login", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(login),
+          })
             .then((response) => {
               return response.json();
             })
@@ -329,8 +244,7 @@ class ConsultaAPIController {
           if (acesso) {
             if (adm) {
               isAdm();
-            }
-            else{
+            } else {
               opcaoAdm1();
             }
             let infoLogin = document.createElement("div");
