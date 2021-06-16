@@ -318,6 +318,10 @@ class ConsultaAPIController {
   cadastraConsultaReal() {
     let consultaInfos = document.querySelector("#infoLoginUser").children;
 
+    let agendaConsulta = new AgendaConsulta(
+      document.querySelector(".swirl-in-fwd")
+    );
+
     let consulta = new Consulta(
       consultaInfos[0].textContent,
       consultaInfos[1].textContent,
@@ -347,7 +351,7 @@ class ConsultaAPIController {
               console.error("Erro na requisição", rejected);
               return false;
             });
-          AgendaConsulta.update(document.querySelector(".swirl-in-fwd"));
+            agendaConsulta.update(document.querySelector(".swirl-in-fwd"));
         },
       },
     ]);

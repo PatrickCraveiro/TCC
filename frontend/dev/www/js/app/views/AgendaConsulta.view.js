@@ -1,4 +1,4 @@
-class CadastraConsulta {
+class AgendaConsulta {
     constructor() {
     }
   
