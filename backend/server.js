@@ -17,6 +17,7 @@ require("./app/routes/login.routes.js")(app);
 require("./app/routes/consulta.routes.js")(app);
 require("./app/routes/funcionario.routes.js")(app);
 require("./app/routes/apostilas_info.routes.js")(app);
+require("./app/routes/produto.routes.js")(app);
 require("./app/routes/apostilas.routes.js")(app);
 
 // set port, listen for requests
