@@ -131,26 +131,30 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid items-center gap-10 overflow-hidden rounded-3xl bg-[linear-gradient(135deg,oklch(0.42_0.08_200),oklch(0.52_0.1_190))] p-10 text-white lg:grid-cols-2 lg:p-14">
-            <div>
-              <p className="text-sm font-semibold tracking-wide text-white/70 uppercase">Para clínicas</p>
+          <div className="relative grid items-center gap-10 overflow-hidden rounded-3xl bg-ink p-10 text-paper lg:grid-cols-2 lg:p-14">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(40rem_24rem_at_100%_0%,color-mix(in_oklch,var(--accent-500)_32%,transparent),transparent)]"
+            />
+            <div className="relative">
+              <p className="text-sm font-semibold tracking-wide text-(--accent-400) uppercase">Para clínicas</p>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-balance">
                 Um painel para cuidar de toda a operação
               </h2>
-              <p className="mt-4 text-white/80">
+              <p className="mt-4 text-paper/72">
                 Administradores gerenciam clínicas, equipe e agenda no mesmo lugar, com
                 indicadores atualizados a cada agendamento.
               </p>
-              <Button size="lg" variant="secondary" className="mt-8 h-11 px-5" asChild>
+              <Button size="lg" className="mt-8 h-11 px-5" asChild>
                 <Link href="/login">
                   Acessar painel <ArrowRight data-icon="inline-end" />
                 </Link>
               </Button>
             </div>
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <ul className="relative grid gap-3 sm:grid-cols-2">
               {RECURSOS_CLINICA.map(({ icone: Icone, texto }) => (
-                <li key={texto} className="flex items-center gap-3 rounded-xl bg-white/10 p-4 ring-1 ring-white/15">
-                  <Icone className="size-5 shrink-0 text-white/90" />
+                <li key={texto} className="flex items-center gap-3 rounded-xl bg-paper/5 p-4 ring-1 ring-paper/12">
+                  <Icone className="size-5 shrink-0 text-(--accent-400)" />
                   <span className="text-sm font-medium">{texto}</span>
                 </li>
               ))}
