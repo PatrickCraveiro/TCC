@@ -77,6 +77,7 @@ export const HORARIOS = [
   "16:00",
   "17:00",
 ] as const;
+export type Horario = (typeof HORARIOS)[number];
 
 // Até quantos dias à frente o paciente pode agendar.
 export const JANELA_AGENDAMENTO_DIAS = 60;

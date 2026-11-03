@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import type { QueryFilter } from "mongoose";
 import { connectDB } from "@/lib/db";
 import { exigirAdmin, exigirUsuario } from "@/lib/auth/dal";
@@ -81,9 +82,9 @@ export async function listarClinicasAdmin(busca = ""): Promise<ClinicaComTotaisD
 }
 
 /** Opções de select (id + nome) para os filtros e formulários do admin. */
-export async function opcoesClinicas() {
+export const opcoesClinicas = cache(async () => {
   await exigirAdmin();
   await connectDB();
   const clinicas = await Clinica.find().select("nome").sort({ nome: 1 }).lean<ClinicaLean[]>();
   return clinicas.map((c) => ({ id: String(c._id), nome: c.nome }));
-}
+});

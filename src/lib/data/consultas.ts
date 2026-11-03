@@ -11,6 +11,7 @@ import {
   HORARIOS,
   STATUS_CONSULTA,
   type EspecialidadeId,
+  type Horario,
   type StatusConsulta,
 } from "@/lib/constants";
 import { horaDe, limitesDoDia } from "@/lib/datas";
@@ -19,6 +20,8 @@ import { diaAgendavel, horarioPassou } from "@/lib/agenda";
 export type ConsultaDTO = {
   id: string;
   data: string; // ISO
+  /** A data já ficou para trás (calculado no servidor). */
+  passou: boolean;
   status: StatusConsulta;
   especialidade: EspecialidadeId;
   sintomas: string[];
@@ -33,10 +36,11 @@ type ConsultaPopulada = Omit<ConsultaDoc, "clinica" | "paciente"> & {
   paciente: { _id: unknown; nome: string; email: string } | null;
 };
 
-function paraDTO(c: ConsultaPopulada): ConsultaDTO {
+function paraDTO(c: ConsultaPopulada, agora: Date): ConsultaDTO {
   return {
     id: String(c._id),
     data: c.data.toISOString(),
+    passou: c.data.getTime() < agora.getTime(),
     status: c.status,
     especialidade: c.especialidade,
     sintomas: c.sintomas,
@@ -62,7 +66,8 @@ export async function listarMinhasConsultas(): Promise<ConsultaDTO[]> {
   const consultas = await buscarPopulado({ paciente: usuario.id })
     .sort({ data: -1 })
     .lean<ConsultaPopulada[]>();
-  return consultas.map(paraDTO);
+  const agora = new Date();
+  return consultas.map((c) => paraDTO(c, agora));
 }
 
 export type FiltroConsultas = { status?: string; clinicaId?: string };
@@ -81,10 +86,14 @@ export async function listarConsultas(filtro: FiltroConsultas = {}): Promise<Con
     .sort({ data: -1 })
     .limit(500)
     .lean<ConsultaPopulada[]>();
-  return consultas.map(paraDTO);
+  const agora = new Date();
+  const dtos = consultas.map((c) => paraDTO(c, agora));
+  // Agenda: próximas primeiro (da mais perto para a mais longe), depois o histórico.
+  const futuras = dtos.filter((c) => !c.passou).reverse();
+  return [...futuras, ...dtos.filter((c) => c.passou)];
 }
 
-export type HorarioDTO = { hora: string; disponivel: boolean };
+export type HorarioDTO = { hora: Horario; disponivel: boolean };
 
 /** Grade de horários de um dia para uma clínica. Quem chama deve autenticar. */
 export async function horariosDoDia(clinicaId: string, dia: string): Promise<HorarioDTO[]> {
@@ -94,6 +103,9 @@ export async function horariosDoDia(clinicaId: string, dia: string): Promise<Hor
   }
 
   await connectDB();
+  if (!(await Clinica.exists({ _id: clinicaId }))) {
+    return HORARIOS.map((hora) => ({ hora, disponivel: false }));
+  }
   const { inicio, fim } = limitesDoDia(dia);
   const ocupadas = await Consulta.find({
     clinica: clinicaId,
@@ -149,6 +161,6 @@ export async function resumoAdmin() {
       especialidade: e.nome,
       total: totaisEspecialidade.get(e.id) ?? 0,
     })).sort((a, b) => b.total - a.total),
-    proximas: proximas.map(paraDTO),
+    proximas: proximas.map((c) => paraDTO(c, agora)),
   };
 }

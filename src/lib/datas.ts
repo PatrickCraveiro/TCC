@@ -56,6 +56,15 @@ export function formatarData(data: Date | string, opcoes: Intl.DateTimeFormatOpt
   }).format(new Date(data));
 }
 
+/** Partes para blocos de calendário: { semana: "ter", dia: "10", mes: "nov" } */
+export function partesData(data: Date | string) {
+  const so = (opcoes: Intl.DateTimeFormatOptions) =>
+    new Intl.DateTimeFormat("pt-BR", { timeZone: FUSO, ...opcoes })
+      .format(new Date(data))
+      .replace(".", "");
+  return { semana: so({ weekday: "short" }), dia: so({ day: "2-digit" }), mes: so({ month: "short" }) };
+}
+
 export function formatarDataHora(data: Date | string) {
   return formatarData(data, { hour: "2-digit", minute: "2-digit" });
 }
